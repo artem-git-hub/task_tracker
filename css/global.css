@@ -1,0 +1,15 @@
+html,
+body {
+    min-height: 100vh;
+    font-size: 18px;
+}
+
+.mini-avatar {
+    height: 40px;
+}
+
+.content {
+    padding: 1rem;
+    width: 100%;
+    min-height: 80vh;
+}
