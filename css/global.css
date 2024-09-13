@@ -9,7 +9,21 @@ body {
 }
 
 .content {
-    padding: 1rem;
+    padding: 1.5rem;
     width: 100%;
     min-height: 80vh;
+}
+
+.up {
+    margin-top: -1rem;
+}
+
+.btn-add-sm {
+    font-size: 2rem;
+    color: rgb(90, 90, 90);
+}
+
+.btn-add-big {
+    font-size: 5rem;
+    color: rgb(90, 90, 90);
 }

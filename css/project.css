@@ -1,0 +1,46 @@
+.card {
+    height: 300px;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.btn-block-menu {
+    margin-left: auto;
+    margin-top: -1rem;
+    margin-right: -1rem;
+}
+
+.b-list {
+    font-weight: 500;
+    line-height: 1.4rem;
+}
+
+.b-list a {
+    color: inherit;
+}
+
+.form-check-input {
+    margin-top: 0.22em;
+    margin-right: 8px;
+}
+
+.form-check {
+    margin-bottom: 1rem;
+}
+
+.form-check-input:checked {
+    background-color: black;
+    border-color: black;
+}
+
+.btn-add-sm {
+    margin-top: -0.5rem;
+    padding-bottom: 0;
+}
+
+.max-hw-100 {
+    max-height: 100%;
+    max-width: 100%;
+}

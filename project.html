@@ -7,6 +7,7 @@
     <title>Проект №1</title>
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/icons/bootstrap-icons.min.css" rel="stylesheet">
     <link href="/css/global.css" rel="stylesheet">
     <link href="/css/project.css" rel="stylesheet">
 </head>
@@ -14,21 +15,35 @@
 <body>
     <!--Панель навигации сверху, закрепленная-->
     <nav class="navbar sticky-top bg-body-tertiary p-1">
-        <div class="container-fluid px-4 d-flex justify-content-between" style="flex-wrap: nowrap;">
+        <div class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
 
             <!--Элементы слева-->
             <div class="d-flex">
                 <a href="/profile.html" class="text-decoration-none text-reset d-flex">
                     <img src="/img/avatar.jpeg" class="rounded mini-avatar">
-                    <b class="my-auto px-2">Имя пользователя</b>
+                    <b class="my-auto px-2 text-break">Имя пользователя</b>
                 </a>
             </div>
 
-            <!--Кнопка разворачивания главного меню-->
-            <button class="navbar-toggler d-inline-flex align-items-start" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#mainMenu">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <!--Элементы справа-->
+            <div class="d-flex">
+                <!--Меню для добавления друзей и удаления проекта-->
+                <div class="dropstart">
+                    <button class="btn btn border mx-2 my-auto" type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-wrench-adjustable"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Друзья проекта</a></li>
+                        <li><a class="dropdown-item text-danger" href="#">Удалить проект</a></li>
+                    </ul>
+                </div>
+
+                <!--Кнопка разворачивания главного меню-->
+                <button class=" btn border h-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
 
             <!--Главное меню-->
             <div class="offcanvas offcanvas-end bg-body-tertiary navbar-nav" tabindex="-1" id="mainMenu">
@@ -69,9 +84,195 @@
 
     <!--Основное содержимое-->
     <div class="content">
+        <div class="row gx-5 gy-4">
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card overflow-y-auto">
+                    <!-- Содержимое блока -->
+                    <div class="card-body">
+                        <div class="d-flex flex-nowrap justify-content-between">
+                            <h4>Заголовок проекта</h4>
+                            <div class="dropdown">
+                                <button class="btn btn-block-menu" type="button" data-bs-toggle="dropdown">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Редактировать проект</a></li>
+                                </ul>
+                            </div>
+                        </div>
 
+                        <p>Описание проекта. Описание проекта. Описание проекта. Описание проекта. Описание проекта.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card overflow-y-auto">
+                    <!-- Содержимое блока -->
+                    <div class="card-body">
+                        <div class="d-flex flex-nowrap justify-content-between">
+                            <h5></h5>
+                            <div class="dropdown">
+                                <button class="btn btn-block-menu" type="button" data-bs-toggle="dropdown">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Редактировать блок</a></li>
+                                    <li><a class="dropdown-item" href="#">Удалить блок</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--Класс up применять при пустом заголовке-->
+                        <ul class="list-unstyled b-list up mb-0">
+                            <ul class="list-unstyled">
+                                <li class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" name="option1" checked> Элемент
+                                        1
+                                    </label>
+                                </li>
+                                <li class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" name="option2" checked> Элемент
+                                        2
+                                    </label>
+                                </li>
+                                <li class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" name="option3"> Элемент 3 тыры
+                                        пыры подлинннее что-то
+                                    </label>
+                                </li>
+                                <li class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" name="option4"> Элемент 4
+                                    </label>
+                                </li>
+                            </ul>
+
+                            <div class="d-flex">
+                                <button class="btn btn-link mx-auto btn-add-sm">
+                                    <i class="bi bi-plus-circle"></i>
+                                </button>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card overflow-y-auto">
+                    <!-- Содержимое блока -->
+                    <div class="card-body">
+                        <div class="d-flex flex-nowrap justify-content-between">
+                            <h5></h5>
+                            <div class="dropdown">
+                                <button class="btn btn-block-menu" type="button" data-bs-toggle="dropdown">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Редактировать блок</a></li>
+                                    <li><a class="dropdown-item" href="#">Удалить блок</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--Класс up применять при пустом заголовке-->
+                        <div class="up d-flex align-items-center justify-content-center h-100">
+                            <img src="/img/img1.jpeg" class="max-hw-100">
+                        </div>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card overflow-y-auto">
+                    <!-- Содержимое блока -->
+                    <div class="card-body">
+                        <div class="d-flex flex-nowrap justify-content-between">
+                            <h5></h5>
+                            <div class="dropdown">
+                                <button class="btn btn-block-menu" type="button" data-bs-toggle="dropdown">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Редактировать блок</a></li>
+                                    <li><a class="dropdown-item" href="#">Удалить блок</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--Класс up применять при пустом заголовке-->
+                        <ul class="list-unstyled b-list up mb-0">
+                            <ul class="list-unstyled">
+                                <li class="form-check">
+                                    <a href="https://github.com" class="form-check-label" target="_blank">GitHub</a>
+                                </li>
+                                <li class="form-check">
+                                    <a href="https://www.google.com" class="form-check-label" target="_blank">Google</a>
+                                </li>
+                                <li class="form-check">
+                                    <a href="https://ru.wikipedia.org" class="form-check-label"
+                                        target="_blank">Википедия</a>
+                                </li>
+                                <li class="form-check">
+                                    <a href="https://vk.com" class="form-check-label" target="_blank">ВКонтакте</a>
+                                </li>
+                            </ul>
+
+                            <div class="d-flex">
+                                <button class="btn btn-link mx-auto btn-add-sm">
+                                    <i class="bi bi-plus-circle"></i>
+                                </button>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card overflow-y-auto">
+                    <!-- Содержимое блока -->
+                    <div class="card-body">
+                        <div class="d-flex flex-nowrap justify-content-between">
+                            <h5>Блок с заголовком</h5>
+                            <div class="dropdown">
+                                <button class="btn btn-block-menu" type="button" data-bs-toggle="dropdown">
+                                    <i class="bi bi-three-dots-vertical"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Редактировать блок</a></li>
+                                    <li><a class="dropdown-item" href="#">Удалить блок</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p>Текст блока. Текст блока. Текст блока. Текст блока. Текст блока. Текст блока. Текст блока.
+                            Текст блока. Текст блока. Текст блока. Текст блока. Текст блока. Текст блока. Текст блока.
+                            Текст
+                            блока. Текст блока. Текст блока. Текст блока. Текст блока. Текст блока. Текст блока. Текст
+                            блока.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card overflow-y-auto">
+                    <!-- Содержимое блока -->
+                    <div class="card-body">
+                        <div class="d-flex justify-content-center align-items-center h-100">
+                            <button class="btn btn-link btn-add-big">
+                                <i class="bi bi-plus-circle"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </body>
+
 <script src="/js/jquery-3.7.1.min.js"></script>
 <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 
