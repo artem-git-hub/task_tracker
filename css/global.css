@@ -5,7 +5,8 @@ body {
 }
 
 .mini-avatar {
-    height: 40px;
+    max-height: 40px;
+    max-width: 80px;
 }
 
 .content {
