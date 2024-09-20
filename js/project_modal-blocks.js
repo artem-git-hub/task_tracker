@@ -34,7 +34,7 @@ modalBlocks.forEach(item => {
 
         if (idBlock == '-1') {
             titleElement.textContent = 'Добавить ' + initialTitle;
-            primaryButton.textContent = 'Добавить блок';
+            primaryButton.textContent = 'Добавить ' + initialTitle;
         } else {
             titleElement.textContent = 'Редактировать ' + initialTitle;
             primaryButton.textContent = 'Сохранить изменения';
