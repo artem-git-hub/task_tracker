@@ -88,7 +88,7 @@
         <div class="row gx-5 gy-4">
 
             <!--Главный блок проекта-->
-            <div class="col-lg-4 col-sm-6 col-12">
+            <div class="col-lg-4 col-sm-6 col-12" id="block-0">
                 <div class="card overflow-y-auto">
                     <!-- Содержимое блока -->
                     <div class="card-body">
@@ -99,7 +99,12 @@
                                     <i class="bi bi-three-dots"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Редактировать проект</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#modalProject" data-bs-block="block-0">
+                                            Редактировать проект
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -110,7 +115,7 @@
             </div>
 
             <!--Блок список чексбоксов-->
-            <div class="col-lg-4 col-sm-6 col-12">
+            <div class="col-lg-4 col-sm-6 col-12" id="block-1">
                 <div class="card overflow-y-auto">
                     <!-- Содержимое блока -->
                     <div class="card-body">
@@ -121,7 +126,12 @@
                                     <i class="bi bi-three-dots"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Редактировать блок</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#modalChecklist" data-bs-block="block-1">
+                                            Редактировать блок
+                                        </a>
+                                    </li>
                                     <li><a class="dropdown-item" href="#">Удалить блок</a></li>
                                 </ul>
                             </div>
@@ -165,7 +175,7 @@
             </div>
 
             <!--Блок изображений-->
-            <div class="col-lg-4 col-sm-6 col-12">
+            <div class="col-lg-4 col-sm-6 col-12" id="block-2">
                 <div class="card overflow-y-auto">
                     <!-- Содержимое блока -->
                     <div class="card-body">
@@ -176,7 +186,12 @@
                                     <i class="bi bi-three-dots"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Редактировать блок</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#modalImage" data-bs-block="block-2">
+                                            Редактировать блок
+                                        </a>
+                                    </li>
                                     <li><a class="dropdown-item" href="#">Удалить блок</a></li>
                                 </ul>
                             </div>
@@ -192,7 +207,7 @@
             </div>
 
             <!--Блок ссылок-->
-            <div class="col-lg-4 col-sm-6 col-12">
+            <div class="col-lg-4 col-sm-6 col-12" id="block-3">
                 <div class="card overflow-y-auto">
                     <!-- Содержимое блока -->
                     <div class="card-body">
@@ -203,7 +218,12 @@
                                     <i class="bi bi-three-dots"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Редактировать блок</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#modalLinks" data-bs-block="block-3">
+                                            Редактировать блок
+                                        </a>
+                                    </li>
                                     <li><a class="dropdown-item" href="#">Удалить блок</a></li>
                                 </ul>
                             </div>
@@ -237,7 +257,7 @@
             </div>
 
             <!--Блок текста-->
-            <div class="col-lg-4 col-sm-6 col-12">
+            <div class="col-lg-4 col-sm-6 col-12" id="block-4">
                 <div class="card overflow-y-auto">
                     <!-- Содержимое блока -->
                     <div class="card-body">
@@ -248,7 +268,12 @@
                                     <i class="bi bi-three-dots"></i>
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Редактировать блок</a></li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#modalText" data-bs-block="block-4">
+                                            Редактировать блок
+                                        </a>
+                                    </li>
                                     <li><a class="dropdown-item" href="#">Удалить блок</a></li>
                                 </ul>
                             </div>
@@ -264,13 +289,23 @@
 
             <!--Блок добавления блоков-->
             <div class="col-lg-4 col-sm-6 col-12">
-                <div class="card overflow-y-auto">
+                <div class="card">
                     <!-- Содержимое блока -->
                     <div class="card-body">
-                        <div class="d-flex justify-content-center align-items-center h-100">
-                            <button class="btn btn-link btn-add-big">
+                        <div class="d-flex justify-content-center align-items-center h-100 dropdown">
+                            <button class="btn btn-link btn-add-big" data-bs-toggle="dropdown">
                                 <i class="bi bi-plus-circle"></i>
                             </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#modalChecklist" data-bs-block="-1">Чек-лист</a></li>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalText"
+                                        data-bs-block="-1">Текст</a></li>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#modalImage" data-bs-block="-1">Изображение</a></li>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                        data-bs-target="#modalLinks" data-bs-block="-1">Ссылки</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -278,9 +313,96 @@
 
         </div>
     </div>
-</body>
 
-<script src="/js/jquery-3.7.1.min.js"></script>
-<script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Модальные окна блоков-->
+    <div class="modal fade modal-block" id="modalProject" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Проект №1</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">Заголовок и описание проекта.</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary">Добавить блок</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-block" id="modalChecklist" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Чек-лист</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">Здесь ваш чек-лист.</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary">Добавить блок</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-block" id="modalText" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Текст</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">Здесь ваш текст.</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary">Сохранить изменения</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-block" id="modalImage" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Изображение</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="https://via.placeholder.com/150" alt="" class="img-fluid">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary">Сохранить изменения</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-block" id="modalLinks" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Ссылки</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">Здесь ваши ссылки.</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary">Добавить блок</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/project_modal-blocks.js"></script>
+
+</body>
 
 </html>
