@@ -6,6 +6,8 @@ function addChecklistItem(modalElement, isChecked = false, text = "") {
 
     checklistItem.append(newCheckbox).append(newInput);
     modalElement.find('.modal-checklist-content').append(checklistItem);
+
+    return checklistItem;
 }
 
 // Добавление нового элемента ссылки в модальное окно
@@ -16,6 +18,8 @@ function addLinkItem(modalElement, text = "", url = "") {
 
     linkItem.append(newLinkText).append(newLinkUrl);
     modalElement.find('.modal-links-content').append(linkItem);
+
+    return linkItem;
 }
 
 // Очистка данных в модальном окне
@@ -128,6 +132,7 @@ function loadModalData(modalElement, blockElement) {
 }
 
 
+// Обработка открытия модального окна
 $('.modal-block').on('show.bs.modal', function (event) {
     let modalElement = $(event.currentTarget);
 
@@ -159,17 +164,39 @@ $('.modal-block').on('show.bs.modal', function (event) {
             initialTitle = 'блок';
     }
 
-    if (idBlock == '-1') {
-        titleElement.text('Добавить ' + initialTitle);
-        primaryButton.text('Добавить ' + initialTitle);
-
-        clearModalData(modalElement);
-    } else {
+    if (idBlock) {
         titleElement.text('Редактировать ' + initialTitle);
         primaryButton.text('Сохранить изменения');
 
         let blockElement = $('#' + idBlock);
 
         loadModalData(modalElement, blockElement);
+
+    } else {
+        titleElement.text('Добавить ' + initialTitle);
+        primaryButton.text('Добавить ' + initialTitle);
+
+        clearModalData(modalElement);
+    }
+});
+
+
+$('.modal-block').on('shown.bs.modal', function (event) {
+    let modalElement = $(event.currentTarget);
+
+    let button = event.relatedTarget;
+    let idBlock = button.getAttribute('data-bs-block');
+
+    if (idBlock) {
+        let addItem = button.getAttribute('data-bs-addItem');
+
+        switch (addItem) {
+            case 'checkbox':
+                addChecklistItem(modalElement).find('input[type="text"]').focus();
+                break;
+            case 'link':
+                addLinkItem(modalElement).find('input[type="text"]').focus();
+                break;
+        }
     }
 });
