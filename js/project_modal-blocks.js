@@ -131,9 +131,34 @@ function loadModalData(modalElement, blockElement) {
     }
 }
 
+// Добавление нового элемента с установкой фокуса
+function addFocusItem(modalElement) {
+
+    let newItem;
+
+    switch (modalElement.attr('id')) {
+        case 'modalChecklist':
+            newItem = addChecklistItem(modalElement);
+            break;
+        case 'modalLinks':
+            newItem = addLinkItem(modalElement);
+            break;
+    }
+
+    let scrollable = modalElement.find('.modal-body')[0];
+    scrollable.scrollTop = scrollable.scrollHeight;
+
+    newItem.find('input[type="text"]').focus();
+}
+
+// Получение элемента модального окна по его типу
+function getModalElementFromType(type) {
+    return $('#modal' + type);
+}
+
 // Отправка данных из модального окна на сервер
 function submitModal(type) {
-    let modalElement = $('#modal' + type);
+    let modalElement = getModalElementFromType(type);
     let data = {
         blockType: type,
         blockId: modalElement.data('blockId'),
@@ -147,9 +172,9 @@ function submitModal(type) {
         case 'Checklist':
             data.checklistItems = [];
             modalElement.find('.checklist-item').each(function () {
-                let checkbox = $(this).find('input[type="checkbox"]').is(':checked');
+                let isChecked = $(this).find('input[type="checkbox"]').is(':checked');
                 let text = $(this).find('input[type="text"]').val();
-                data.checklistItems.push({ checked: checkbox, text: text });
+                data.checklistItems.push({ checked: isChecked, text: text });
             });
             break;
         case 'Links':
@@ -198,7 +223,7 @@ $('.modal-block').on('show.bs.modal', function (event) {
     let modalElement = $(event.currentTarget);
 
     let button = event.relatedTarget;
-    let blockId = button.getAttribute('data-bs-block');
+    let blockId = button.getAttribute('data-block');
     modalElement.data('blockId', blockId);
 
     let titleElement = modalElement.find('.modal-title');
@@ -246,19 +271,9 @@ $('.modal-block').on('show.bs.modal', function (event) {
 $('.modal-block').on('shown.bs.modal', function (event) {
     let modalElement = $(event.currentTarget);
 
-    let button = event.relatedTarget;
-    let blockId = button.getAttribute('data-bs-block');
+    let button = $(event.relatedTarget);
 
-    if (blockId) {
-        let addItem = button.getAttribute('data-bs-addItem');
-
-        switch (addItem) {
-            case 'checkbox':
-                addChecklistItem(modalElement).find('input[type="text"]').focus();
-                break;
-            case 'link':
-                addLinkItem(modalElement).find('input[type="text"]').focus();
-                break;
-        }
+    if (button.is('[data-addItem]')) {
+        addFocusItem(modalElement)
     }
 });
