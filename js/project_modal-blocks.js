@@ -131,13 +131,75 @@ function loadModalData(modalElement, blockElement) {
     }
 }
 
+// Отправка данных из модального окна на сервер
+function submitModal(type) {
+    let modalElement = $('#modal' + type);
+    let data = {
+        blockType: type,
+        blockId: modalElement.data('blockId'),
+        blockTitle: modalElement.find('[name="blockTitle"]').val(),
+    };
+
+    switch (type) {
+        case 'Project':
+            data.description = modalElement.find('textarea').val();
+            break;
+        case 'Checklist':
+            data.checklistItems = [];
+            modalElement.find('.checklist-item').each(function () {
+                let checkbox = $(this).find('input[type="checkbox"]').is(':checked');
+                let text = $(this).find('input[type="text"]').val();
+                data.checklistItems.push({ checked: checkbox, text: text });
+            });
+            break;
+        case 'Links':
+            data.links = [];
+            modalElement.find('.link-item').each(function () {
+                let text = $(this).find('input[type="text"]').val();
+                let url = $(this).find('input[type="url"]').val();
+                data.links.push({ text: text, url: url });
+            });
+            break;
+        case 'Image':
+            // Логика сбора данных для изображения
+            break;
+        case 'Text':
+            data.text = modalElement.find('textarea').val();
+            break;
+    }
+
+    // Отправка данных на сервер с помощью AJAX
+    $.ajax({
+        url: '/', // URL обработчика на сервере
+        type: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+        success: function (response) {
+            // Обработка успешного ответа от сервера
+            console.log('Данные успешно отправлены на сервер:', response);
+
+            // Обновление блока на странице (с сервера)
+            // ...
+        },
+        error: function (error) {
+            // Обработка ошибки отправки данных
+            console.error('Ошибка отправки данных:', error);
+        }
+    });
+
+    console.log('Отправленные данные:', data);
+
+    modalElement.modal('hide');
+}
+
 
 // Обработка открытия модального окна
 $('.modal-block').on('show.bs.modal', function (event) {
     let modalElement = $(event.currentTarget);
 
     let button = event.relatedTarget;
-    let idBlock = button.getAttribute('data-bs-block');
+    let blockId = button.getAttribute('data-bs-block');
+    modalElement.data('blockId', blockId);
 
     let titleElement = modalElement.find('.modal-title');
     let primaryButton = modalElement.find('.btn-primary');
@@ -164,11 +226,11 @@ $('.modal-block').on('show.bs.modal', function (event) {
             initialTitle = 'блок';
     }
 
-    if (idBlock) {
+    if (blockId) {
         titleElement.text('Редактировать ' + initialTitle);
         primaryButton.text('Сохранить изменения');
 
-        let blockElement = $('#' + idBlock);
+        let blockElement = $('#' + blockId);
 
         loadModalData(modalElement, blockElement);
 
@@ -185,9 +247,9 @@ $('.modal-block').on('shown.bs.modal', function (event) {
     let modalElement = $(event.currentTarget);
 
     let button = event.relatedTarget;
-    let idBlock = button.getAttribute('data-bs-block');
+    let blockId = button.getAttribute('data-bs-block');
 
-    if (idBlock) {
+    if (blockId) {
         let addItem = button.getAttribute('data-bs-addItem');
 
         switch (addItem) {
