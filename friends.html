@@ -99,7 +99,10 @@
                             </ul>
                         </div>
                         <img src="/img/avatar.jpeg" class="my-auto mx-3 rounded avatar">
-                        <h5 class="py-0 my-auto">@vasiliy228</h5>
+                        <div>
+                            <h5 class="py-0 my-auto">Имя пользователя</h5>
+                            <h6 class="py-0 my-auto muted">@vasiliy228</h6>
+                        </div>
                     </div>
                 </li>
 
@@ -117,10 +120,61 @@
                             </ul>
                         </div>
                         <img src="/img/avatar.jpeg" class="my-auto mx-3 rounded avatar">
-                        <h5 class="py-0 my-auto">@kldf_gjalerji41322</h5>
+                        <div>
+                            <h5 class="py-0 my-auto">Имя потолкользователя</h5>
+                            <h6 class="py-0 my-auto muted">@vasiliy228</h6>
+                        </div>
                     </div>
                 </li>
             </ul>
+        </div>
+
+
+
+        <!--Модальное окно чек-листа-->
+        <div class=" modal fade modal-block" id="modalChecklist" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Чек-лист</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>Название чек-листа</h6>
+                        <input type="text" name="titleBlock" class="form-control mb-3"
+                            placeholder="Введите название чек-листа (необязательно)">
+
+                        <h6>Элементы чек-листа</h6>
+                        <div class="checklist-item mb-2">
+                            <input type="checkbox" class="form-check-input">
+                            <input type="text" class="form-control d-inline-block w-75"
+                                placeholder="Введите элемент чек-листа">
+                        </div>
+                        <div class="checklist-item mb-2">
+                            <input type="checkbox" class="form-check-input">
+                            <input type="text" class="form-control d-inline-block w-75"
+                                placeholder="Введите элемент чек-листа">
+                        </div>
+                        <div class="checklist-item mb-2">
+                            <input type="checkbox" class="form-check-input">
+                            <input type="text" class="form-control d-inline-block w-75"
+                                placeholder="Введите элемент чек-листа">
+                        </div>
+
+                        <div class="d-flex">
+                            <button class="btn btn-link mx-auto btn-add-sm">
+                                <i class="bi bi-plus-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                        <button type="button" class="btn btn-primary" onclick="submitModal('modalChecklist')">
+                            Добавить блок
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
