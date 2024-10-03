@@ -9,6 +9,11 @@ body {
     max-width: 80px;
 }
 
+.avatar {
+    max-height: 60px;
+    max-width: 120px;
+}
+
 .content {
     padding: 1.5rem;
     width: 100%;
