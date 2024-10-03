@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Проект №1</title>
+    <title>Друзья проекта</title>
 
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/bootstrap/icons/bootstrap-icons.min.css" rel="stylesheet">
@@ -79,12 +79,14 @@
 
         <div class="d-flex gx-5 gy-4">
             <h1>Друзья проекта</h1>
-            <button class="btn btn-link  btn-add-sm">
+            <button class="btn btn-link  btn-add-sm"  data-bs-toggle="modal" data-bs-target="#modalAddFriends">
                 <i class="bi bi-plus-circle"></i>
             </button>
         </div>
 
         <div class="my-auto">
+
+
             <ul class="list-unstyled">
                 
                 
@@ -126,51 +128,90 @@
                         </div>
                     </div>
                 </li>
+
             </ul>
+
         </div>
 
 
 
         <!--Модальное окно чек-листа-->
-        <div class=" modal fade modal-block" id="modalChecklist" tabindex="-1">
+        <div class="modal fade modal-lg" id="modalAddFriends" tabindex="-1">
             <div class="modal-dialog modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Чек-лист</h5>
+                        <h5 class="modal-title">Добавление друга</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <h6>Название чек-листа</h6>
-                        <input type="text" name="titleBlock" class="form-control mb-3"
-                            placeholder="Введите название чек-листа (необязательно)">
-
-                        <h6>Элементы чек-листа</h6>
-                        <div class="checklist-item mb-2">
-                            <input type="checkbox" class="form-check-input">
-                            <input type="text" class="form-control d-inline-block w-75"
-                                placeholder="Введите элемент чек-листа">
-                        </div>
-                        <div class="checklist-item mb-2">
-                            <input type="checkbox" class="form-check-input">
-                            <input type="text" class="form-control d-inline-block w-75"
-                                placeholder="Введите элемент чек-листа">
-                        </div>
-                        <div class="checklist-item mb-2">
-                            <input type="checkbox" class="form-check-input">
-                            <input type="text" class="form-control d-inline-block w-75"
-                                placeholder="Введите элемент чек-листа">
-                        </div>
 
                         <div class="d-flex">
-                            <button class="btn btn-link mx-auto btn-add-sm">
-                                <i class="bi bi-plus-circle"></i>
+                            <input type="text" name="blockTitle" class="form-control mb-3"
+                                placeholder="@login пользователя">
+                            <button class=" btn border h-100 mx-2" type="button">
+                                <i class="bi bi-search"></i>
                             </button>
                         </div>
+        
+
+                        <ul class="list-unstyled">
+                            
+                            
+                            <li class="my-4">
+                                <div class="d-flex">
+                                    <button class="btn btn-link  btn-add-sm"  data-bs-toggle="modal" data-bs-target="#modalAddFriends">
+                                        <i class="bi bi-plus-circle"></i>
+                                    </button>
+                                    <div class="dropdown my-auto">
+                                        <!-- <button class="btn btn-block-menu py-0 my-auto" type="button" data-bs-toggle="dropdown">
+                                            <i class="bi bi-three-dots"></i>
+                                        </button> -->
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Удалить друга</a></li>
+                                        </ul>
+                                    </div>
+                                    <img src="/img/avatar.jpeg" class="my-auto mx-3 rounded avatar">
+                                    <div>
+                                        <h6 class="py-0 my-auto">Имя пользоватеsdfg sdfg sdfg </h6>
+                                        <p class="py-0 my-auto muted">@vasiliy228</p>
+                                    </div>
+
+                                </div>
+                            </li>
+
+
+                            
+                            
+                            <li class="my-4">
+                                <div class="d-flex">
+
+                                    <button class="btn btn-link  btn-add-sm"  data-bs-toggle="modal" data-bs-target="#modalAddFriends">
+                                        <i class="bi bi-plus-circle"></i>
+                                    </button>
+                                    <div class="dropdown my-auto">
+                                        <!-- <button class="btn btn-block-menu py-0 my-auto" type="button" data-bs-toggle="dropdown"> -->
+                                            <!-- <i class="bi bi-three-dots"></i> -->
+                                        <!-- </button> -->
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="#">Удалить друга</a></li>
+                                        </ul>
+                                    </div>
+                                    <img src="/img/avatar.jpeg" class="my-auto mx-3 rounded avatar">
+                                    <div>
+                                        <h6 class="py-0 my-auto">Имя потолкользователя</h6>
+                                        <p class="py-0 my-auto muted">@vasiliy228</p>
+                                    </div>
+
+                                </div>
+                            </li>
+
+                        </ul>
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
                         <button type="button" class="btn btn-primary" onclick="submitModal('modalChecklist')">
-                            Добавить блок
+                            Продолжить
                         </button>
                     </div>
                 </div>
