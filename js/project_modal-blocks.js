@@ -217,8 +217,44 @@ function submitModal(type) {
     modalElement.modal('hide');
 }
 
+// Удаление блока
+function deleteBlock() {
+    let modalElement = $('#modalDeleteBlock');
 
-// Обработка открытия модального окна
+    let data = {
+        blockId: modalElement.data('blockId'),
+    };
+
+    // Отправка данных на сервер с помощью AJAX
+    $.ajax({
+        url: '/', // URL обработчика на сервере
+        type: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+        success: function (response) {
+            // Обработка успешного ответа от сервера
+            console.log('Данные успешно отправлены на сервер:', response);
+
+            // Удаление блока на странице (с сервера)
+            // ...
+        },
+        error: function (error) {
+            // Обработка ошибки отправки данных
+            console.error('Ошибка отправки данных:', error);
+        }
+    });
+
+    console.log('Отправленные данные:', data);
+
+    modalElement.modal('hide');
+}
+
+// Удаление блока
+function deleteProject() {
+   
+}
+
+// Обработка открытия модального окна добавления/редактирования блока
 $('.modal-block').on('show.bs.modal', function (event) {
     let modalElement = $(event.currentTarget);
 
@@ -267,7 +303,7 @@ $('.modal-block').on('show.bs.modal', function (event) {
     }
 });
 
-
+// Обработка после открытия модального окна добавления/редактирования блока
 $('.modal-block').on('shown.bs.modal', function (event) {
     let modalElement = $(event.currentTarget);
 
@@ -276,4 +312,13 @@ $('.modal-block').on('shown.bs.modal', function (event) {
     if (button.is('[data-addItem]')) {
         addFocusItem(modalElement)
     }
+});
+
+// Обработка открытия модального окна удаления блока
+$('#modalDeleteBlock').on('show.bs.modal', function (event) {
+    let modalElement = $(event.currentTarget);
+
+    let button = event.relatedTarget;
+    let blockId = button.getAttribute('data-block');
+    modalElement.data('blockId', blockId);
 });
