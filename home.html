@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/icons/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="/css/global.css" rel="stylesheet">
+    <link href="/css/home.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Панель навигации сверху, закрепленная-->
+    <nav class="navbar sticky-top bg-body-tertiary p-1">
+        <div class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
+
+            <!--Элементы слева-->
+            <div class="d-flex">
+                <a href="/profile.html" class="text-decoration-none text-reset d-flex">
+                    <img src="/img/avatar.jpeg" class="rounded mini-avatar">
+                    <b class="my-auto px-2 text-break">Имя пользователя</b>
+                </a>
+            </div>
+
+            <!--Элементы справа-->
+            <div class="d-flex">
+                <!--Кнопка разворачивания главного меню-->
+                <button class=" btn border h-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+
+            <!--Главное меню-->
+            <div class="offcanvas offcanvas-end bg-body-tertiary navbar-nav" tabindex="-1" id="mainMenu">
+                <div class="offcanvas-header px-5">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body text-center py-1">
+                    <ul class="navbar-nav h-100">
+                        <h2 class="mb-4">Task Tracker</h2>
+
+                        <li class="nav-item">
+                            <a href="/profile.html" class="text-decoration-none text-reset">
+                                <img src="/img/avatar.jpeg" class="w-25 rounded my-2">
+                                <h5 class="mb-0">Имя пользователя</h5>
+                                <p class="mb-5">@login</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="text-decoration-none text-reset" href="#">
+                                <h4 class="mb-4">Проекты</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="text-decoration-none text-reset" href="#">
+                                <h4 class="mb-4">Настройки</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-auto">
+                            <a class="text-decoration-none text-reset" href="#">
+                                <h4 class="mb-4">Выход</h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--Основное содержимое-->
+    <div class="content">
+        <div class="d-flex mb-2">
+            <h1 class="mb-0">
+                Мои проекты<button class="btn btn-link  btn-add-sm" data-bs-toggle="modal"
+                    data-bs-target="#modalAddFriends">
+                    <i class="bi bi-plus-circle"></i>
+                </button>
+            </h1>
+
+        </div>
+
+        <!--Контейнер для карт моих проектов-->
+        <div class="row gx-4 gy-3">
+
+            <div class="col-lg-3 col-sm-6 col-12" id="project-0">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект 1</h4>
+                        <p class="pre-text">Описание проекта.Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.Описание проекта.Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.
+                            Описание проекта.Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12" id="project-1">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект 2</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12" id="project-2">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект 3</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12" id="project-3">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект 4</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!--Далее сворачиваемые карты проектов-->
+            <div class="col-lg-3 col-sm-6 col-12 collapse collapse-myProject" id="project-n">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект N</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12 collapse collapse-myProject" id="project-n">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект N</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12 collapse collapse-myProject" id="project-n">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект N</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12 collapse collapse-myProject" id="project-n">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект N</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12 collapse collapse-myProject" id="project-n">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект N</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <!--Кнопка для разворачивания/сворачивания-->
+            <div>
+                <button class="btn" data-bs-toggle="collapse" data-bs-target=".collapse-myProject"
+                    onclick="collapseExpandTextToggle(this)">
+                    <h6 class="toggleText">
+                        Развернуть <i class=" bi bi-chevron-down"></i>
+                    </h6>
+                </button>
+            </div>
+
+        </div>
+
+
+        <h2 class="d-flex mb-2 mt-4">Доступные проекты</h2>
+
+
+        <!--Контейнер для доступных проектов-->
+        <div class="row gx-4 gy-3">
+
+            <div class="col-lg-3 col-sm-6 col-12" id="project-0">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект друга 1</h4>
+                        <p class="pre-text">Описание проекта.Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.Описание проекта.Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.
+                            Описание проекта.Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12" id="project-1">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект друга 2</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12" id="project-2">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект друга 3</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12" id="project-3">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект друга 4</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <!--Далее сворачиваемые карты проектов-->
+            <div class="col-lg-3 col-sm-6 col-12 collapse collapse-friendProject" id="project-n">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект другаN</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12 collapse collapse-friendProject" id="project-n">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект другаN</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12 collapse collapse-friendProject" id="project-n">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект друга N</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12 collapse collapse-friendProject" id="project-n">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект друга N</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 col-12 collapse collapse-friendProject" id="project-n">
+                <a class="card overflow-y-auto text-decoration-none" href="/project.html">
+                    <div class="card-body">
+                        <h4 class="block-title">Проект друга N</h4>
+                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <!--Кнопка для разворачивания/сворачивания-->
+            <div>
+                <button class="btn" data-bs-toggle="collapse" data-bs-target=".collapse-friendProject"
+                    onclick="collapseExpandTextToggle(this)">
+                    <h6 class="toggleText">
+                        Развернуть <i class=" bi bi-chevron-down"></i>
+                    </h6>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+
+</html>
