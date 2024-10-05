@@ -309,6 +309,33 @@
 
     </div>
 
+    <!--Модальное окно проекта-->
+    <div class="modal fade modal-block" id="modalProject" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Создание проекта</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Название проекта</h6>
+                    <input type="text" name="blockTitle" class="form-control mb-3"
+                        placeholder="Введите название проекта">
+
+                    <h6>Описание проекта</h6>
+                    <textarea name="projectDescription" class="form-control" rows="3"
+                        placeholder="Введите описание проекта (необязательно)"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" onclick="createProject()">
+                        Создать проект
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/js/home.js"></script>
