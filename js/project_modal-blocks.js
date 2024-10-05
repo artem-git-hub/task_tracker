@@ -249,9 +249,9 @@ function deleteBlock() {
     modalElement.modal('hide');
 }
 
-// Удаление блока
+// Удаление проекта
 function deleteProject() {
-   
+
 }
 
 // Обработка открытия модального окна добавления/редактирования блока
