@@ -29,7 +29,7 @@ function clearModalData(modalElement) {
 
     switch (modalElement.attr('id')) {
         case 'modalProject':
-            modalElement.find('textarea').text('');
+            modalElement.find('textarea').val('');
             break;
         case 'modalChecklist':
             modalElement.find('.modal-checklist-content').empty();
@@ -40,7 +40,7 @@ function clearModalData(modalElement) {
             modalElement.find('img').attr('src', '');
             break;
         case 'modalText':
-            modalElement.find('textarea').text('');
+            modalElement.find('textarea').val('');
             break;
         case 'modalLinks':
             modalElement.find('.modal-links-content').empty();
