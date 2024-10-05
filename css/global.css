@@ -37,3 +37,7 @@ body {
 .form-check-input:focus {
     box-shadow: none;
 }
+
+.pre-text {
+    white-space: pre-wrap;
+}
