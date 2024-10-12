@@ -1,14 +1,102 @@
 // Добавление нового элемента чек-листа в модальное окно
-function addChecklistItem(modalElement, isChecked = false, text = "") {
-    let checklistItem = $('<div class="checklist-item mb-2 d-flex"></div>');
-    let newCheckbox = $('<input type="checkbox" class="form-check-input">').prop('checked', isChecked);
-    let newInput = $('<input type="text" class="form-control d-inline-block flex-fill" placeholder="Введите элемент чек-листа">').val(text);
+function addChecklistItem(modalElement, id, isChecked = false, text = "") {
+    let checklistItem = $('<div class="checklist-item mb-3 d-flex" data-id="' + id + '"></div>');
+    let checkbox = $('<input type="checkbox" class="form-check-input">').prop('checked', isChecked);
 
-    checklistItem.append(newCheckbox).append(newInput);
-    modalElement.find('.modal-checklist-content').append(checklistItem);
+    let label = $('<span class="checklist-label flex-fill"></span>').text(text);
+
+    let editButton = $('<button class="btn btn-link"><i class="bi bi-pencil"></i></button>');
+
+    let deleteButton = $('<button class="btn btn-link" data-bs-toggle="popover" data-bs-placement="bottom" '
+        + 'data-bs-content="Нажмите еще раз для подтверждения удаления"><i class="bi bi-x"></i></button>');
+
+    let errorMessage = $('<div class="text-danger error-checkbox d-none" role="alert"></div>');
+
+    checklistItem.append(checkbox).append(label).append(editButton).append(deleteButton);
+    modalElement.find('.modal-checklist-content').append(checklistItem).append(errorMessage);;
+
+    let popover = new bootstrap.Popover(deleteButton[0]);
+
+    editButton.on('click', function () {
+        toggleEdit(checklistItem, label, editButton, id, errorMessage);
+    });
+
+    deleteButton.on('click', function () {
+        deleteCheckboxItem(checklistItem, deleteButton, popover, id, errorMessage);
+    });
 
     return checklistItem;
 }
+
+function toggleEdit(checklistItem, label, editButton, id, errorMessage) {
+    if (editButton.find('i').hasClass('bi-pencil')) {
+        // Превращаем надпись в input
+        let input = $('<input type="text" class="form-control d-inline-block flex-fill" placeholder="Элемент чек-листа">')
+            .val(label.text());
+        label.replaceWith(input);
+        input.focus();
+        editButton.html('<i class="bi bi-check2"></i>'); // Меняем кнопку на галочку
+    } else {
+        let newText = checklistItem.find('input[type="text"]').val();
+        // Отправляем обновленные данные на сервер
+        $.ajax({
+            url: '/checkbox/update',
+            method: 'POST',
+            data: {
+                id: id,
+                text: newText,
+                isChecked: checklistItem.find('input[type="checkbox"]').val()
+            },
+            success: function (response) {
+                // Превращаем input обратно в надпись
+                label.text(newText);
+                checklistItem.find('input[type="text"]').replaceWith(label);
+                editButton.html('<i class="bi bi-pencil"></i>'); // Меняем кнопку обратно на карандаш
+
+                console.log('Данные успешно обновлены:', response);
+                errorMessage.addClass('d-none');
+            },
+            error: function (xhr) {
+                console.error('Ошибка при обновлении данных:', xhr.responseText);
+                errorMessage.text(xhr.responseText || 'Произошла ошибка при обновлении.').removeClass('d-none');
+            }
+        });
+    }
+}
+
+function deleteCheckboxItem(checklistItem, deleteButton, popover, id, errorMessage) {
+    if (deleteButton.data('confirm')) {
+        // Отправляем запрос на удаление на сервер
+        $.ajax({
+            url: '/checkbox/delete',
+            method: 'POST',
+            data: {
+                id: id
+            },
+            success: function (response) {
+                console.log('Элемент успешно удален:', response);
+                checklistItem.remove();
+                errorMessage.remove();
+            },
+            error: function (xhr) {
+                console.error('Ошибка при удалении элемента:', xhr.responseText);
+                errorMessage.text(xhr.responseText || 'Произошла ошибка при удалении.').removeClass('d-none');
+            }
+        });
+    } else {
+        deleteButton.data('confirm', true);
+        deleteButton.addClass('text-danger');
+        popover.show();
+
+        // Сбрасываем флаг после 2 секунд
+        setTimeout(() => {
+            deleteButton.data('confirm', false);
+            deleteButton.removeClass('text-danger');
+            popover.hide();
+        }, 2000);
+    }
+}
+
 
 // Добавление нового элемента ссылки в модальное окно
 function addLinkItem(modalElement, text = "", url = "") {
@@ -66,11 +154,15 @@ function loadModalDataChecklist(modalElement, blockElement) {
     // Перебираем все чекбоксы в блоке
     blockElement.find('.form-check').each(function () {
         let checkbox = $(this).find('input[type="checkbox"]');
-        let isChecked = checkbox.is(':checked');
 
         let labelText = $(this).find('label').text().trim();
 
-        addChecklistItem(modalElement, isChecked, labelText);
+        addChecklistItem(
+            modalElement,
+            checkbox.attr('id'),
+            checkbox.is(':checked'),
+            labelText
+        );
     });
 }
 
@@ -133,7 +225,6 @@ function loadModalData(modalElement, blockElement) {
 
 // Добавление нового элемента с установкой фокуса
 function addFocusItem(modalElement) {
-
     let newItem;
 
     switch (modalElement.attr('id')) {
@@ -227,7 +318,7 @@ function deleteBlock() {
 
     // Отправка данных на сервер с помощью AJAX
     $.ajax({
-        url: '/', // URL обработчика на сервере
+        url: '/block/delete', // URL обработчика на сервере
         type: 'POST',
         data: JSON.stringify(data),
         contentType: 'application/json',
@@ -258,9 +349,7 @@ function deleteProject() {
 $('.modal-block').on('show.bs.modal', function (event) {
     let modalElement = $(event.currentTarget);
 
-    let button = event.relatedTarget;
-    let blockId = button.getAttribute('data-block');
-    modalElement.data('blockId', blockId);
+    let blockId = modalElement.data('blockId');
 
     let titleElement = modalElement.find('.modal-title');
     let primaryButton = modalElement.find('.btn-primary');
@@ -269,26 +358,38 @@ $('.modal-block').on('show.bs.modal', function (event) {
     let initialTitle;
     switch (modalElement.attr('id')) {
         case 'modalProject':
-            initialTitle = 'проект';
+            initialTitle = 'Проект';
             break;
         case 'modalChecklist':
-            initialTitle = 'чек-лист';
+            initialTitle = 'Чек-лист';
             break;
         case 'modalImage':
-            initialTitle = 'изображение';
+            initialTitle = 'Изображение';
             break;
         case 'modalText':
-            initialTitle = 'текст';
+            initialTitle = 'Текст';
             break;
         case 'modalLinks':
-            initialTitle = 'ссылки';
+            initialTitle = 'Ссылки';
             break;
         default:
-            initialTitle = 'блок';
+            initialTitle = 'Блок';
     }
 
     if (blockId) {
-        titleElement.text('Редактировать ' + initialTitle);
+        titleElement.text(initialTitle);
+
+        if (initialTitle != 'Проект') {
+            deleteButton = $('<button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalDeleteBlock">' +
+                '<i class="bi bi-trash"></i></button>');
+
+            deleteButton.on('click', function () {
+                $('#modalDeleteBlock').data('blockId', blockId);
+            });
+
+            titleElement.append(deleteButton);
+        }
+
         primaryButton.text('Сохранить изменения');
 
         let blockElement = $('#' + blockId);
@@ -314,11 +415,22 @@ $('.modal-block').on('shown.bs.modal', function (event) {
     }
 });
 
-// Обработка открытия модального окна удаления блока
-$('#modalDeleteBlock').on('show.bs.modal', function (event) {
-    let modalElement = $(event.currentTarget);
+$('.card').on('click', function (event) {
+    // Игнорируем клики на чекбоксах, кнопках и ссылках
+    let eventTarget = $(event.target);
+    if (
+        eventTarget.closest('.form-check-label').length > 0 ||
+        eventTarget.closest('button').length > 0 ||
+        eventTarget.closest('a').length > 0
+    ) {
+        return;
+    }
 
-    let button = event.relatedTarget;
-    let blockId = button.getAttribute('data-block');
-    modalElement.data('blockId', blockId);
+    let card = $(this);
+    let type = card.data('type');
+
+    let modalElement = $('#modal' + type);
+
+    modalElement.data('blockId', card.attr('id'));
+    modalElement.modal('show');
 });

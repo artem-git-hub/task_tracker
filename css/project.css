@@ -25,10 +25,6 @@
     margin-right: 8px;
 }
 
-.form-check {
-    margin-bottom: 1rem;
-}
-
 .form-check-input:checked {
     background-color: black;
     border-color: black;
@@ -47,4 +43,13 @@
 .max-hw-100 {
     max-height: 100%;
     max-width: 100%;
+}
+
+.modal .btn-link {
+    color: inherit;
+}
+
+.error-checkbox {
+    margin: -.9rem auto 1rem 27px;
+    font-weight: 400;
 }

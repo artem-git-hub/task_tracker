@@ -93,26 +93,11 @@
         <div class="row gx-5 gy-4">
 
             <!--Главный блок проекта-->
-            <div class="col-lg-4 col-sm-6 col-12" id="block-0">
-                <div class="card overflow-y-auto">
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card overflow-y-auto" id="block-0" data-type="Project">
                     <!-- Содержимое блока -->
                     <div class="card-body">
-                        <div class="d-flex flex-nowrap justify-content-between">
-                            <h4 class="block-title">Заголовок проекта</h4>
-                            <div class="dropdown">
-                                <button class="btn btn-block-menu" type="button" data-bs-toggle="dropdown">
-                                    <i class="bi bi-three-dots"></i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#modalProject" data-block="block-0">
-                                            Редактировать проект
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <h4 class="block-title">Заголовок проекта</h4>
 
                         <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
                             Описание проекта.</p>
@@ -121,53 +106,32 @@
             </div>
 
             <!--Блок список чексбоксов-->
-            <div class="col-lg-4 col-sm-6 col-12" id="block-1">
-                <div class="card overflow-y-auto">
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card overflow-y-auto" id="block-1" data-type="Checklist">
                     <!-- Содержимое блока -->
                     <div class="card-body">
-                        <div class="d-flex flex-nowrap justify-content-between">
-                            <h5 class="block-title"></h5>
-                            <div class="dropdown">
-                                <button class="btn btn-block-menu" type="button" data-bs-toggle="dropdown">
-                                    <i class="bi bi-three-dots"></i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#modalChecklist" data-block="block-1">
-                                            Редактировать блок
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#modalDeleteBlock" data-block="block-1">
-                                            Удалить блок
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--Класс up применять при пустом заголовке-->
-                        <ul class="list-unstyled b-list up mb-0">
-                            <li class="form-check">
+                        <h5 class="block-title"></h5>
+
+                        <ul class="list-unstyled b-list mb-0">
+                            <li class="form-check mb-3">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="option1" checked>
                                     Элемент 1
                                 </label>
                             </li>
-                            <li class="form-check">
+                            <li class="form-check mb-3">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="option2" checked>
                                     Элемент 2
                                 </label>
                             </li>
-                            <li class="form-check">
+                            <li class="form-check mb-3">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="option3">
                                     Элемент 3 тыры пыры подлинннее что-то
                                 </label>
                             </li>
-                            <li class="form-check">
+                            <li class="form-check mb-3">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="option4">
                                     Элемент 4
@@ -186,34 +150,12 @@
             </div>
 
             <!--Блок изображений-->
-            <div class="col-lg-4 col-sm-6 col-12" id="block-2">
-                <div class="card overflow-y-auto">
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card overflow-y-auto" data-type="Image" id="block-2">
                     <!-- Содержимое блока -->
                     <div class="card-body">
-                        <div class="d-flex flex-nowrap justify-content-between">
-                            <h5 class="block-title"></h5>
-                            <div class="dropdown">
-                                <button class="btn btn-block-menu" type="button" data-bs-toggle="dropdown">
-                                    <i class="bi bi-three-dots"></i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#modalImage" data-block="block-2">
-                                            Редактировать блок
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#modalDeleteBlock" data-block="block-2">
-                                            Удалить блок
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--Класс up применять при пустом заголовке-->
-                        <div class="up d-flex align-items-center justify-content-center h-100">
+                        <h5 class="block-title"></h5>
+                        <div class="d-flex align-items-center justify-content-center h-100">
                             <img src="/img/img1.jpeg" class="max-hw-100">
                         </div>
 
@@ -223,46 +165,23 @@
             </div>
 
             <!--Блок ссылок-->
-            <div class="col-lg-4 col-sm-6 col-12" id="block-3">
-                <div class="card overflow-y-auto">
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card overflow-y-auto" data-type="Links" id="block-3">
                     <!-- Содержимое блока -->
                     <div class="card-body">
-                        <div class="d-flex flex-nowrap justify-content-between">
-                            <h5 class="block-title"></h5>
-                            <div class="dropdown">
-                                <button class="btn btn-block-menu" type="button" data-bs-toggle="dropdown">
-                                    <i class="bi bi-three-dots"></i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#modalLinks" data-block="block-3">
-                                            Редактировать блок
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#modalDeleteBlock" data-block="block-3">
-                                            Удалить блок
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--Класс up применять при пустом заголовке-->
-                        <ul class="list-unstyled b-list up mb-0">
-                            <li class="form-check">
-                                <a href="https://github.com" class="form-check-label" target="_blank">GitHub</a>
+                        <h5 class="block-title"></h5>
+                        <ul class="list-unstyled b-list mb-0">
+                            <li class="mb-3">
+                                <a href="https://github.com" target="_blank">GitHub</a>
                             </li>
-                            <li class="form-check">
-                                <a href="https://www.google.com" class="form-check-label" target="_blank">Google</a>
+                            <li class="mb-3">
+                                <a href="https://www.google.com" target="_blank">Google</a>
                             </li>
-                            <li class="form-check">
-                                <a href="https://ru.wikipedia.org" class="form-check-label"
-                                    target="_blank">Википедия</a>
+                            <li class="mb-3">
+                                <a href="https://ru.wikipedia.org" target="_blank">Википедия</a>
                             </li>
-                            <li class="form-check">
-                                <a href="https://vk.com" class="form-check-label" target="_blank">ВКонтакте</a>
+                            <li class="mb-3">
+                                <a href="https://vk.com" target="_blank">ВКонтакте</a>
                             </li>
                         </ul>
 
@@ -277,32 +196,12 @@
             </div>
 
             <!--Блок текста-->
-            <div class="col-lg-4 col-sm-6 col-12" id="block-4">
-                <div class="card overflow-y-auto">
+            <div class="col-lg-4 col-sm-6 col-12">
+                <div class="card overflow-y-auto" data-type="Text" id="block-4">
                     <!-- Содержимое блока -->
                     <div class="card-body">
-                        <div class="d-flex flex-nowrap justify-content-between">
-                            <h5 class="block-title">Блок с заголовком</h5>
-                            <div class="dropdown">
-                                <button class="btn btn-block-menu" type="button" data-bs-toggle="dropdown">
-                                    <i class="bi bi-three-dots"></i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#modalText" data-block="block-4">
-                                            Редактировать блок
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#modalDeleteBlock" data-block="block-4">
-                                            Удалить блок
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        <h5 class="block-title">Блок с заголовком</h5>
+
                         <p class="pre-text">Текст блока. Текст блока. Текст блока. Текст блока. Текст
                             блока. Текст
                             блока. Текст блока.
@@ -319,7 +218,7 @@
                 <div class="card">
                     <!-- Содержимое блока -->
                     <div class="card-body">
-                        <div class="d-flex justify-content-center align-items-center h-100 dropdown">
+                        <div class="d-flex justify-content-center align-items-center h-100">
                             <button class="btn btn-link btn-add-big" data-bs-toggle="dropdown">
                                 <i class="bi bi-plus-circle"></i>
                             </button>
@@ -384,7 +283,7 @@
                         placeholder="Введите название чек-листа (необязательно)">
 
                     <h6>Элементы чек-листа</h6>
-                    <div class="modal-checklist-content">
+                    <div class="modal-checklist-content b-list">
                         <!--Генерируются-->
                     </div>
 
