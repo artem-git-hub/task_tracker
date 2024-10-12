@@ -41,3 +41,37 @@ body {
 .pre-text {
     white-space: pre-wrap;
 }
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.card::-webkit-scrollbar {
+    width: 5px;
+}
+
+.card::-webkit-scrollbar-thumb {
+    visibility: hidden;
+}
+
+.card:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+.btn-link {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
