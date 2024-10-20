@@ -25,6 +25,10 @@
     margin-right: 8px;
 }
 
+.form-check-label {
+    display: inline;
+}
+
 .form-check-input:checked {
     background-color: black;
     border-color: black;
@@ -46,10 +50,23 @@
 }
 
 .modal .btn-link {
-    color: inherit;
+    color: rgb(90, 90, 90);
 }
 
 .error-checkbox {
     margin: -.9rem auto 1rem 27px;
     font-weight: 400;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.input-content {
+    padding: 0px 3px !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
 }
