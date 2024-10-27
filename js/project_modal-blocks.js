@@ -88,7 +88,14 @@ function clearModalData(modalElement) {
 
     switch (modalElement.attr('id')) {
         case 'modalProject':
-            modalElement.find('textarea').val('');
+            // Очищаем краткое и полное описание
+            modalElement.find('textarea[name="shortDescription"]').val('');
+            modalElement.find('textarea[name="description"]').val('');
+
+            // Устанавливаем статус на "Не задан"
+            const projectStatusSelect = modalElement.find('select[name="projectStatus"]');
+            projectStatusSelect.val('undefined');
+            projectStatusSelect.trigger('change');
             break;
         case 'modalChecklist':
             modalElement.find('.modal-checklist-content').empty();
@@ -111,10 +118,19 @@ function clearModalData(modalElement) {
 
 // Загрузка данных в модальное окно из блока проекта
 function loadModalDataProject(modalElement, blockElement) {
-    let descriptionData = blockElement.find('.pre-text').text();
-    let modalText = modalElement.find('textarea');
+    let shortDescription = blockElement.find('[name="shortDescription"]').text();
+    let description = blockElement.find('[name="description"]').text();
 
-    modalText.text(descriptionData);
+    modalElement.find('textarea[name="shortDescription"]').val(shortDescription);
+    modalElement.find('textarea[name="description"]').val(description);
+
+
+    let status = blockElement.find('[name="projectStatus"]').text();
+
+    let projectStatusSelect = modalElement.find('select[name="projectStatus"]');
+    projectStatusSelect.find('option').prop('selected', false);
+    projectStatusSelect.find(`option[value = "${status}"]`).prop('selected', true);
+    projectStatusSelect.trigger('change');
 }
 
 // Загрузка данных в модальное окно из блока чеклиста
@@ -231,7 +247,9 @@ function submitModal(type) {
 
     switch (type) {
         case 'Project':
-            data.description = modalElement.find('textarea').val();
+            data.shortDescription = modalElement.find('textarea[name="shortDescription"]').val();
+            data.description = modalElement.find('textarea[name="description"]').val();
+            data.projectStatus = modalElement.find('select[name="projectStatus"]').val();
             break;
         case 'Checklist':
             data.checklistItems = [];
@@ -476,4 +494,31 @@ $(document).on('change', 'input[type="checkbox"]', function () {
             console.error(error);
         }
     });
+});
+
+$('select[name="projectStatus"]').on('change', function () {
+    let selector = $(this);
+    let selectedStatus = selector.val();
+    let statusCircle = selector.parent().find('.status-circle');
+
+    switch (selectedStatus) {
+        case 'active':
+            statusCircle.removeClass().addClass('status-circle status-active');
+            break;
+        case 'completed':
+            statusCircle.removeClass().addClass('status-circle status-completed');
+            break;
+        case 'closed':
+            statusCircle.removeClass().addClass('status-circle status-closed');
+            break;
+        case 'frozen':
+            statusCircle.removeClass().addClass('status-circle status-frozen');
+            break;
+        case 'not-started':
+            statusCircle.removeClass().addClass('status-circle status-not-started');
+            break;
+        case 'undefined':
+            statusCircle.removeClass().addClass('status-circle status-undefined');
+            break;
+    }
 });

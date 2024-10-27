@@ -98,8 +98,16 @@
                     <!-- Содержимое блока -->
                     <div class="card-body">
                         <h4 class="block-title">Заголовок проекта</h4>
-
-                        <p class="pre-text">Описание проекта. Описание проекта. Описание проекта. Описание проекта.
+                        <h6 class="mb-1 me-2">Статус проекта:</h6>
+                        <div class="d-flex align-items-center mb-3">
+                            <span class="status-circle-mini status-active"></span>
+                            <span name="projectStatus">Активен</span>
+                        </div>
+                        <h6 class="mb-0">Краткое описание:</h6>
+                        <p class="mb-3" name="shortDescription">Краткое описание проекта.</p>
+                        <h6 class="mb-0">Полное описание:</h6>
+                        <p class="pre-text" name="description">Описание проекта. Описание проекта. Описание проекта.
+                            Описание проекта.
                             Описание проекта.</p>
                     </div>
                 </div>
@@ -249,13 +257,35 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <h6>Название проекта</h6>
-                    <input type="text" name="blockTitle" class="form-control mb-3"
-                        placeholder="Введите название проекта">
-
-                    <h6>Описание проекта</h6>
-                    <textarea name="projectDescription" class="input-content form-control" rows="3"
-                        placeholder="Введите описание проекта (необязательно)"></textarea>
+                    <div class="mb-3">
+                        <h6>Название проекта</h6>
+                        <input type="text" name="blockTitle" class="form-control"
+                            placeholder="Введите название проекта">
+                    </div>
+                    <div class="mb-3">
+                        <h6>Статус проекта</h6>
+                        <div class="d-flex align-items-center">
+                            <div id="statusCircle" class="status-circle status-active"></div>
+                            <select name="projectStatus" class="form-select">
+                                <option value="active" selected>Активен</option>
+                                <option value="completed">Завершен</option>
+                                <option value="closed">Закрыт</option>
+                                <option value="frozen">Заморожен</option>
+                                <option value="not-started">Не начат</option>
+                                <option value="undefined">Не задан</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <h6>Краткое описание</h6>
+                        <textarea name="shortDescription" class="input-content form-control" rows="2"
+                            placeholder="Введите краткое описание (необязательно)"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <h6>Полное</h6>
+                        <textarea name="description" class="input-content form-control" rows="3"
+                            placeholder="Введите описание проекта (необязательно)"></textarea>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
