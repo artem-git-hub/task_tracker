@@ -323,8 +323,29 @@ function deleteBlock() {
 
 // Удаление проекта
 function deleteProject() {
+    let projectIdElement = $('[data-project-id]');
+    let projectId = projectIdElement.data('project-id');
 
+    console.log('projectId:', projectId);
+
+    // Отправляем запрос на сервер
+    $.ajax({
+        url: '/project/delete', // Замените на ваш URL
+        type: 'POST',
+        data: { projectId: projectId },
+        success: function (response) {
+            // Обработка ответа от сервера (если необходимо)
+            console.log('Project deleted successfully:', response);
+            // Переадресация на новую страницу
+            window.location.href = '/home';
+        },
+        error: function (error) {
+            // Обработка ошибки (если необходимо)
+            console.error('Error deleting project:', error);
+        }
+    });
 }
+
 
 // Обработка открытия модального окна добавления/редактирования блока
 $('.modal-block').on('show.bs.modal', function (event) {
