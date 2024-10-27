@@ -75,3 +75,11 @@ body::-webkit-scrollbar-track {
     padding-top: 0px;
     padding-bottom: 0px;
 }
+
+.no-border {
+    border: none;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 3px var(--bs-focus-ring-color);
+}

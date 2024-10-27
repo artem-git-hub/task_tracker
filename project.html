@@ -113,25 +113,25 @@
                         <h5 class="block-title"></h5>
 
                         <ul class="list-unstyled b-list mb-0">
-                            <li class="form-check mb-3">
+                            <li class="form-check mb-3" data-item-id="1">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="option1" checked>
                                     Элемент 1
                                 </label>
                             </li>
-                            <li class="form-check mb-3">
+                            <li class="form-check mb-3" data-item-id="2">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="option2" checked>
                                     Элемент 2
                                 </label>
                             </li>
-                            <li class="form-check mb-3">
+                            <li class="form-check mb-3" data-item-id="3">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="option3">
                                     Элемент 3 тыры пыры подлинннее что-то
                                 </label>
                             </li>
-                            <li class="form-check mb-3">
+                            <li class="form-check mb-3" data-item-id="4">
                                 <label class="form-check-label">
                                     <input type="checkbox" class="form-check-input" name="option4">
                                     Элемент 4
@@ -140,8 +140,7 @@
                         </ul>
 
                         <div class="d-flex">
-                            <button class="btn btn-link mx-auto btn-add-sm" data-bs-toggle="modal"
-                                data-bs-target="#modalChecklist" data-block="block-1" data-addItem>
+                            <button class="btn btn-link mx-auto btn-add-sm btn-add-item">
                                 <i class="bi bi-plus-circle"></i>
                             </button>
                         </div>
@@ -172,22 +171,21 @@
                         <h5 class="block-title"></h5>
                         <ul class="list-unstyled b-list mb-0">
                             <li class="mb-3">
-                                <a href="https://github.com" target="_blank">GitHub</a>
+                                <a href="https://github.com" data-item-id="1" target="_blank">GitHub</a>
                             </li>
                             <li class="mb-3">
-                                <a href="https://www.google.com" target="_blank">Google</a>
+                                <a href="https://www.google.com" data-item-id="2" target="_blank">Google</a>
                             </li>
                             <li class="mb-3">
-                                <a href="https://ru.wikipedia.org" target="_blank">Википедия</a>
+                                <a href="https://ru.wikipedia.org" data-item-id="3" target="_blank">Википедия</a>
                             </li>
                             <li class="mb-3">
-                                <a href="https://vk.com" target="_blank">ВКонтакте</a>
+                                <a href="https://vk.com" data-item-id="4" target="_blank">ВКонтакте</a>
                             </li>
                         </ul>
 
                         <div class="d-flex">
-                            <button class="btn btn-link mx-auto btn-add-sm" data-bs-toggle="modal"
-                                data-bs-target="#modalLinks" data-block="block-3" data-addItem>
+                            <button class="btn btn-link mx-auto btn-add-sm btn-add-item">
                                 <i class="bi bi-plus-circle"></i>
                             </button>
                         </div>
@@ -215,7 +213,7 @@
 
             <!--Блок добавления блоков-->
             <div class="col-lg-4 col-sm-6 col-12">
-                <div class="card">
+                <div class="card" data-type="AddBlock">
                     <!-- Содержимое блока -->
                     <div class="card-body">
                         <div class="d-flex justify-content-center align-items-center h-100">
@@ -223,13 +221,13 @@
                                 <i class="bi bi-plus-circle"></i>
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                <li><a class="dropdown-item btn-add-block" href="#" data-bs-toggle="modal"
                                         data-bs-target="#modalChecklist">Чек-лист</a></li>
-                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                <li><a class="dropdown-item btn-add-block" href="#" data-bs-toggle="modal"
                                         data-bs-target="#modalText">Текст</a></li>
-                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                <li><a class="dropdown-item btn-add-block" href="#" data-bs-toggle="modal"
                                         data-bs-target="#modalImage">Изображение</a></li>
-                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                <li><a class="dropdown-item btn-add-block" href="#" data-bs-toggle="modal"
                                         data-bs-target="#modalLinks">Ссылки</a></li>
                             </ul>
                         </div>
@@ -256,7 +254,7 @@
                         placeholder="Введите название проекта">
 
                     <h6>Описание проекта</h6>
-                    <textarea name="projectDescription" class="form-control" rows="3"
+                    <textarea name="projectDescription" class="input-content form-control" rows="3"
                         placeholder="Введите описание проекта (необязательно)"></textarea>
                 </div>
                 <div class="modal-footer">
@@ -318,7 +316,7 @@
                         placeholder="Введите название текста (необязательно)">
 
                     <h6>Текст</h6>
-                    <textarea class='form-control' rows='5' placeholder='Введите текст'></textarea>
+                    <textarea class='input-content form-control' rows='5' placeholder='Введите текст'></textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>

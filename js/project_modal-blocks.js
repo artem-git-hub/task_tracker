@@ -38,12 +38,12 @@ function createDeleteBtn(itemContainer) {
 }
 
 // Добавление нового элемента чек-листа в модальное окно
-function addChecklistItem(modalElement, isChecked = false, text = "") {
-    let checklistItem = $('<div class="checklist-item mb-3 d-flex"></div>');
+function addChecklistItem(modalElement, isChecked = false, text = "", itemId = null) {
+    let checklistItem = $('<div class="checklist-item mb-3 d-flex" data-item-id="' + itemId + '"></div>');
     let checkbox = $('<input type="checkbox" class="form-check-input">').prop('checked', isChecked);
 
-    let input = $('<input type="text" class="input-content form-control d-inline-block flex-fill fw-medium" '
-        + 'placeholder="Введите элемент чек-листа">').val(text);
+    let input = $('<input type="text" class="input-content form-control '
+        + 'd-inline-block flex-fill fw-medium">').val(text);
 
     let deleteButton = createDeleteBtn(checklistItem);
 
@@ -54,13 +54,13 @@ function addChecklistItem(modalElement, isChecked = false, text = "") {
 }
 
 // Добавление нового элемента ссылки в модальное окно
-function addLinkItem(modalElement, text = "", url = "") {
-    let linkItem = $('<div class="link-item mb-4"></div>');
+function addLinkItem(modalElement, text = "", url = "", itemId = null) {
+    let linkItem = $('<div class="link-item mb-4" data-item-id="' + itemId + '"></div>');
 
     // Строка для текста ссылки и кнопки удаления
-    let textRow = $('<div class="d-flex align-items-center mb-2"></div>');
-    let newLinkText = $('<input type="text" class="input-content form-control fw-medium" '
-        + 'placeholder="Текст ссылки">').val(text);
+    let textRow = $('<div class="d-flex align-items-center"></div>');
+    let newLinkText = $('<input type="text" class="input-content form-control fw-medium no-border" '
+        + 'placeholder="Название ссылки">').val(text);
     let deleteButton = createDeleteBtn(linkItem);
 
     textRow.append(newLinkText).append(deleteButton);
@@ -79,8 +79,6 @@ function addLinkItem(modalElement, text = "", url = "") {
 
     return linkItem;
 }
-
-
 
 
 // Очистка данных в модальном окне
@@ -126,14 +124,16 @@ function loadModalDataChecklist(modalElement, blockElement) {
 
     // Перебираем все чекбоксы в блоке
     blockElement.find('.form-check').each(function () {
-        let checkbox = $(this).find('input[type="checkbox"]');
-
-        let labelText = $(this).find('label').text().trim();
+        let checkItem = $(this);
+        let checkbox = checkItem.find('input[type="checkbox"]');
+        let labelText = checkItem.find('label').text().trim();
+        let itemId = checkItem.data('itemId');
 
         addChecklistItem(
             modalElement,
             checkbox.is(':checked'),
-            labelText
+            labelText,
+            itemId
         );
     });
 }
@@ -148,8 +148,9 @@ function loadModalDataLinks(modalElement, blockElement) {
         let link = $(this);
         let linkText = link.text().trim();
         let linkUrl = link.attr('href');
+        let itemId = link.data('itemId');
 
-        addLinkItem(modalElement, linkText, linkUrl);
+        addLinkItem(modalElement, linkText, linkUrl, itemId);
     });
 }
 
@@ -235,17 +236,25 @@ function submitModal(type) {
         case 'Checklist':
             data.checklistItems = [];
             modalElement.find('.checklist-item').each(function () {
-                let isChecked = $(this).find('input[type="checkbox"]').is(':checked');
-                let text = $(this).find('input[type="text"]').val();
-                data.checklistItems.push({ checked: isChecked, text: text });
+                let checkItem = $(this);
+                let isChecked = checkItem.find('input[type="checkbox"]').is(':checked');
+                let text = checkItem.find('input[type="text"]').val();
+                let id = checkItem.data('itemId');
+                data.checklistItems.push({
+                    checked: isChecked,
+                    text: text,
+                    id: id,
+                });
             });
             break;
         case 'Links':
             data.links = [];
             modalElement.find('.link-item').each(function () {
-                let text = $(this).find('input[type="text"]').val();
-                let url = $(this).find('input[type="url"]').val();
-                data.links.push({ text: text, url: url });
+                let linkItem = $(this);
+                let text = linkItem.find('input[type="text"]').val();
+                let url = linkItem.find('input[type="url"]').val();
+                let id = linkItem.data('itemId');
+                data.links.push({ text: text, url: url, id: id, });
             });
             break;
         case 'Image':
