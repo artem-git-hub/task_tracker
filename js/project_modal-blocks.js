@@ -433,6 +433,7 @@ $('.modal-block').on('shown.bs.modal', function (event) {
     let modalElement = $(event.currentTarget);
 
     if (modalElement.data('addItem')) {
+        modalElement.data('addItem', false);
         addFocusItem(modalElement)
     }
 });
@@ -453,6 +454,7 @@ $('.card').on('click', function (event) {
     let type = card.data('type');
 
     if (type == "AddBlock") {
+        modalElement.data('addItem', false);
         return;
     }
 
