@@ -428,3 +428,31 @@ $('.card').on('click', function (event) {
         modalElement.data('addItem', false);
     }
 });
+
+$(document).on('change', 'input[type="checkbox"]', function () {
+    // Находим ближайший родительский элемент с атрибутом data-item-id
+    let itemId = $(this).closest('[data-item-id]').data('item-id');
+    let isChecked = $(this).is(':checked');
+
+    // Выводим данные в консоль
+    console.log('itemId:', itemId);
+    console.log('isChecked:', isChecked);
+
+    // Отправляем AJAX запрос
+    $.ajax({
+        url: '/checkChange',
+        type: 'POST',
+        data: {
+            itemId: itemId,
+            isChecked: isChecked
+        },
+        success: function (response) {
+            // Обработка ответа от сервера (если необходимо)
+            console.log(response);
+        },
+        error: function (error) {
+            // Обработка ошибки (если необходимо)
+            console.error(error);
+        }
+    });
+});
