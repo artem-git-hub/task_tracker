@@ -127,7 +127,7 @@ function loadModalDataChecklist(modalElement, blockElement) {
         let checkItem = $(this);
         let checkbox = checkItem.find('input[type="checkbox"]');
         let labelText = checkItem.find('label').text().trim();
-        let itemId = checkItem.data('itemId');
+        let itemId = checkItem.data('item-id');
 
         addChecklistItem(
             modalElement,
@@ -148,7 +148,7 @@ function loadModalDataLinks(modalElement, blockElement) {
         let link = $(this);
         let linkText = link.text().trim();
         let linkUrl = link.attr('href');
-        let itemId = link.data('itemId');
+        let itemId = link.data('item-id');
 
         addLinkItem(modalElement, linkText, linkUrl, itemId);
     });
@@ -239,7 +239,7 @@ function submitModal(type) {
                 let checkItem = $(this);
                 let isChecked = checkItem.find('input[type="checkbox"]').is(':checked');
                 let text = checkItem.find('input[type="text"]').val();
-                let id = checkItem.data('itemId');
+                let id = checkItem.data('item-id');
                 data.checklistItems.push({
                     checked: isChecked,
                     text: text,
@@ -253,7 +253,7 @@ function submitModal(type) {
                 let linkItem = $(this);
                 let text = linkItem.find('input[type="text"]').val();
                 let url = linkItem.find('input[type="url"]').val();
-                let id = linkItem.data('itemId');
+                let id = linkItem.data('item-id');
                 data.links.push({ text: text, url: url, id: id, });
             });
             break;
