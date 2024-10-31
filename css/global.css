@@ -75,3 +75,52 @@ body::-webkit-scrollbar-track {
     padding-top: 0px;
     padding-bottom: 0px;
 }
+
+.no-border {
+    border: none;
+}
+
+.form-select:focus,
+.form-control:focus {
+    box-shadow: 0 0 3px var(--bs-focus-ring-color);
+}
+
+.status-circle {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.status-circle-mini {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.status-active {
+    background-color: darkviolet;
+}
+
+.status-completed {
+    background-color: #00bc06;
+}
+
+.status-closed {
+    background-color: #C73030;
+}
+
+.status-frozen {
+    background-color: #2196F3;
+}
+
+.status-not-started {
+    background-color: #FFD54F;
+}
+
+.status-undefined {
+    background-color: #424242;
+}
