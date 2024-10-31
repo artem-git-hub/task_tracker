@@ -124,3 +124,12 @@ body::-webkit-scrollbar-track {
 .status-undefined {
     background-color: #424242;
 }
+
+.input-content {
+    padding: 0px 3px !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-top: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
