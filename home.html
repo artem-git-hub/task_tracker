@@ -318,22 +318,44 @@
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Создание проекта</h5>
+                    <h5 class="modal-title">Проект</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <h6>Название проекта</h6>
-                    <input type="text" name="blockTitle" class="form-control mb-3"
-                        placeholder="Введите название проекта">
-
-                    <h6>Описание проекта</h6>
-                    <textarea name="projectDescription" class="form-control" rows="3"
-                        placeholder="Введите описание проекта (необязательно)"></textarea>
+                    <div class="mb-3">
+                        <h6>Название проекта</h6>
+                        <input type="text" name="blockTitle" class="form-control"
+                            placeholder="Введите название проекта">
+                    </div>
+                    <div class="mb-3">
+                        <h6>Статус проекта</h6>
+                        <div class="d-flex align-items-center">
+                            <div id="statusCircle" class="status-circle status-active"></div>
+                            <select name="projectStatus" class="form-select flex-grow-1 w-auto">
+                                <option value="active" selected>Активен</option>
+                                <option value="completed">Завершен</option>
+                                <option value="closed">Закрыт</option>
+                                <option value="frozen">Заморожен</option>
+                                <option value="not-started">Не начат</option>
+                                <option value="undefined">Не задан</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <h6>Краткое описание</h6>
+                        <textarea name="shortDescription" class="input-content form-control" rows="2"
+                            placeholder="Введите краткое описание (необязательно)"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <h6>Полное описание</h6>
+                        <textarea name="description" class="input-content form-control" rows="3"
+                            placeholder="Введите описание проекта (необязательно)"></textarea>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                    <button type="button" class="btn btn-primary" onclick="createProject()">
-                        Создать проект
+                    <button type="button" class="btn btn-primary" onclick="submitModal('Project')">
+                        Добавить блок
                     </button>
                 </div>
             </div>
@@ -343,6 +365,7 @@
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/js/home.js"></script>
+    <script src="/js/status.js"></script>
 </body>
 
 </html>

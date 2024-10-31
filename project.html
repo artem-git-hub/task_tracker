@@ -266,7 +266,7 @@
                         <h6>Статус проекта</h6>
                         <div class="d-flex align-items-center">
                             <div id="statusCircle" class="status-circle status-active"></div>
-                            <select name="projectStatus" class="form-select">
+                            <select name="projectStatus" class="form-select flex-grow-1 w-auto">
                                 <option value="active" selected>Активен</option>
                                 <option value="completed">Завершен</option>
                                 <option value="closed">Закрыт</option>
@@ -282,7 +282,7 @@
                             placeholder="Введите краткое описание (необязательно)"></textarea>
                     </div>
                     <div class="mb-3">
-                        <h6>Полное</h6>
+                        <h6>Полное описание</h6>
                         <textarea name="description" class="input-content form-control" rows="3"
                             placeholder="Введите описание проекта (необязательно)"></textarea>
                     </div>
@@ -473,6 +473,7 @@
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <script src="/js/project_modal-blocks.js"></script>
+    <script src="/js/status.js"></script>
 
 </body>
 
