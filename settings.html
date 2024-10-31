@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Настройки</title>
+
+    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/icons/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="/css/global.css" rel="stylesheet">
+
+
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="/docs/5.3/assets/css/docs.css" rel="stylesheet"> -->
+</head>
+
+<body>
+
+
+    <nav class="navbar sticky-top bg-body-tertiary p-1">
+        <div class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
+
+            <!--Элементы слева-->
+            <div class="d-flex">
+                <a href="/profile.html" class="text-decoration-none text-reset d-flex">
+                    <img src="/img/avatar.jpeg" class="rounded mini-avatar">
+                    <b class="my-auto px-2 text-break">Имя пользователя</b>
+                </a>
+            </div>
+
+            <!--Элементы справа-->
+            <div class="d-flex">
+                <!--Меню для добавления друзей и удаления проекта-->
+                <div class="dropstart">
+                    <button class="btn btn border mx-2 my-auto" type="button" data-bs-toggle="dropdown">
+                        <i class="bi bi-wrench-adjustable"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/friends.html">Друзья проекта</a></li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal"
+                                data-bs-target="#modalDeleteProject" data-projectId="0">
+                                Удалить проект
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!--Кнопка разворачивания главного меню-->
+                <button class=" btn border h-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+
+            <!--Главное меню-->
+            <div class="offcanvas offcanvas-end bg-body-tertiary navbar-nav" tabindex="-1" id="mainMenu">
+                <div class="offcanvas-header px-5">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body text-center py-1">
+                    <ul class="navbar-nav h-100">
+                        <h2 class="mb-4">Task Tracker</h2>
+
+                        <li class="nav-item">
+                            <a href="/profile.html" class="text-decoration-none text-reset">
+                                <img src="/img/avatar.jpeg" class="w-25 rounded my-2">
+                                <h5 class="mb-0">Имя пользователя</h5>
+                                <p class="mb-5">@login</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="text-decoration-none text-reset" href="/home.html">
+                                <h4 class="mb-4">Проекты</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="text-decoration-none text-reset" href="#">
+                                <h4 class="mb-4">Настройки</h4>
+                            </a>
+                        </li>
+                        <li class="nav-item mt-auto">
+                            <a class="text-decoration-none text-reset" href="#">
+                                <h4 class="mb-4">Выход</h4>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container my-2">
+        <div class="border-bottom">
+            <ul class="nav nav-underline">
+                <li class="nav-item">
+                <a class="nav-link" href="#profile">Профиль</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#style">Стили</a>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+
+
+
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/js/project_modal-blocks.js"></script>
+
+</body>
+
+</html>
