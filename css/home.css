@@ -5,3 +5,11 @@
 .card-body {
     padding: 1.5rem;
 }
+
+.project-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    text-align: center;
+}

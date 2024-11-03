@@ -90,6 +90,9 @@ body::-webkit-scrollbar-track {
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    border-width: 1px;
+    border-color: rgba(50, 50, 50, 0.25);
+    border-style: solid;
     margin-right: 10px;
 }
 
@@ -98,31 +101,34 @@ body::-webkit-scrollbar-track {
     width: 15px;
     height: 15px;
     border-radius: 50%;
+    border-width: 1px;
+    border-color: rgba(50, 50, 50, 0.25);
+    border-style: solid;
     margin-right: 5px;
 }
 
 .status-active {
-    background-color: darkviolet;
+    background-color: #9e01e1;
 }
 
 .status-completed {
-    background-color: #00bc06;
+    background-color: #00c006;
 }
 
 .status-closed {
-    background-color: #C73030;
+    background-color: #d41919;
 }
 
 .status-frozen {
-    background-color: #2196F3;
+    background-color: #007bff;
 }
 
 .status-not-started {
-    background-color: #FFD54F;
+    background-color: #ffd036;
 }
 
 .status-undefined {
-    background-color: #424242;
+    background-color: #404050;
 }
 
 .input-content {

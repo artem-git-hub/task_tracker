@@ -43,7 +43,7 @@ function addChecklistItem(modalElement, isChecked = false, text = "", itemId = n
     let checkbox = $('<input type="checkbox" class="form-check-input">').prop('checked', isChecked);
 
     let input = $('<input type="text" class="input-content form-control '
-        + 'd-inline-block flex-fill fw-medium">').val(text);
+        + 'd-inline-block flex-fill fw-medium" maxlength="128">').val(text);
 
     let deleteButton = createDeleteBtn(checklistItem);
 
@@ -60,7 +60,7 @@ function addLinkItem(modalElement, text = "", url = "", itemId = null) {
     // Строка для текста ссылки и кнопки удаления
     let textRow = $('<div class="d-flex align-items-center"></div>');
     let newLinkText = $('<input type="text" class="input-content form-control fw-medium no-border" '
-        + 'placeholder="Название ссылки">').val(text);
+        + 'placeholder="Название ссылки" maxlength="128">').val(text);
     let deleteButton = createDeleteBtn(linkItem);
 
     textRow.append(newLinkText).append(deleteButton);
@@ -69,7 +69,7 @@ function addLinkItem(modalElement, text = "", url = "", itemId = null) {
     // Строка для URL и кнопки перехода
     let urlRow = $('<div class="d-flex align-items-center"></div>');
     let newLinkUrl = $('<input type="url" class="input-content form-control" '
-        + 'placeholder="URL ссылки">').val(url);
+        + 'placeholder="URL ссылки" maxlength="2048">').val(url);
     let goButton = $('<button class="btn btn-link"><i class="bi bi-link-45deg"></i></button>')
         .on('click', function () { window.open(newLinkUrl.val(), '_blank'); });
 

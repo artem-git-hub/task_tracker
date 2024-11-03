@@ -259,7 +259,7 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <h6>Название проекта</h6>
-                        <input type="text" name="blockTitle" class="form-control"
+                        <input type="text" name="blockTitle" class="form-control" maxlength="64"
                             placeholder="Введите название проекта">
                     </div>
                     <div class="mb-3">
@@ -279,12 +279,14 @@
                     <div class="mb-3">
                         <h6>Краткое описание</h6>
                         <textarea name="shortDescription" class="input-content form-control" rows="2"
-                            placeholder="Введите краткое описание (необязательно)"></textarea>
+                            placeholder="Введите краткое описание (необязательно)" maxlength="128">
+                        </textarea>
                     </div>
                     <div class="mb-3">
                         <h6>Полное описание</h6>
                         <textarea name="description" class="input-content form-control" rows="3"
-                            placeholder="Введите описание проекта (необязательно)"></textarea>
+                            placeholder="Введите описание проекта (необязательно)" maxlength="2048">
+                        </textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -298,7 +300,7 @@
     </div>
 
     <!--Модальное окно чек-листа-->
-    <div class=" modal fade modal-block" id="modalChecklist" tabindex="-1">
+    <div class="modal fade modal-block" id="modalChecklist" tabindex="-1">
         <div class="modal-dialog modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
@@ -308,7 +310,7 @@
                 <div class="modal-body">
                     <h6>Название чек-листа</h6>
                     <input type="text" name="blockTitle" class="form-control mb-3"
-                        placeholder="Введите название чек-листа (необязательно)">
+                        placeholder="Введите название чек-листа (необязательно)" maxlength="128">
 
                     <h6>Элементы чек-листа</h6>
                     <div class="modal-checklist-content b-list">
@@ -343,10 +345,11 @@
                 <div class="modal-body">
                     <h6>Название текста</h6>
                     <input type="text" name="blockTitle" class="form-control mb-3"
-                        placeholder="Введите название текста (необязательно)">
+                        placeholder="Введите название текста (необязательно)" maxlength="128">
 
                     <h6>Текст</h6>
-                    <textarea class='input-content form-control' rows='5' placeholder='Введите текст'></textarea>
+                    <textarea class='input-content form-control' rows='5' placeholder='Введите текст' maxlength="16384">
+                    </textarea>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
@@ -369,7 +372,7 @@
                 <div class="modal-body">
                     <h6>Название изображения</h6>
                     <input type="text" name="blockTitle" class="form-control mb-3"
-                        placeholder="Введите название изображения (необязательно)">
+                        placeholder="Введите название изображения (необязательно)" maxlength="128">
 
                     <h6>Выбор изображения</h6>
                     <div class="d-flex justify-content-center">
@@ -398,7 +401,7 @@
                 <div class="modal-body">
                     <h6>Название блока ссылок</h6>
                     <input type="text" name="blockTitle" class="form-control mb-3"
-                        placeholder="Введите название блока ссылок (необязательно)">
+                        placeholder="Введите название блока ссылок (необязательно)" maxlength="128">
 
                     <h6>Ссылки</h6>
                     <div class="modal-links-content">
@@ -456,7 +459,8 @@
                 <div class="modal-body">
                     <h6>Вы уверены, что хотите удалить весь проект? (безвозвратно)</h6>
                     <p class="mb-1">Для подтверждени введите название проекта:</p>
-                    <input type="text" name="projectTitle" class="form-control mb-3" placeholder="Название проекта">
+                    <input type="text" name="projectTitle" class="form-control mb-3" placeholder="Название проекта"
+                        maxlength="256">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
