@@ -29,7 +29,7 @@
             <div class="d-flex">
                 <!--Меню для добавления друзей и удаления проекта-->
                 <div class="dropstart">
-                    <button class="btn btn border mx-2 my-auto" type="button" data-bs-toggle="dropdown">
+                    <button class="btn border mx-2 my-auto" type="button" data-bs-toggle="dropdown">
                         <i class="bi bi-wrench-adjustable"></i>
                     </button>
                     <ul class="dropdown-menu">
@@ -42,6 +42,12 @@
                         </li>
                     </ul>
                 </div>
+
+                <!--Кнопка разворачивания меню музыки-->
+                <button class=" btn border mx-2 my-auto" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#musicMenu">
+                    <i class="bi bi-music-note-list"></i>
+                </button>
 
                 <!--Кнопка разворачивания главного меню-->
                 <button class=" btn border h-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu">
@@ -84,7 +90,28 @@
                     </ul>
                 </div>
             </div>
+
+            <!--Меню музыки-->
+            <div class="offcanvas offcanvas-end bg-body-tertiary navbar-nav" tabindex="-1" id="musicMenu">
+                <div class="offcanvas-header px-5">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body text-center py-1 d-flex flex-column">
+                    <h2 class="mb-4">Музыка</h2>
+                    <h6>Ссылка на плейлист Яндекс-музыки:</h6>
+                    <div class="d-flex mb-4">
+                        <input type="text" id="playlistLink" class="form-control" placeholder="Введите ссылку" required>
+                        <button id="loadPlaylist" class="btn border ms-2">
+                            <i class="bi bi-vinyl"></i>
+                        </button>
+                    </div>
+                    <iframe id="playlistFrame" class="w-100 flex-grow-1 mb-4" frameborder="0" width="100%" height="auto"
+                        src="https://music.yandex.ru/iframe/playlist/Kreyn175/3"></iframe>
+                    <?xml version="1.0" encoding="UTF-8"?>
+                </div>
+            </div>
         </div>
+
     </nav>
 
     <!--Основное содержимое-->
@@ -478,6 +505,7 @@
 
     <script src="/js/project_modal-blocks.js"></script>
     <script src="/js/status.js"></script>
+    <script src="/js/music.js"></script>
 
 </body>
 
