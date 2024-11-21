@@ -1,34 +1,6 @@
-.card {
-    height: 250px;
-}
+/* custom.css */
 
-.card-body {
-    padding: 1.5rem;
-}
-
-.project-data {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
-    text-align: center;
-}
-
-@font-face {
-    font-family: 'SC Portugal';
-    src: url('fonts/SC Portugal.woff2') format('woff2'),
-         url('fonts/SC Portugal.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('fonts/Montserrat.woff2') format('woff2'),
-         url('fonts/Montserrat.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
+/* Стили подвала */
 
 .footer {
     background-color: #f1f1f1; /* Светло-серый фон */
@@ -61,3 +33,34 @@
     text-decoration: underline;
 }
 
+/* Кнопки выбора темы */
+.theme-toggle-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 2px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.theme-toggle-btn:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.1);
+}
+
+.theme-toggle-btn:focus {
+    outline: none;
+}
+
+/* Стили для контейнера под темы */
+#themeSwitcher {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}

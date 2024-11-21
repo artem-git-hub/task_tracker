@@ -1,0 +1,74 @@
+/* Подключение шрифта SC Portugal */
+@font-face {
+    font-family: 'SC Portugal';
+    src: url('fonts/SC Portugal.woff2') format('woff2'),
+         url('fonts/SC Portugal.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Глобальные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили кнопок */
+.btn {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Округлость и свечение для кнопок Login и Password */
+.custom-btn {
+    border-radius: 30px; /* Округлость */
+    box-shadow: 0px 0px 8px #eee; /* Бледно-красное свечение */
+}
+
+.custom-btn:hover {
+    background-color: #eee;
+    border-color: #aaa;
+    box-shadow: 0px 0px 12px rgba(255, 0, 0, 0.6); /* Усиленное свечение при наведении */
+}
+
+/* Стили заголовка */
+h1 {
+    font-family: 'SC Portugal', serif;
+}
+
+/* Стили контейнера и элементов внутри */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.text-left {
+    width: 45%;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.text-right {
+    width: 45%;
+    text-align: center;
+}
+
+.text-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    box-shadow: 0px 0px 12px rgba(0, 123, 255, 0.6); /* Свечение при наведении */
+}

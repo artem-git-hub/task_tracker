@@ -9,20 +9,15 @@
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/bootstrap/icons/bootstrap-icons.min.css" rel="stylesheet">
     <link href="/css/global.css" rel="stylesheet">
-
-
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
-    <link href="/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link href="/docs/5.3/assets/css/docs.css" rel="stylesheet"> -->
+    <link href="/css/settings.css" rel="stylesheet"> <!-- Подключение нового CSS файла -->
+    <script src="/js/theme-switcher.js" defer></script>
 </head>
 
 <body>
-
-
     <nav class="navbar sticky-top bg-body-tertiary p-1">
         <div class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
 
-            <!--Элементы слева-->
+            <!-- Элементы слева -->
             <div class="d-flex">
                 <a href="/profile.html" class="text-decoration-none text-reset d-flex">
                     <img src="/img/avatar.jpeg" class="rounded mini-avatar">
@@ -30,9 +25,8 @@
                 </a>
             </div>
 
-            <!--Элементы справа-->
+            <!-- Элементы справа -->
             <div class="d-flex">
-                <!--Меню для добавления друзей и удаления проекта-->
                 <div class="dropstart">
                     <button class="btn btn border mx-2 my-auto" type="button" data-bs-toggle="dropdown">
                         <i class="bi bi-wrench-adjustable"></i>
@@ -41,21 +35,20 @@
                         <li><a class="dropdown-item" href="/friends.html">Друзья проекта</a></li>
                         <li>
                             <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal"
-                                data-bs-target="#modalDeleteProject" data-projectId="0">
-                                Удалить проект
+                               data-bs-target="#modalDeleteProject" data-projectId="0">
+                               Удалить проект
                             </a>
                         </li>
                     </ul>
                 </div>
 
-                <!--Кнопка разворачивания главного меню-->
-                <button class=" btn border h-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu">
+                <!-- Кнопка главного меню -->
+                <button class="btn border h-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
 
-
-            <!--Главное меню-->
+            <!-- Главное меню -->
             <div class="offcanvas offcanvas-end bg-body-tertiary navbar-nav" tabindex="-1" id="mainMenu">
                 <div class="offcanvas-header px-5">
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
@@ -63,7 +56,6 @@
                 <div class="offcanvas-body text-center py-1">
                     <ul class="navbar-nav h-100">
                         <h2 class="mb-4">Task Tracker</h2>
-
                         <li class="nav-item">
                             <a href="/profile.html" class="text-decoration-none text-reset">
                                 <img src="/img/avatar.jpeg" class="w-25 rounded my-2">
@@ -82,7 +74,7 @@
                             </a>
                         </li>
                         <li class="nav-item mt-auto">
-                            <a class="text-decoration-none text-reset" href="#">
+                           <a class="text-decoration-none text-reset" href="/mainpage.html">
                                 <h4 class="mb-4">Выход</h4>
                             </a>
                         </li>
@@ -92,66 +84,70 @@
         </div>
     </nav>
 
-
-
     <div class="container my-2">
-        <div class="border-bottom">
-            <ul class="nav nav-underline">
-                <li class="nav-item">
-                <a class="nav-link" href="#profile">Профиль</a>
-                </li>
-                <!-- <li class="nav-item">
-                <a class="nav-link" href="#style">Стили</a>
-                </li> -->
-            </ul>
-        </div>
-        <div class="col-sm-6 offset-sm-3">
-            <!-- <div>
-                <div class="d-flex justify-content-center mb-4">
-                    
-                    <img id="selectedAvatar" src="./img/avatar.jpeg"
-                    class="rounded-circle" style="width: 200px; height: 200px; object-fit: cover;" alt="example placeholder" />
+        <!-- Вкладки для переключения -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Профиль</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="themes-tab" data-bs-toggle="tab" href="#themes" role="tab" aria-controls="themes" aria-selected="false">Темы</a>
+            </li>
+        </ul>
+        <!-- Контент вкладок -->
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <!-- Контент профиля -->
+                <div class="my-4">
+                    <h6>Изменить почту</h6>
+                    <input type="text" name="blockTitle" class="form-control"
+                        placeholder="Новая почта">
                 </div>
-                <div class="d-flex justify-content-center">
-                    <div data-mdb-ripple-init class="btn btn-primary btn-rounded">
-                        <label class="form-label text-white m-1" for="customFile2">Choose file</label>
-                        <input type="file" class="form-control d-none" id="customFile2" onchange="displaySelectedImage(event, 'selectedAvatar')" />
-                    </div>
+                <div class="my-4">
+                    <h6>Старый пароль</h6>
+                    <input type="password" name="blockTitle" class="form-control"
+                        placeholder="">
                 </div>
-            </div> -->
-            <div class="my-4">
-                <h6>Изменить почту</h6>
-                <input type="text" name="blockTitle" class="form-control"
-                    placeholder="Новая почта">
+                <div class="my-4">
+                    <h6>Новый пароль</h6>
+                    <input type="password" name="blockTitle" class="form-control"
+                        placeholder="Новый пароль...">
+                </div>
+                <div class="my-4">
+                    <h6>Повторите новый пароль</h6>
+                    <input type="password" name="blockTitle" class="form-control"
+                        placeholder="Новый пароль...">
+                </div>
             </div>
-            <div class="my-4">
-                <h6>Старый пароль</h6>
-                <input type="password" name="blockTitle" class="form-control"
-                    placeholder="">
-            </div>
-            <div class="my-4">
-                <h6>Новый пароль</h6>
-                <input type="password" name="blockTitle" class="form-control"
-                    placeholder="Новый пароль...">
-            </div>
-            <div class="my-4">
-                <h6>Повторите новый пароль</h6>
-                <input type="password" name="blockTitle" class="form-control"
-                    placeholder="Новый пароль...">
+            <div class="tab-pane fade" id="themes" role="tabpanel" aria-labelledby="themes-tab">
+                <!-- Переключатели тем -->
+                <div class="d-flex justify-content-center my-4">
+                    <button class="theme-toggle-btn" id="dark-theme-btn" onclick="switchTheme('dark')">
+                        <i class="bi bi-moon-stars"></i> <!-- Иконка луны -->
+                    </button>
+                    <button class="theme-toggle-btn" id="light-theme-btn" onclick="switchTheme('light')">
+                        <i class="bi bi-brightness-high"></i> <!-- Иконка солнца -->
+                    </button>
+                </div>
             </div>
         </div>
-        
-
-        
     </div>
 
-
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="footer-logo">MyS</h1>
+            <div class="footer-links">
+                <a href="/about.html" class="footer-link">About Us</a>
+                <a href="/faq.html" class="footer-link">FAQ</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- <script src="/js/project_modal-blocks.js"></script> -->
-
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
