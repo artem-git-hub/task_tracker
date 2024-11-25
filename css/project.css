@@ -21,7 +21,8 @@
 
 .b-list a {
     color: inherit;
-    text-decoration: none; /* Удаляет подчеркивание у ссылок */
+    text-decoration: none;
+    /* Удаляет подчеркивание у ссылок */
 }
 
 .form-check-input {
@@ -54,36 +55,48 @@
 
 /* Настройка цвета и эффекта для кнопок */
 .btn-primary {
-    background-color: #6c757d; /* Серый цвет кнопки */
-    border-color: #6c757d;     /* Граница совпадает с фоном */
-    color: white;              /* Белый текст */
+    background-color: #6c757d;
+    /* Серый цвет кнопки */
+    border-color: #6c757d;
+    /* Граница совпадает с фоном */
+    color: white;
+    /* Белый текст */
 }
 
 .btn-primary:hover {
-    background-color: #6c757d; /* Оставляем основной цвет фона */
-    border-color: #6c757d;     /* Цвет границы остается серым */
+    background-color: #6c757d;
+    /* Оставляем основной цвет фона */
+    border-color: #6c757d;
+    /* Цвет границы остается серым */
     color: white;
-    box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.6); /* Тень вокруг кнопки */
+    box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.6);
+    /* Тень вокруг кнопки */
 }
 
 /* Подсветка для ссылок в модальных окнах */
 .modal .btn-link:hover {
-    color: #d9534f; /* Бледно-красный цвет текста при наведении */
+    color: #d9534f;
+    /* Бледно-красный цвет текста при наведении */
 }
 
 /* Размытие и стили для модального окна */
 .modal-backdrop {
-    backdrop-filter: blur(5px); /* Добавляет размытие фона */
-    background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный затемненный фон */
+    backdrop-filter: blur(5px);
+    /* Добавляет размытие фона */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Полупрозрачный затемненный фон */
 }
 
 .modal {
-    backdrop-filter: blur(2px); /* Легкое размытие внутри модального окна */
+    backdrop-filter: blur(2px);
+    /* Легкое размытие внутри модального окна */
 }
 
 .modal-content {
-    border-radius: 8px; /* Закругленные края */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Тень для глубины */
+    border-radius: 8px;
+    /* Закругленные края */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    /* Тень для глубины */
 }
 
 .error-checkbox {
@@ -94,7 +107,7 @@
 @font-face {
     font-family: 'SC Portugal';
     src: url('fonts/SC Portugal.woff2') format('woff2'),
-         url('fonts/SC Portugal.woff') format('woff');
+        url('fonts/SC Portugal.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
@@ -102,39 +115,43 @@
 @font-face {
     font-family: 'Montserrat';
     src: url('fonts/Montserrat.woff2') format('woff2'),
-         url('fonts/Montserrat.woff') format('woff');
+        url('fonts/Montserrat.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
 
 .footer {
-    background-color: #f1f1f1; /* Светло-серый фон */
+    background-color: #f1f1f1;
+    /* Светло-серый фон */
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 10px 0;  /* Уменьшены отступы */
+    padding: 10px 0;
+    /* Уменьшены отступы */
     font-family: 'SC Portugal', sans-serif;
     border-top: 1px solid #ddd;
 }
 
 .footer-logo {
-    font-size: 1.8rem; /* Уменьшенный размер шрифта для названия */
+    font-size: 1.8rem;
+    /* Уменьшенный размер шрифта для названия */
     margin: 0;
     color: #333;
 }
 
 .footer-links {
     display: flex;
-    gap: 15px; /* Уменьшен интервал между ссылками */
+    gap: 15px;
+    /* Уменьшен интервал между ссылками */
 }
 
 .footer-link {
     color: #333;
     text-decoration: none;
-    font-size: 0.9rem; /* Уменьшен размер шрифта */
+    font-size: 0.9rem;
+    /* Уменьшен размер шрифта */
 }
 
 .footer-link:hover {
     text-decoration: underline;
 }
-

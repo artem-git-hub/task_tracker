@@ -1,69 +1,110 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Профиль пользователя</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профиль пользователя</title>
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+            rel="stylesheet" />
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link href="/css/profile.css" rel="stylesheet">
-</head>
+        <!-- Custom CSS -->
+        <link href="/css/profile.css" rel="stylesheet" />
+    </head>
 
-<body>
-    <!-- Profile Container (HTML code remains the same) -->
-    <div class="container d-flex flex-column align-items-center justify-content-center vh-100 position-relative">
-        <button class="btn btn-light edit-button" data-bs-toggle="modal" data-bs-target="#editModal">
-            <i class="bi bi-pencil-square"></i>
-        </button>
-        
-        <div class="avatar mb-3">
-            <img src="/img/avatar.jpeg" alt="User Avatar">
+    <body>
+        <!-- Profile Container (HTML code remains the same) -->
+        <div
+            class="container d-flex flex-column align-items-center justify-content-center vh-100 position-relative">
+            <button
+                class="btn btn-light edit-button"
+                data-bs-toggle="modal"
+                data-bs-target="#editModal">
+                <i class="bi bi-pencil-square"></i>
+            </button>
+
+            <div class="avatar mb-3">
+                <img src="/img/avatar.jpeg" alt="User Avatar" />
+            </div>
+
+            <h2 class="text-center">Имя пользователя</h2>
+            <p class="text-muted">@login</p>
+            <div class="about-section text-center">
+                <p class="mb-0">
+                    О себе: Здесь можно написать краткую информацию о
+                    пользователе.
+                </p>
+            </div>
         </div>
 
-        <h2 class="text-center">Имя пользователя</h2>
-        <p class="text-muted">@login</p>
-        <div class="about-section text-center">
-            <p class="mb-0">О себе: Здесь можно написать краткую информацию о пользователе.</p>
-        </div>
-    </div>
-
-    <!-- Edit Modal -->
-    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">Редактировать профиль</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3">
-                            <label for="userName" class="form-label">Имя пользователя</label>
-                            <input type="text" class="form-control" id="userName" value="Имя пользователя">
-                        </div>
-                        <div class="mb-3">
-                            <label for="userLogin" class="form-label">Логин</label>
-                            <input type="text" class="form-control" id="userLogin" value="@login">
-                        </div>
-                        <div class="mb-3">
-                            <label for="aboutText" class="form-label">О себе</label>
-                            <textarea class="form-control" id="aboutText" rows="3">Здесь можно написать краткую информацию о пользователе.</textarea>
-                        </div>
-                        <button type="button" class="btn btn-primary">Сохранить</button>
-                    </form>
+        <!-- Edit Modal -->
+        <div
+            class="modal fade"
+            id="editModal"
+            tabindex="-1"
+            aria-labelledby="editModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="editModalLabel">
+                            Редактировать профиль
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="userName" class="form-label"
+                                    >Имя пользователя</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="userName"
+                                    value="Имя пользователя" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="userLogin" class="form-label"
+                                    >Логин</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="userLogin"
+                                    value="@login" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="aboutText" class="form-label"
+                                    >О себе</label
+                                >
+                                <textarea
+                                    class="form-control"
+                                    id="aboutText"
+                                    rows="3">
+Здесь можно написать краткую информацию о пользователе.</textarea
+                                >
+                            </div>
+                            <button type="button" class="btn btn-primary">
+                                Сохранить
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Bootstrap and Custom JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/profile.js"></script>
-</body>
-
+        <!-- Bootstrap and Custom JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/profile.js"></script>
+    </body>
 </html>

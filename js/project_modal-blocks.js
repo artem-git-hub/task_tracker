@@ -20,7 +20,8 @@ function deleteItem(itemContainer, deleteButton, popover) {
 
 // Функция для создания кнопки удаления
 function createDeleteBtn(itemContainer) {
-    let deleteButton = $(`<button class="btn btn-link" data-bs-toggle="popover" data-bs-placement="bottom" 
+    let deleteButton =
+        $(`<button class="btn btn-link" data-bs-toggle="popover" data-bs-placement="bottom" 
         data-bs-content="Нажмите еще раз для подтверждения удаления">
         <i class="bi bi-x"></i></button>`);
 
@@ -38,12 +39,26 @@ function createDeleteBtn(itemContainer) {
 }
 
 // Добавление нового элемента чек-листа в модальное окно
-function addChecklistItem(modalElement, isChecked = false, text = "", itemId = null) {
-    let checklistItem = $('<div class="checklist-item mb-3 d-flex" data-item-id="' + itemId + '"></div>');
-    let checkbox = $('<input type="checkbox" class="form-check-input">').prop('checked', isChecked);
+function addChecklistItem(
+    modalElement,
+    isChecked = false,
+    text = '',
+    itemId = null
+) {
+    let checklistItem = $(
+        '<div class="checklist-item mb-3 d-flex" data-item-id="' +
+            itemId +
+            '"></div>'
+    );
+    let checkbox = $('<input type="checkbox" class="form-check-input">').prop(
+        'checked',
+        isChecked
+    );
 
-    let input = $('<input type="text" class="input-content form-control '
-        + 'd-inline-block flex-fill fw-medium" maxlength="128">').val(text);
+    let input = $(
+        '<input type="text" class="input-content form-control ' +
+            'd-inline-block flex-fill fw-medium" maxlength="128">'
+    ).val(text);
 
     let deleteButton = createDeleteBtn(checklistItem);
 
@@ -54,13 +69,17 @@ function addChecklistItem(modalElement, isChecked = false, text = "", itemId = n
 }
 
 // Добавление нового элемента ссылки в модальное окно
-function addLinkItem(modalElement, text = "", url = "", itemId = null) {
-    let linkItem = $('<div class="link-item mb-4" data-item-id="' + itemId + '"></div>');
+function addLinkItem(modalElement, text = '', url = '', itemId = null) {
+    let linkItem = $(
+        '<div class="link-item mb-4" data-item-id="' + itemId + '"></div>'
+    );
 
     // Строка для текста ссылки и кнопки удаления
     let textRow = $('<div class="d-flex align-items-center"></div>');
-    let newLinkText = $('<input type="text" class="input-content form-control fw-medium no-border" '
-        + 'placeholder="Название ссылки" maxlength="128">').val(text);
+    let newLinkText = $(
+        '<input type="text" class="input-content form-control fw-medium no-border" ' +
+            'placeholder="Название ссылки" maxlength="128">'
+    ).val(text);
     let deleteButton = createDeleteBtn(linkItem);
 
     textRow.append(newLinkText).append(deleteButton);
@@ -68,10 +87,15 @@ function addLinkItem(modalElement, text = "", url = "", itemId = null) {
 
     // Строка для URL и кнопки перехода
     let urlRow = $('<div class="d-flex align-items-center"></div>');
-    let newLinkUrl = $('<input type="url" class="input-content form-control" '
-        + 'placeholder="URL ссылки" maxlength="2048">').val(url);
-    let goButton = $('<button class="btn btn-link"><i class="bi bi-link-45deg"></i></button>')
-        .on('click', function () { window.open(newLinkUrl.val(), '_blank'); });
+    let newLinkUrl = $(
+        '<input type="url" class="input-content form-control" ' +
+            'placeholder="URL ссылки" maxlength="2048">'
+    ).val(url);
+    let goButton = $(
+        '<button class="btn btn-link"><i class="bi bi-link-45deg"></i></button>'
+    ).on('click', function () {
+        window.open(newLinkUrl.val(), '_blank');
+    });
 
     urlRow.append(newLinkUrl).append(goButton);
     linkItem.append(urlRow);
@@ -79,7 +103,6 @@ function addLinkItem(modalElement, text = "", url = "", itemId = null) {
 
     return linkItem;
 }
-
 
 // Очистка данных в модальном окне
 function clearModalData(modalElement) {
@@ -93,7 +116,9 @@ function clearModalData(modalElement) {
             modalElement.find('textarea[name="description"]').val('');
 
             // Устанавливаем статус на "Не задан"
-            const projectStatusSelect = modalElement.find('select[name="projectStatus"]');
+            const projectStatusSelect = modalElement.find(
+                'select[name="projectStatus"]'
+            );
             projectStatusSelect.val('undefined');
             projectStatusSelect.trigger('change');
             break;
@@ -118,18 +143,23 @@ function clearModalData(modalElement) {
 
 // Загрузка данных в модальное окно из блока проекта
 function loadModalDataProject(modalElement, blockElement) {
-    let shortDescription = blockElement.find('[name="shortDescription"]').text();
+    let shortDescription = blockElement
+        .find('[name="shortDescription"]')
+        .text();
     let description = blockElement.find('[name="description"]').text();
 
-    modalElement.find('textarea[name="shortDescription"]').val(shortDescription);
+    modalElement
+        .find('textarea[name="shortDescription"]')
+        .val(shortDescription);
     modalElement.find('textarea[name="description"]').val(description);
-
 
     let status = blockElement.find('[name="projectStatus"]').text();
 
     let projectStatusSelect = modalElement.find('select[name="projectStatus"]');
     projectStatusSelect.find('option').prop('selected', false);
-    projectStatusSelect.find(`option[value = "${status}"]`).prop('selected', true);
+    projectStatusSelect
+        .find(`option[value = "${status}"]`)
+        .prop('selected', true);
     projectStatusSelect.trigger('change');
 }
 
@@ -160,14 +190,17 @@ function loadModalDataLinks(modalElement, blockElement) {
     linksContent.empty();
 
     // Перебираем все ссылки в блоке
-    blockElement.find('.b-list').find('a').each(function () {
-        let link = $(this);
-        let linkText = link.text().trim();
-        let linkUrl = link.attr('href');
-        let itemId = link.data('item-id');
+    blockElement
+        .find('.b-list')
+        .find('a')
+        .each(function () {
+            let link = $(this);
+            let linkText = link.text().trim();
+            let linkUrl = link.attr('href');
+            let itemId = link.data('item-id');
 
-        addLinkItem(modalElement, linkText, linkUrl, itemId);
-    });
+            addLinkItem(modalElement, linkText, linkUrl, itemId);
+        });
 }
 
 // Загрузка данных в модальное окно из блока изображения
@@ -247,15 +280,23 @@ function submitModal(type) {
 
     switch (type) {
         case 'Project':
-            data.shortDescription = modalElement.find('textarea[name="shortDescription"]').val();
-            data.description = modalElement.find('textarea[name="description"]').val();
-            data.projectStatus = modalElement.find('select[name="projectStatus"]').val();
+            data.shortDescription = modalElement
+                .find('textarea[name="shortDescription"]')
+                .val();
+            data.description = modalElement
+                .find('textarea[name="description"]')
+                .val();
+            data.projectStatus = modalElement
+                .find('select[name="projectStatus"]')
+                .val();
             break;
         case 'Checklist':
             data.checklistItems = [];
             modalElement.find('.checklist-item').each(function () {
                 let checkItem = $(this);
-                let isChecked = checkItem.find('input[type="checkbox"]').is(':checked');
+                let isChecked = checkItem
+                    .find('input[type="checkbox"]')
+                    .is(':checked');
                 let text = checkItem.find('input[type="text"]').val();
                 let id = checkItem.data('item-id');
                 data.checklistItems.push({
@@ -272,7 +313,7 @@ function submitModal(type) {
                 let text = linkItem.find('input[type="text"]').val();
                 let url = linkItem.find('input[type="url"]').val();
                 let id = linkItem.data('item-id');
-                data.links.push({ text: text, url: url, id: id, });
+                data.links.push({ text: text, url: url, id: id });
             });
             break;
         case 'Image':
@@ -299,7 +340,7 @@ function submitModal(type) {
         error: function (error) {
             // Обработка ошибки отправки данных
             console.error('Ошибка отправки данных:', error);
-        }
+        },
     });
 
     console.log('Отправленные данные:', data);
@@ -331,7 +372,7 @@ function deleteBlock() {
         error: function (error) {
             // Обработка ошибки отправки данных
             console.error('Ошибка отправки данных:', error);
-        }
+        },
     });
 
     console.log('Отправленные данные:', data);
@@ -360,16 +401,18 @@ function deleteProject() {
         error: function (error) {
             // Обработка ошибки (если необходимо)
             console.error('Error deleting project:', error);
-        }
+        },
     });
 }
-
 
 // Обработка открытия модального окна добавления/редактирования блока
 $('.modal-block').on('show.bs.modal', function (event) {
     let modalElement = $(event.currentTarget);
 
-    if (event.relatedTarget && event.relatedTarget.classList.contains('btn-add-block')) {
+    if (
+        event.relatedTarget &&
+        event.relatedTarget.classList.contains('btn-add-block')
+    ) {
         modalElement.data('blockId', false);
     }
 
@@ -404,8 +447,10 @@ $('.modal-block').on('show.bs.modal', function (event) {
         titleElement.text(initialTitle);
 
         if (initialTitle != 'Проект') {
-            deleteButton = $('<button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalDeleteBlock">' +
-                '<i class="bi bi-trash"></i></button>');
+            deleteButton = $(
+                '<button class="btn btn-link" data-bs-toggle="modal" data-bs-target="#modalDeleteBlock">' +
+                    '<i class="bi bi-trash"></i></button>'
+            );
 
             deleteButton.on('click', function () {
                 $('#modalDeleteBlock').data('blockId', blockId);
@@ -419,7 +464,6 @@ $('.modal-block').on('show.bs.modal', function (event) {
         let blockElement = $('#' + blockId);
 
         loadModalData(modalElement, blockElement);
-
     } else {
         titleElement.text('Добавить ' + initialTitle);
         primaryButton.text('Добавить ' + initialTitle);
@@ -434,7 +478,7 @@ $('.modal-block').on('shown.bs.modal', function (event) {
 
     if (modalElement.data('addItem')) {
         modalElement.data('addItem', false);
-        addFocusItem(modalElement)
+        addFocusItem(modalElement);
     }
 });
 
@@ -442,10 +486,10 @@ $('.card').on('click', function (event) {
     let eventTarget = $(event.target);
     // Игнорируем клики на чекбоксах, кнопках и ссылках (кроме кнопки добавления пункта)
     if (
-        (eventTarget.closest('.form-check-label').length > 0
-            || eventTarget.closest('button').length > 0
-            || eventTarget.closest('a').length > 0)
-        && !(eventTarget.closest('.btn-add-item').length > 0)
+        (eventTarget.closest('.form-check-label').length > 0 ||
+            eventTarget.closest('button').length > 0 ||
+            eventTarget.closest('a').length > 0) &&
+        !(eventTarget.closest('.btn-add-item').length > 0)
     ) {
         return;
     }
@@ -453,7 +497,7 @@ $('.card').on('click', function (event) {
     let card = $(this);
     let type = card.data('type');
 
-    if (type == "AddBlock") {
+    if (type == 'AddBlock') {
         modalElement.data('addItem', false);
         return;
     }
@@ -485,7 +529,7 @@ $(document).on('change', 'input[type="checkbox"]', function () {
         type: 'POST',
         data: {
             itemId: itemId,
-            isChecked: isChecked
+            isChecked: isChecked,
         },
         success: function (response) {
             // Обработка ответа от сервера (если необходимо)
@@ -494,6 +538,6 @@ $(document).on('change', 'input[type="checkbox"]', function () {
         error: function (error) {
             // Обработка ошибки (если необходимо)
             console.error(error);
-        }
+        },
     });
 });

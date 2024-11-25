@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'SC Portugal';
     src: url('fonts/SC Portugal.woff2') format('woff2'),
-         url('fonts/SC Portugal.woff') format('woff');
+        url('fonts/SC Portugal.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }

@@ -1,153 +1,236 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Настройки</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Настройки</title>
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link
+            href="/bootstrap/icons/bootstrap-icons.min.css"
+            rel="stylesheet" />
+        <link href="/css/global.css" rel="stylesheet" />
+        <link href="/css/settings.css" rel="stylesheet" />
+        <!-- Подключение нового CSS файла -->
+        <script src="/js/theme-switcher.js" defer></script>
+    </head>
 
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/bootstrap/icons/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="/css/global.css" rel="stylesheet">
-    <link href="/css/settings.css" rel="stylesheet"> <!-- Подключение нового CSS файла -->
-    <script src="/js/theme-switcher.js" defer></script>
-</head>
+    <body>
+        <nav class="navbar sticky-top bg-body-tertiary p-1">
+            <div
+                class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
+                <!-- Элементы слева -->
+                <div class="d-flex">
+                    <a
+                        href="/profile.html"
+                        class="text-decoration-none text-reset d-flex">
+                        <img
+                            src="/img/avatar.jpeg"
+                            class="rounded mini-avatar" />
+                        <b class="my-auto px-2 text-break">Имя пользователя</b>
+                    </a>
+                </div>
 
-<body>
-    <nav class="navbar sticky-top bg-body-tertiary p-1">
-        <div class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
+                <!-- Элементы справа -->
+                <div class="d-flex">
+                    <div class="dropstart">
+                        <button
+                            class="btn btn border mx-2 my-auto"
+                            type="button"
+                            data-bs-toggle="dropdown">
+                            <i class="bi bi-wrench-adjustable"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="/friends.html"
+                                    >Друзья проекта</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    class="dropdown-item text-danger"
+                                    href="#"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalDeleteProject"
+                                    data-projectId="0">
+                                    Удалить проект
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
 
-            <!-- Элементы слева -->
-            <div class="d-flex">
-                <a href="/profile.html" class="text-decoration-none text-reset d-flex">
-                    <img src="/img/avatar.jpeg" class="rounded mini-avatar">
-                    <b class="my-auto px-2 text-break">Имя пользователя</b>
-                </a>
-            </div>
-
-            <!-- Элементы справа -->
-            <div class="d-flex">
-                <div class="dropstart">
-                    <button class="btn btn border mx-2 my-auto" type="button" data-bs-toggle="dropdown">
-                        <i class="bi bi-wrench-adjustable"></i>
+                    <!-- Кнопка главного меню -->
+                    <button
+                        class="btn border h-100"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#mainMenu">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/friends.html">Друзья проекта</a></li>
-                        <li>
-                            <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal"
-                               data-bs-target="#modalDeleteProject" data-projectId="0">
-                               Удалить проект
-                            </a>
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- Кнопка главного меню -->
-                <button class="btn border h-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <!-- Главное меню -->
+                <div
+                    class="offcanvas offcanvas-end bg-body-tertiary navbar-nav"
+                    tabindex="-1"
+                    id="mainMenu">
+                    <div class="offcanvas-header px-5">
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body text-center py-1">
+                        <ul class="navbar-nav h-100">
+                            <h2 class="mb-4">Task Tracker</h2>
+                            <li class="nav-item">
+                                <a
+                                    href="/profile.html"
+                                    class="text-decoration-none text-reset">
+                                    <img
+                                        src="/img/avatar.jpeg"
+                                        class="w-25 rounded my-2" />
+                                    <h5 class="mb-0">Имя пользователя</h5>
+                                    <p class="mb-5">@login</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="text-decoration-none text-reset"
+                                    href="/home.html">
+                                    <h4 class="mb-4">Проекты</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="text-decoration-none text-reset"
+                                    href="#">
+                                    <h4 class="mb-4">Настройки</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item mt-auto">
+                                <a
+                                    class="text-decoration-none text-reset"
+                                    href="/mainpage.html">
+                                    <h4 class="mb-4">Выход</h4>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </nav>
 
-            <!-- Главное меню -->
-            <div class="offcanvas offcanvas-end bg-body-tertiary navbar-nav" tabindex="-1" id="mainMenu">
-                <div class="offcanvas-header px-5">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        <div class="container my-2">
+            <!-- Вкладки для переключения -->
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a
+                        class="nav-link active"
+                        id="profile-tab"
+                        data-bs-toggle="tab"
+                        href="#profile"
+                        role="tab"
+                        aria-controls="profile"
+                        aria-selected="true"
+                        >Профиль</a
+                    >
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a
+                        class="nav-link"
+                        id="themes-tab"
+                        data-bs-toggle="tab"
+                        href="#themes"
+                        role="tab"
+                        aria-controls="themes"
+                        aria-selected="false"
+                        >Темы</a
+                    >
+                </li>
+            </ul>
+            <!-- Контент вкладок -->
+            <div class="tab-content" id="myTabContent">
+                <div
+                    class="tab-pane fade show active"
+                    id="profile"
+                    role="tabpanel"
+                    aria-labelledby="profile-tab">
+                    <!-- Контент профиля -->
+                    <div class="my-4">
+                        <h6>Изменить почту</h6>
+                        <input
+                            type="text"
+                            name="blockTitle"
+                            class="form-control"
+                            placeholder="Новая почта" />
+                    </div>
+                    <div class="my-4">
+                        <h6>Старый пароль</h6>
+                        <input
+                            type="password"
+                            name="blockTitle"
+                            class="form-control"
+                            placeholder="" />
+                    </div>
+                    <div class="my-4">
+                        <h6>Новый пароль</h6>
+                        <input
+                            type="password"
+                            name="blockTitle"
+                            class="form-control"
+                            placeholder="Новый пароль..." />
+                    </div>
+                    <div class="my-4">
+                        <h6>Повторите новый пароль</h6>
+                        <input
+                            type="password"
+                            name="blockTitle"
+                            class="form-control"
+                            placeholder="Новый пароль..." />
+                    </div>
                 </div>
-                <div class="offcanvas-body text-center py-1">
-                    <ul class="navbar-nav h-100">
-                        <h2 class="mb-4">Task Tracker</h2>
-                        <li class="nav-item">
-                            <a href="/profile.html" class="text-decoration-none text-reset">
-                                <img src="/img/avatar.jpeg" class="w-25 rounded my-2">
-                                <h5 class="mb-0">Имя пользователя</h5>
-                                <p class="mb-5">@login</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="text-decoration-none text-reset" href="/home.html">
-                                <h4 class="mb-4">Проекты</h4>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="text-decoration-none text-reset" href="#">
-                                <h4 class="mb-4">Настройки</h4>
-                            </a>
-                        </li>
-                        <li class="nav-item mt-auto">
-                           <a class="text-decoration-none text-reset" href="/mainpage.html">
-                                <h4 class="mb-4">Выход</h4>
-                            </a>
-                        </li>
-                    </ul>
+                <div
+                    class="tab-pane fade"
+                    id="themes"
+                    role="tabpanel"
+                    aria-labelledby="themes-tab">
+                    <!-- Переключатели тем -->
+                    <div class="d-flex justify-content-center my-4">
+                        <button
+                            class="theme-toggle-btn"
+                            id="dark-theme-btn"
+                            onclick="switchTheme('dark')">
+                            <i class="bi bi-moon-stars"></i>
+                            <!-- Иконка луны -->
+                        </button>
+                        <button
+                            class="theme-toggle-btn"
+                            id="light-theme-btn"
+                            onclick="switchTheme('light')">
+                            <i class="bi bi-brightness-high"></i>
+                            <!-- Иконка солнца -->
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
 
-    <div class="container my-2">
-        <!-- Вкладки для переключения -->
-        <ul class="nav nav-tabs" id="myTab" role="tablist">
-            <li class="nav-item" role="presentation">
-                <a class="nav-link active" id="profile-tab" data-bs-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="true">Профиль</a>
-            </li>
-            <li class="nav-item" role="presentation">
-                <a class="nav-link" id="themes-tab" data-bs-toggle="tab" href="#themes" role="tab" aria-controls="themes" aria-selected="false">Темы</a>
-            </li>
-        </ul>
-        <!-- Контент вкладок -->
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <!-- Контент профиля -->
-                <div class="my-4">
-                    <h6>Изменить почту</h6>
-                    <input type="text" name="blockTitle" class="form-control"
-                        placeholder="Новая почта">
-                </div>
-                <div class="my-4">
-                    <h6>Старый пароль</h6>
-                    <input type="password" name="blockTitle" class="form-control"
-                        placeholder="">
-                </div>
-                <div class="my-4">
-                    <h6>Новый пароль</h6>
-                    <input type="password" name="blockTitle" class="form-control"
-                        placeholder="Новый пароль...">
-                </div>
-                <div class="my-4">
-                    <h6>Повторите новый пароль</h6>
-                    <input type="password" name="blockTitle" class="form-control"
-                        placeholder="Новый пароль...">
+        <!-- Подвал -->
+        <footer class="footer">
+            <div
+                class="container d-flex justify-content-between align-items-center">
+                <h1 class="footer-logo">MyS</h1>
+                <div class="footer-links">
+                    <a href="/about.html" class="footer-link">About Us</a>
+                    <a href="/faq.html" class="footer-link">FAQ</a>
                 </div>
             </div>
-            <div class="tab-pane fade" id="themes" role="tabpanel" aria-labelledby="themes-tab">
-                <!-- Переключатели тем -->
-                <div class="d-flex justify-content-center my-4">
-                    <button class="theme-toggle-btn" id="dark-theme-btn" onclick="switchTheme('dark')">
-                        <i class="bi bi-moon-stars"></i> <!-- Иконка луны -->
-                    </button>
-                    <button class="theme-toggle-btn" id="light-theme-btn" onclick="switchTheme('light')">
-                        <i class="bi bi-brightness-high"></i> <!-- Иконка солнца -->
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+        </footer>
 
-    <!-- Подвал -->
-    <footer class="footer">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="footer-logo">MyS</h1>
-            <div class="footer-links">
-                <a href="/about.html" class="footer-link">About Us</a>
-                <a href="/faq.html" class="footer-link">FAQ</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="/js/jquery-3.7.1.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/jquery-3.7.1.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-</body>
-
+        <script src="/js/jquery-3.7.1.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/jquery-3.7.1.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>

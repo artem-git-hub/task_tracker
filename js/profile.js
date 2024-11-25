@@ -1,5 +1,3 @@
-// profile.js
-
 document.addEventListener('DOMContentLoaded', () => {
     const saveButton = document.querySelector('#editModal .btn-primary');
 
@@ -11,7 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Here you can add code to update the profile fields or make an API request to save them
 
         // Close modal after saving
-        const modal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+        const modal = bootstrap.Modal.getInstance(
+            document.getElementById('editModal')
+        );
         modal.hide();
     });
 });

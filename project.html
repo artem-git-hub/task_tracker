@@ -1,522 +1,795 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Проект №1</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Проект №1</title>
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link
+            href="/bootstrap/icons/bootstrap-icons.min.css"
+            rel="stylesheet" />
+        <link href="/css/global.css" rel="stylesheet" />
+        <link href="/css/project.css" rel="stylesheet" />
+    </head>
 
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/bootstrap/icons/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="/css/global.css" rel="stylesheet">
-    <link href="/css/project.css" rel="stylesheet">
-</head>
-
-<body>
-    <!--Панель навигации сверху, закрепленная-->
-    <nav class="navbar sticky-top bg-body-tertiary p-1">
-        <div class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
-
-            <!--Элементы слева-->
-            <div class="d-flex">
-                <a href="/profile.html" class="text-decoration-none text-reset d-flex">
-                    <img src="/img/avatar.jpeg" class="rounded mini-avatar">
-                    <b class="my-auto px-2 text-break">Имя пользователя</b>
-                </a>
-            </div>
-
-            <!--Элементы справа-->
-            <div class="d-flex">
-                <!--Меню для добавления друзей и удаления проекта-->
-                <div class="dropstart">
-                    <button class="btn border mx-2 my-auto" type="button" data-bs-toggle="dropdown">
-                        <i class="bi bi-wrench-adjustable"></i>
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/friends.html">Друзья проекта</a></li>
-                        <li>
-                            <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal"
-                                data-bs-target="#modalDeleteProject" data-projectId="0">
-                                Удалить проект
-                            </a>
-                        </li>
-                    </ul>
+    <body>
+        <!--Панель навигации сверху, закрепленная-->
+        <nav class="navbar sticky-top bg-body-tertiary p-1">
+            <div
+                class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
+                <!--Элементы слева-->
+                <div class="d-flex">
+                    <a
+                        href="/profile.html"
+                        class="text-decoration-none text-reset d-flex">
+                        <img
+                            src="/img/avatar.jpeg"
+                            class="rounded mini-avatar" />
+                        <b class="my-auto px-2 text-break">Имя пользователя</b>
+                    </a>
                 </div>
 
-                <!--Кнопка разворачивания меню музыки-->
-                <button class=" btn border mx-2 my-auto" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#musicMenu">
-                    <i class="bi bi-music-note-list"></i>
-                </button>
-
-                <!--Кнопка разворачивания главного меню-->
-                <button class=" btn border h-100" type="button" data-bs-toggle="offcanvas" data-bs-target="#mainMenu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-
-
-            <!--Главное меню-->
-            <div class="offcanvas offcanvas-end bg-body-tertiary navbar-nav" tabindex="-1" id="mainMenu">
-                <div class="offcanvas-header px-5">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-                </div>
-                <div class="offcanvas-body text-center py-1">
-                    <ul class="navbar-nav h-100">
-                        <h2 class="mb-4">Task Tracker</h2>
-
-                        <li class="nav-item">
-                            <a href="/profile.html" class="text-decoration-none text-reset">
-                                <img src="/img/avatar.jpeg" class="w-25 rounded my-2">
-                                <h5 class="mb-0">Имя пользователя</h5>
-                                <p class="mb-5">@login</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="text-decoration-none text-reset" href="/home.html">
-                                <h4 class="mb-4">Проекты</h4>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="text-decoration-none text-reset" href="/settings.html">
-                                <h4 class="mb-4">Настройки</h4>
-                            </a>
-                        </li>
-                        <li class="nav-item mt-auto">
-                            <a class="text-decoration-none text-reset" href="/mainpage.html">
-                                <h4 class="mb-4">Выход</h4>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!--Меню музыки-->
-            <div class="offcanvas offcanvas-end bg-body-tertiary navbar-nav" tabindex="-1" id="musicMenu">
-                <div class="offcanvas-header px-5">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-                </div>
-                <div class="offcanvas-body text-center py-1 d-flex flex-column">
-                    <h2 class="mb-4">Музыка</h2>
-                    <h6>Ссылка на плейлист Яндекс-музыки:</h6>
-                    <div class="d-flex mb-4">
-                        <input type="text" id="playlistLink" class="form-control" placeholder="Введите ссылку" required>
-                        <button id="loadPlaylist" class="btn border ms-2">
-                            <i class="bi bi-vinyl"></i>
+                <!--Элементы справа-->
+                <div class="d-flex">
+                    <!--Меню для добавления друзей и удаления проекта-->
+                    <div class="dropstart">
+                        <button
+                            class="btn border mx-2 my-auto"
+                            type="button"
+                            data-bs-toggle="dropdown">
+                            <i class="bi bi-wrench-adjustable"></i>
                         </button>
-                    </div>
-                    <iframe id="playlistFrame" class="w-100 flex-grow-1 mb-4" frameborder="0" width="100%" height="auto"
-                        src="https://music.yandex.ru/iframe/playlist/Kreyn175/3"></iframe>
-                    <?xml version="1.0" encoding="UTF-8"?>
-                </div>
-            </div>
-        </div>
-
-    </nav>
-
-    <!--Основное содержимое-->
-    <div class="content">
-        <!--Контейнер для блоков-->
-        <div class="row gx-5 gy-4">
-
-            <!--Главный блок проекта-->
-            <div class="col-lg-4 col-sm-6 col-12">
-                <div class="card overflow-y-auto" id="block-0" data-type="Project" data-project-id="1">
-                    <!-- Содержимое блока -->
-                    <div class="card-body">
-                        <h4 class="block-title">Заголовок проекта</h4>
-                        <h6 class="mb-1 me-2">Статус проекта:</h6>
-                        <div class="d-flex align-items-center mb-3">
-                            <span class="status-circle-mini status-active"></span>
-                            <span name="projectStatus">Активен</span>
-                        </div>
-                        <h6 class="mb-0">Краткое описание:</h6>
-                        <p class="mb-3" name="shortDescription">Краткое описание проекта.</p>
-                        <h6 class="mb-0">Полное описание:</h6>
-                        <p class="pre-text" name="description">Описание проекта. Описание проекта. Описание проекта.
-                            Описание проекта.
-                            Описание проекта.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!--Блок список чексбоксов-->
-            <div class="col-lg-4 col-sm-6 col-12">
-                <div class="card overflow-y-auto" id="block-1" data-type="Checklist">
-                    <!-- Содержимое блока -->
-                    <div class="card-body">
-                        <h5 class="block-title"></h5>
-
-                        <ul class="list-unstyled b-list mb-0">
-                            <li class="form-check mb-3" data-item-id="1">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="option1" checked>
-                                    Элемент 1
-                                </label>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="/friends.html"
+                                    >Друзья проекта</a
+                                >
                             </li>
-                            <li class="form-check mb-3" data-item-id="2">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="option2" checked>
-                                    Элемент 2
-                                </label>
-                            </li>
-                            <li class="form-check mb-3" data-item-id="3">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="option3">
-                                    Элемент 3 тыры пыры подлинннее что-то
-                                </label>
-                            </li>
-                            <li class="form-check mb-3" data-item-id="4">
-                                <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" name="option4">
-                                    Элемент 4
-                                </label>
+                            <li>
+                                <a
+                                    class="dropdown-item text-danger"
+                                    href="#"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalDeleteProject"
+                                    data-projectId="0">
+                                    Удалить проект
+                                </a>
                             </li>
                         </ul>
-
-                        <div class="d-flex">
-                            <button class="btn btn-link mx-auto btn-add-sm btn-add-item">
-                                <i class="bi bi-plus-circle"></i>
-                            </button>
-                        </div>
                     </div>
+
+                    <!--Кнопка разворачивания меню музыки-->
+                    <button
+                        class="btn border mx-2 my-auto"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#musicMenu">
+                        <i class="bi bi-music-note-list"></i>
+                    </button>
+
+                    <!--Кнопка разворачивания главного меню-->
+                    <button
+                        class="btn border h-100"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#mainMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
                 </div>
-            </div>
 
-            <!--Блок изображений-->
-            <div class="col-lg-4 col-sm-6 col-12">
-                <div class="card overflow-y-auto" data-type="Image" id="block-2">
-                    <!-- Содержимое блока -->
-                    <div class="card-body">
-                        <h5 class="block-title"></h5>
-                        <div class="d-flex align-items-center justify-content-center h-100">
-                            <img src="/img/img1.jpeg" class="max-hw-100">
-                        </div>
+                <!--Главное меню-->
+                <div
+                    class="offcanvas offcanvas-end bg-body-tertiary navbar-nav"
+                    tabindex="-1"
+                    id="mainMenu">
+                    <div class="offcanvas-header px-5">
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body text-center py-1">
+                        <ul class="navbar-nav h-100">
+                            <h2 class="mb-4">Task Tracker</h2>
 
+                            <li class="nav-item">
+                                <a
+                                    href="/profile.html"
+                                    class="text-decoration-none text-reset">
+                                    <img
+                                        src="/img/avatar.jpeg"
+                                        class="w-25 rounded my-2" />
+                                    <h5 class="mb-0">Имя пользователя</h5>
+                                    <p class="mb-5">@login</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="text-decoration-none text-reset"
+                                    href="/home.html">
+                                    <h4 class="mb-4">Проекты</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a
+                                    class="text-decoration-none text-reset"
+                                    href="/settings.html">
+                                    <h4 class="mb-4">Настройки</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item mt-auto">
+                                <a
+                                    class="text-decoration-none text-reset"
+                                    href="/mainpage.html">
+                                    <h4 class="mb-4">Выход</h4>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
-            </div>
 
-            <!--Блок ссылок-->
-            <div class="col-lg-4 col-sm-6 col-12">
-                <div class="card overflow-y-auto" data-type="Links" id="block-3">
-                    <!-- Содержимое блока -->
-                    <div class="card-body">
-                        <h5 class="block-title"></h5>
-                        <ul class="list-unstyled b-list mb-0">
-                            <li class="mb-3">
-                                <a href="https://github.com" data-item-id="1" target="_blank">GitHub</a>
-                            </li>
-                            <li class="mb-3">
-                                <a href="https://www.google.com" data-item-id="2" target="_blank">Google</a>
-                            </li>
-                            <li class="mb-3">
-                                <a href="https://ru.wikipedia.org" data-item-id="3" target="_blank">Википедия</a>
-                            </li>
-                            <li class="mb-3">
-                                <a href="https://vk.com" data-item-id="4" target="_blank">ВКонтакте</a>
-                            </li>
-                        </ul>
-
-                        <div class="d-flex">
-                            <button class="btn btn-link mx-auto btn-add-sm btn-add-item">
-                                <i class="bi bi-plus-circle"></i>
+                <!--Меню музыки-->
+                <div
+                    class="offcanvas offcanvas-end bg-body-tertiary navbar-nav"
+                    tabindex="-1"
+                    id="musicMenu">
+                    <div class="offcanvas-header px-5">
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div
+                        class="offcanvas-body text-center py-1 d-flex flex-column">
+                        <h2 class="mb-4">Музыка</h2>
+                        <h6>Ссылка на плейлист Яндекс-музыки:</h6>
+                        <div class="d-flex mb-4">
+                            <input
+                                type="text"
+                                id="playlistLink"
+                                class="form-control"
+                                placeholder="Введите ссылку"
+                                required />
+                            <button id="loadPlaylist" class="btn border ms-2">
+                                <i class="bi bi-vinyl"></i>
                             </button>
+                        </div>
+                        <iframe
+                            id="playlistFrame"
+                            class="w-100 flex-grow-1 mb-4"
+                            frameborder="0"
+                            width="100%"
+                            height="auto"
+                            src="https://music.yandex.ru/iframe/playlist/Kreyn175/3"></iframe>
+                        <?xml version="1.0" encoding="UTF-8"?>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!--Основное содержимое-->
+        <div class="content">
+            <!--Контейнер для блоков-->
+            <div class="row gx-5 gy-4">
+                <!--Главный блок проекта-->
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div
+                        class="card overflow-y-auto"
+                        id="block-0"
+                        data-type="Project"
+                        data-project-id="1">
+                        <!-- Содержимое блока -->
+                        <div class="card-body">
+                            <h4 class="block-title">Заголовок проекта</h4>
+                            <h6 class="mb-1 me-2">Статус проекта:</h6>
+                            <div class="d-flex align-items-center mb-3">
+                                <span
+                                    class="status-circle-mini status-active"></span>
+                                <span name="projectStatus">Активен</span>
+                            </div>
+                            <h6 class="mb-0">Краткое описание:</h6>
+                            <p class="mb-3" name="shortDescription">
+                                Краткое описание проекта.
+                            </p>
+                            <h6 class="mb-0">Полное описание:</h6>
+                            <p class="pre-text" name="description">
+                                Описание проекта. Описание проекта. Описание
+                                проекта. Описание проекта. Описание проекта.
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!--Блок текста-->
-            <div class="col-lg-4 col-sm-6 col-12">
-                <div class="card overflow-y-auto" data-type="Text" id="block-4">
-                    <!-- Содержимое блока -->
-                    <div class="card-body">
-                        <h5 class="block-title">Блок с заголовком</h5>
+                <!--Блок список чексбоксов-->
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div
+                        class="card overflow-y-auto"
+                        id="block-1"
+                        data-type="Checklist">
+                        <!-- Содержимое блока -->
+                        <div class="card-body">
+                            <h5 class="block-title"></h5>
 
-                        <p class="pre-text">Текст блока. Текст блока. Текст блока. Текст блока. Текст
-                            блока. Текст
-                            блока. Текст блока.
-                            Текст блока. Текст блока. Текст блока. Текст блока. Текст блока. Текст блока. Текст блока.
-                            Текст
-                            блока. Текст блока. Текст блока. Текст блока. Текст блока. Текст блока. Текст блока. Текст
-                            блока.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!--Блок добавления блоков-->
-            <div class="col-lg-4 col-sm-6 col-12">
-                <div class="card" data-type="AddBlock">
-                    <!-- Содержимое блока -->
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center align-items-center h-100">
-                            <button class="btn btn-link btn-add-big" data-bs-toggle="dropdown">
-                                <i class="bi bi-plus-circle"></i>
-                            </button>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item btn-add-block" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#modalChecklist">Чек-лист</a></li>
-                                <li><a class="dropdown-item btn-add-block" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#modalText">Текст</a></li>
-                                <li><a class="dropdown-item btn-add-block" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#modalImage">Изображение</a></li>
-                                <li><a class="dropdown-item btn-add-block" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#modalLinks">Ссылки</a></li>
+                            <ul class="list-unstyled b-list mb-0">
+                                <li class="form-check mb-3" data-item-id="1">
+                                    <label class="form-check-label">
+                                        <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            name="option1"
+                                            checked />
+                                        Элемент 1
+                                    </label>
+                                </li>
+                                <li class="form-check mb-3" data-item-id="2">
+                                    <label class="form-check-label">
+                                        <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            name="option2"
+                                            checked />
+                                        Элемент 2
+                                    </label>
+                                </li>
+                                <li class="form-check mb-3" data-item-id="3">
+                                    <label class="form-check-label">
+                                        <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            name="option3" />
+                                        Элемент 3 тыры пыры подлинннее что-то
+                                    </label>
+                                </li>
+                                <li class="form-check mb-3" data-item-id="4">
+                                    <label class="form-check-label">
+                                        <input
+                                            type="checkbox"
+                                            class="form-check-input"
+                                            name="option4" />
+                                        Элемент 4
+                                    </label>
+                                </li>
                             </ul>
+
+                            <div class="d-flex">
+                                <button
+                                    class="btn btn-link mx-auto btn-add-sm btn-add-item">
+                                    <i class="bi bi-plus-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Блок изображений-->
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div
+                        class="card overflow-y-auto"
+                        data-type="Image"
+                        id="block-2">
+                        <!-- Содержимое блока -->
+                        <div class="card-body">
+                            <h5 class="block-title"></h5>
+                            <div
+                                class="d-flex align-items-center justify-content-center h-100">
+                                <img src="/img/img1.jpeg" class="max-hw-100" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Блок ссылок-->
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div
+                        class="card overflow-y-auto"
+                        data-type="Links"
+                        id="block-3">
+                        <!-- Содержимое блока -->
+                        <div class="card-body">
+                            <h5 class="block-title"></h5>
+                            <ul class="list-unstyled b-list mb-0">
+                                <li class="mb-3">
+                                    <a
+                                        href="https://github.com"
+                                        data-item-id="1"
+                                        target="_blank"
+                                        >GitHub</a
+                                    >
+                                </li>
+                                <li class="mb-3">
+                                    <a
+                                        href="https://www.google.com"
+                                        data-item-id="2"
+                                        target="_blank"
+                                        >Google</a
+                                    >
+                                </li>
+                                <li class="mb-3">
+                                    <a
+                                        href="https://ru.wikipedia.org"
+                                        data-item-id="3"
+                                        target="_blank"
+                                        >Википедия</a
+                                    >
+                                </li>
+                                <li class="mb-3">
+                                    <a
+                                        href="https://vk.com"
+                                        data-item-id="4"
+                                        target="_blank"
+                                        >ВКонтакте</a
+                                    >
+                                </li>
+                            </ul>
+
+                            <div class="d-flex">
+                                <button
+                                    class="btn btn-link mx-auto btn-add-sm btn-add-item">
+                                    <i class="bi bi-plus-circle"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Блок текста-->
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div
+                        class="card overflow-y-auto"
+                        data-type="Text"
+                        id="block-4">
+                        <!-- Содержимое блока -->
+                        <div class="card-body">
+                            <h5 class="block-title">Блок с заголовком</h5>
+
+                            <p class="pre-text">
+                                Текст блока. Текст блока. Текст блока. Текст
+                                блока. Текст блока. Текст блока. Текст блока.
+                                Текст блока. Текст блока. Текст блока. Текст
+                                блока. Текст блока. Текст блока. Текст блока.
+                                Текст блока. Текст блока. Текст блока. Текст
+                                блока. Текст блока. Текст блока. Текст блока.
+                                Текст блока.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Блок добавления блоков-->
+                <div class="col-lg-4 col-sm-6 col-12">
+                    <div class="card" data-type="AddBlock">
+                        <!-- Содержимое блока -->
+                        <div class="card-body">
+                            <div
+                                class="d-flex justify-content-center align-items-center h-100">
+                                <button
+                                    class="btn btn-link btn-add-big"
+                                    data-bs-toggle="dropdown">
+                                    <i class="bi bi-plus-circle"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a
+                                            class="dropdown-item btn-add-block"
+                                            href="#"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#modalChecklist"
+                                            >Чек-лист</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item btn-add-block"
+                                            href="#"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#modalText"
+                                            >Текст</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item btn-add-block"
+                                            href="#"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#modalImage"
+                                            >Изображение</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a
+                                            class="dropdown-item btn-add-block"
+                                            href="#"
+                                            data-bs-toggle="modal"
+                                            data-bs-target="#modalLinks"
+                                            >Ссылки</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
 
-    <!-- Модальные окна блоков-->
+        <!-- Модальные окна блоков-->
 
-    <!--Модальное окно проекта-->
-    <div class="modal fade modal-block" id="modalProject" tabindex="-1">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Проект</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <h6>Название проекта</h6>
-                        <input type="text" name="blockTitle" class="form-control" maxlength="64"
-                            placeholder="Введите название проекта">
+        <!--Модальное окно проекта-->
+        <div class="modal fade modal-block" id="modalProject" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Проект</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"></button>
                     </div>
-                    <div class="mb-3">
-                        <h6>Статус проекта</h6>
-                        <div class="d-flex align-items-center">
-                            <div id="statusCircle" class="status-circle status-active"></div>
-                            <select name="projectStatus" class="form-select flex-grow-1 w-auto">
-                                <option value="active" selected>Активен</option>
-                                <option value="completed">Завершен</option>
-                                <option value="closed">Закрыт</option>
-                                <option value="frozen">Заморожен</option>
-                                <option value="not-started">Не начат</option>
-                                <option value="undefined">Не задан</option>
-                            </select>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <h6>Название проекта</h6>
+                            <input
+                                type="text"
+                                name="blockTitle"
+                                class="form-control"
+                                maxlength="64"
+                                placeholder="Введите название проекта" />
+                        </div>
+                        <div class="mb-3">
+                            <h6>Статус проекта</h6>
+                            <div class="d-flex align-items-center">
+                                <div
+                                    id="statusCircle"
+                                    class="status-circle status-active"></div>
+                                <select
+                                    name="projectStatus"
+                                    class="form-select flex-grow-1 w-auto">
+                                    <option value="active" selected>
+                                        Активен
+                                    </option>
+                                    <option value="completed">Завершен</option>
+                                    <option value="closed">Закрыт</option>
+                                    <option value="frozen">Заморожен</option>
+                                    <option value="not-started">
+                                        Не начат
+                                    </option>
+                                    <option value="undefined">Не задан</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <h6>Краткое описание</h6>
+                            <textarea
+                                name="shortDescription"
+                                class="input-content form-control"
+                                rows="2"
+                                placeholder="Введите краткое описание (необязательно)"
+                                maxlength="128">
+                            </textarea>
+                        </div>
+                        <div class="mb-3">
+                            <h6>Полное описание</h6>
+                            <textarea
+                                name="description"
+                                class="input-content form-control"
+                                rows="3"
+                                placeholder="Введите описание проекта (необязательно)"
+                                maxlength="2048">
+                            </textarea>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <h6>Краткое описание</h6>
-                        <textarea name="shortDescription" class="input-content form-control" rows="2"
-                            placeholder="Введите краткое описание (необязательно)" maxlength="128">
-                        </textarea>
-                    </div>
-                    <div class="mb-3">
-                        <h6>Полное описание</h6>
-                        <textarea name="description" class="input-content form-control" rows="3"
-                            placeholder="Введите описание проекта (необязательно)" maxlength="2048">
-                        </textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                    <button type="button" class="btn btn-primary" onclick="submitModal('Project')">
-                        Добавить блок
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Модальное окно чек-листа-->
-    <div class="modal fade modal-block" id="modalChecklist" tabindex="-1">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Чек-лист</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>Название чек-листа</h6>
-                    <input type="text" name="blockTitle" class="form-control mb-3"
-                        placeholder="Введите название чек-листа (необязательно)" maxlength="128">
-
-                    <h6>Элементы чек-листа</h6>
-                    <div class="modal-checklist-content b-list">
-                        <!--Генерируются-->
-                    </div>
-
-                    <div class="d-flex">
-                        <button class="btn btn-link mx-auto btn-add-sm"
-                            onclick="addFocusItem(getModalElementFromType('Checklist'))">
-                            <i class="bi bi-plus-circle"></i>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Отмена
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="submitModal('Project')">
+                            Добавить блок
                         </button>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                    <button type="button" class="btn btn-primary" onclick="submitModal('Checklist')">
-                        Добавить блок
-                    </button>
-                </div>
             </div>
         </div>
-    </div>
 
-    <!--Модальное окно текста-->
-    <div class="modal fade modal-block" id="modalText" tabindex="-1">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Текст</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>Название текста</h6>
-                    <input type="text" name="blockTitle" class="form-control mb-3"
-                        placeholder="Введите название текста (необязательно)" maxlength="128">
-
-                    <h6>Текст</h6>
-                    <textarea class='input-content form-control' rows='5' placeholder='Введите текст' maxlength="16384">
-                    </textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                    <button type="button" class="btn btn-primary" onclick="submitModal('Text')">
-                        Добавить блок
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--Модальное окно изображения-->
-    <div class="modal fade modal-block" id="modalImage" tabindex="-1">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Изображение</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>Название изображения</h6>
-                    <input type="text" name="blockTitle" class="form-control mb-3"
-                        placeholder="Введите название изображения (необязательно)" maxlength="128">
-
-                    <h6>Выбор изображения</h6>
-                    <div class="d-flex justify-content-center">
-                        <img id="imagePreview rounded w-100 mx-auto my-2" src="">
+        <!--Модальное окно чек-листа-->
+        <div class="modal fade modal-block" id="modalChecklist" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Чек-лист</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"></button>
                     </div>
-                    <input type="file" class="form-control mb-3" accept="image/*" onchange="previewImage(event)">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                    <button type="button" class="btn btn-primary" onclick="submitModal('Image')">
-                        Добавить блок
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
+                    <div class="modal-body">
+                        <h6>Название чек-листа</h6>
+                        <input
+                            type="text"
+                            name="blockTitle"
+                            class="form-control mb-3"
+                            placeholder="Введите название чек-листа (необязательно)"
+                            maxlength="128" />
 
-    <!--Модальное окно ссылок-->
-    <div class="modal fade modal-block" id="modalLinks" tabindex="-1">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Ссылки</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>Название блока ссылок</h6>
-                    <input type="text" name="blockTitle" class="form-control mb-3"
-                        placeholder="Введите название блока ссылок (необязательно)" maxlength="128">
+                        <h6>Элементы чек-листа</h6>
+                        <div class="modal-checklist-content b-list">
+                            <!--Генерируются-->
+                        </div>
 
-                    <h6>Ссылки</h6>
-                    <div class="modal-links-content">
-                        <!--Генерируются-->
+                        <div class="d-flex">
+                            <button
+                                class="btn btn-link mx-auto btn-add-sm"
+                                onclick="addFocusItem(getModalElementFromType('Checklist'))">
+                                <i class="bi bi-plus-circle"></i>
+                            </button>
+                        </div>
                     </div>
-
-                    <div class="d-flex">
-                        <button class="btn btn-link mx-auto btn-add-sm"
-                            onclick="addFocusItem(getModalElementFromType('Links'))">
-                            <i class="bi bi-plus-circle"></i>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Отмена
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="submitModal('Checklist')">
+                            Добавить блок
                         </button>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                    <button type="button" class="btn btn-primary" onclick="submitModal('Links')">
-                        Добавить блок
-                    </button>
+            </div>
+        </div>
+
+        <!--Модальное окно текста-->
+        <div class="modal fade modal-block" id="modalText" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Текст</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>Название текста</h6>
+                        <input
+                            type="text"
+                            name="blockTitle"
+                            class="form-control mb-3"
+                            placeholder="Введите название текста (необязательно)"
+                            maxlength="128" />
+
+                        <h6>Текст</h6>
+                        <textarea
+                            class="input-content form-control"
+                            rows="5"
+                            placeholder="Введите текст"
+                            maxlength="16384">
+                        </textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Отмена
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="submitModal('Text')">
+                            Добавить блок
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
+        <!--Модальное окно изображения-->
+        <div class="modal fade modal-block" id="modalImage" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Изображение</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>Название изображения</h6>
+                        <input
+                            type="text"
+                            name="blockTitle"
+                            class="form-control mb-3"
+                            placeholder="Введите название изображения (необязательно)"
+                            maxlength="128" />
 
-    <!--Модальные окна для удаления-->
-    <!--Модальное окно для удаления блока-->
-    <div class="modal fade" id="modalDeleteBlock" tabindex="-1">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Удаление блока</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>Вы уверены, что хотите удалить блок?</h6>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                    <button type="button" class="btn btn-danger" onclick="deleteBlock()">
-                        Удалить блок
-                    </button>
+                        <h6>Выбор изображения</h6>
+                        <div class="d-flex justify-content-center">
+                            <img
+                                id="imagePreview rounded w-100 mx-auto my-2"
+                                src="" />
+                        </div>
+                        <input
+                            type="file"
+                            class="form-control mb-3"
+                            accept="image/*"
+                            onchange="previewImage(event)" />
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Отмена
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="submitModal('Image')">
+                            Добавить блок
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!--Модальное окно для удаления проекта-->
-    <div class="modal fade" id="modalDeleteProject" tabindex="-1">
-        <div class="modal-dialog modal-dialog-scrollable">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Удаление проекта Название_проекта</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <h6>Вы уверены, что хотите удалить весь проект? (безвозвратно)</h6>
-                    <p class="mb-1">Для подтверждени введите название проекта:</p>
-                    <input type="text" name="projectTitle" class="form-control mb-3" placeholder="Название проекта"
-                        maxlength="256">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Отмена</button>
-                    <button type="button" class="btn btn-danger" onclick="deleteProject()">
-                        Удалить проект
-                    </button>
+        <!--Модальное окно ссылок-->
+        <div class="modal fade modal-block" id="modalLinks" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Ссылки</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>Название блока ссылок</h6>
+                        <input
+                            type="text"
+                            name="blockTitle"
+                            class="form-control mb-3"
+                            placeholder="Введите название блока ссылок (необязательно)"
+                            maxlength="128" />
+
+                        <h6>Ссылки</h6>
+                        <div class="modal-links-content">
+                            <!--Генерируются-->
+                        </div>
+
+                        <div class="d-flex">
+                            <button
+                                class="btn btn-link mx-auto btn-add-sm"
+                                onclick="addFocusItem(getModalElementFromType('Links'))">
+                                <i class="bi bi-plus-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Отмена
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            onclick="submitModal('Links')">
+                            Добавить блок
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <footer class="footer">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="footer-logo">MyS</h1>
-            <div class="footer-links">
-                <a href="/about.html" class="footer-link">About Us</a>
-                <a href="/faq.html" class="footer-link">FAQ</a>
+        <!--Модальные окна для удаления-->
+        <!--Модальное окно для удаления блока-->
+        <div class="modal fade" id="modalDeleteBlock" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Удаление блока</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>Вы уверены, что хотите удалить блок?</h6>
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Отмена
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-danger"
+                            onclick="deleteBlock()">
+                            Удалить блок
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </footer>
 
+        <!--Модальное окно для удаления проекта-->
+        <div class="modal fade" id="modalDeleteProject" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            Удаление проекта Название_проекта
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h6>
+                            Вы уверены, что хотите удалить весь проект?
+                            (безвозвратно)
+                        </h6>
+                        <p class="mb-1">
+                            Для подтверждени введите название проекта:
+                        </p>
+                        <input
+                            type="text"
+                            name="projectTitle"
+                            class="form-control mb-3"
+                            placeholder="Название проекта"
+                            maxlength="256" />
+                    </div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal">
+                            Отмена
+                        </button>
+                        <button
+                            type="button"
+                            class="btn btn-danger"
+                            onclick="deleteProject()">
+                            Удалить проект
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <script src="/js/jquery-3.7.1.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <footer class="footer">
+            <div
+                class="container d-flex justify-content-between align-items-center">
+                <h1 class="footer-logo">MyS</h1>
+                <div class="footer-links">
+                    <a href="/about.html" class="footer-link">About Us</a>
+                    <a href="/faq.html" class="footer-link">FAQ</a>
+                </div>
+            </div>
+        </footer>
 
-    <script src="/js/project_modal-blocks.js"></script>
-    <script src="/js/status.js"></script>
-    <script src="/js/music.js"></script>
+        <script src="/js/jquery-3.7.1.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-</body>
-
+        <script src="/js/project_modal-blocks.js"></script>
+        <script src="/js/status.js"></script>
+        <script src="/js/music.js"></script>
+    </body>
 </html>

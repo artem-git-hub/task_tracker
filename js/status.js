@@ -1,4 +1,3 @@
-
 $('select[name="projectStatus"]').on('change', function () {
     let selector = $(this);
     let selectedStatus = selector.val();
@@ -9,7 +8,9 @@ $('select[name="projectStatus"]').on('change', function () {
             statusCircle.removeClass().addClass('status-circle status-active');
             break;
         case 'completed':
-            statusCircle.removeClass().addClass('status-circle status-completed');
+            statusCircle
+                .removeClass()
+                .addClass('status-circle status-completed');
             break;
         case 'closed':
             statusCircle.removeClass().addClass('status-circle status-closed');
@@ -18,10 +19,14 @@ $('select[name="projectStatus"]').on('change', function () {
             statusCircle.removeClass().addClass('status-circle status-frozen');
             break;
         case 'not-started':
-            statusCircle.removeClass().addClass('status-circle status-not-started');
+            statusCircle
+                .removeClass()
+                .addClass('status-circle status-not-started');
             break;
         case 'undefined':
-            statusCircle.removeClass().addClass('status-circle status-undefined');
+            statusCircle
+                .removeClass()
+                .addClass('status-circle status-undefined');
             break;
     }
 });

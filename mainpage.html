@@ -1,52 +1,72 @@
 <!DOCTYPE html>
 <html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MyS</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyS</title>
+        <!-- Подключаем Bootstrap CSS -->
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Подключаем иконки Bootstrap -->
+        <link
+            href="/bootstrap/icons/bootstrap-icons.min.css"
+            rel="stylesheet" />
+        <!-- Подключаем стили -->
+        <link href="/css/global.css" rel="stylesheet" />
+        <link href="/css/mainpage.css" rel="stylesheet" />
+    </head>
 
-    <!-- Подключаем Bootstrap CSS -->
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Подключаем иконки Bootstrap -->
-    <link href="/bootstrap/icons/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Подключаем стили -->
-    <link href="/css/global.css" rel="stylesheet">
-    <link href="/css/mainpage.css" rel="stylesheet">
-</head>
+    <body>
+        <!-- Навигационная панель -->
+        <nav class="navbar sticky-top bg-body-tertiary p-1">
+            <div
+                class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
+                <!-- Логотип слева -->
+                <div class="d-flex">
+                    <h1
+                        class="my-auto px-2 text-break"
+                        style="font-family: 'SC Portugal', serif">
+                        MyS
+                    </h1>
+                </div>
 
-<body>
-    <!-- Навигационная панель -->
-    <nav class="navbar sticky-top bg-body-tertiary p-1">
-        <div class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
+                <!-- Кнопки справа -->
+                <div class="d-flex">
+                    <!-- Кнопка "Login" с переходом на страницу входа -->
+                    <a
+                        href="login.html"
+                        class="btn border h-100 me-3 custom-btn"
+                        >Вход</a
+                    >
+                    <button class="btn border h-100 custom-btn" type="button">
+                        Регистрация
+                    </button>
+                </div>
+            </div>
+        </nav>
 
-            <!-- Логотип слева -->
-            <div class="d-flex">
-                <h1 class="my-auto px-2 text-break" style="font-family: 'SC Portugal', serif;">MyS</h1>
+        <!-- Основной контент -->
+        <div class="container d-flex mt-5">
+            <!-- Левый блок с описанием -->
+            <div class="text-left">
+                <p>
+                    MyS (Manifest your Success) — это удобный планировщик задач,
+                    который помогает вам организовать дела, управлять
+                    приоритетами и достигать целей. Используйте наш инструмент,
+                    чтобы стать продуктивнее каждый день!
+                </p>
             </div>
 
-            <!-- Кнопки справа -->
-            <div class="d-flex">
-                <!-- Кнопка "Login" с переходом на страницу входа -->
-                <a href="login.html" class="btn border h-100 me-3 custom-btn">Вход</a>
-                <button class="btn border h-100 custom-btn" type="button">Регистрация</button>
+            <!-- Правый блок с изображением и кнопкой -->
+            <div class="text-right">
+                <img
+                    src="/img/img2.jpeg"
+                    class="img-fluid"
+                    alt="Изображение планировщика" />
+                <a href="demo.html" class="btn custom-btn mt-3">
+                    Начать менять свою жизнь</a
+                >
             </div>
         </div>
-    </nav>
-
-    <!-- Основной контент -->
-    <div class="container d-flex mt-5">
-        <!-- Левый блок с описанием -->
-        <div class="text-left">
-            <p>MyS (Manifest your Success) — это удобный планировщик задач, который помогает вам организовать дела, управлять приоритетами и достигать целей. Используйте наш инструмент, чтобы стать продуктивнее каждый день!</p>
-        </div>
-
-        <!-- Правый блок с изображением и кнопкой -->
-        <div class="text-right">
-            <img src="/img/img2.jpeg" class="img-fluid" alt="Изображение планировщика">
-            <a href="demo.html" class="btn custom-btn mt-3"> Начать менять свою жизнь</a>
-        </div>
-    </div>
-</body>
-
+    </body>
 </html>

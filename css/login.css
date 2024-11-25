@@ -3,7 +3,8 @@ body {
 }
 
 .card {
-    background-color: rgba(255, 255, 255, 0.7); /* Полупрозрачный белый фон */
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Полупрозрачный белый фон */
     border: none;
     border-radius: 10px;
     box-shadow: 0px 4px 15px #0000001a;

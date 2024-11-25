@@ -1,11 +1,9 @@
-// js/theme-switcher.js
-
-function switchTheme(theme) {
-    if (theme === 'light') {
-        document.body.classList.remove('bg-dark');
-        document.body.classList.add('bg-light');
+function setTheme(button) {
+    const theme = button.dataset.theme;
+    if (theme) {
+        localStorage.setItem('bs-theme', theme);
+        document.body.dataset.bsTheme = theme;
     } else {
-        document.body.classList.remove('bg-light');
-        document.body.classList.add('bg-dark');
+        console.error('Кнопка не содержит атрибут data-theme');
     }
 }
