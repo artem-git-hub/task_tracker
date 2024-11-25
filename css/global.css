@@ -3,6 +3,9 @@ body {
     min-height: 100vh;
     font-size: 18px;
     hyphens: auto;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .mini-avatar {
@@ -18,7 +21,7 @@ body {
 .content {
     padding: 1.5rem;
     width: 100%;
-    min-height: 80vh;
+    flex: 1;
 }
 
 .up {
@@ -139,4 +142,35 @@ body::-webkit-scrollbar-track {
     border-top: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+}
+
+.footer {
+    width: 100%;
+    padding: 10px 0;
+    /* Уменьшены отступы */
+    font-family: 'SC Portugal', sans-serif;
+    border-top: 1px solid #ddd;
+    bottom: 0;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    /* Увеличенный размер шрифта для названия */
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+    /* Уменьшен интервал между ссылками */
+}
+
+.footer-link {
+    text-decoration: none;
+    font-size: 0.9rem;
+    /* Уменьшен размер шрифта */
+}
+
+.footer-link:hover {
+    text-decoration: underline;
 }

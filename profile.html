@@ -16,9 +16,9 @@
     <body>
         <!-- Profile Container (HTML code remains the same) -->
         <div
-            class="container d-flex flex-column align-items-center justify-content-center vh-100 position-relative">
+            class="content d-flex flex-column align-items-center justify-content-center vh-100 position-relative">
             <button
-                class="btn btn-light edit-button"
+                class="btn edit-button bg-body-tertiary"
                 data-bs-toggle="modal"
                 data-bs-target="#editModal">
                 <i class="bi bi-pencil-square"></i>
@@ -30,7 +30,7 @@
 
             <h2 class="text-center">Имя пользователя</h2>
             <p class="text-muted">@login</p>
-            <div class="about-section text-center">
+            <div class="about-section text-center bg-body-tertiary">
                 <p class="mb-0">
                     О себе: Здесь можно написать краткую информацию о
                     пользователе.
@@ -98,6 +98,17 @@
                 </div>
             </div>
         </div>
+
+        <footer class="footer bg-body-tertiary">
+            <div
+                class="container d-flex justify-content-between align-items-center">
+                <h1 class="footer-logo">MyS</h1>
+                <div class="footer-links">
+                    <a href="/about.html" class="footer-link">About Us</a>
+                    <a href="/faq.html" class="footer-link">FAQ</a>
+                </div>
+            </div>
+        </footer>
 
         <script src="/js/jquery-3.7.1.min.js"></script>
         <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -29,39 +29,3 @@
     font-weight: 400;
     font-style: normal;
 }
-
-.footer {
-    background-color: #f1f1f1;
-    /* Светло-серый фон */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    padding: 10px 0;
-    /* Уменьшены отступы */
-    font-family: 'SC Portugal', sans-serif;
-    border-top: 1px solid #ddd;
-}
-
-.footer-logo {
-    font-size: 1.8rem;
-    /* Уменьшенный размер шрифта для названия */
-    margin: 0;
-    color: #333;
-}
-
-.footer-links {
-    display: flex;
-    gap: 15px;
-    /* Уменьшен интервал между ссылками */
-}
-
-.footer-link {
-    color: #333;
-    text-decoration: none;
-    font-size: 0.9rem;
-    /* Уменьшен размер шрифта */
-}
-
-.footer-link:hover {
-    text-decoration: underline;
-}
