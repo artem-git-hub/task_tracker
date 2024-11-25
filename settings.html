@@ -11,8 +11,6 @@
             rel="stylesheet" />
         <link href="/css/global.css" rel="stylesheet" />
         <link href="/css/settings.css" rel="stylesheet" />
-        <!-- Подключение нового CSS файла -->
-        <script src="/js/theme-switcher.js" defer></script>
     </head>
 
     <body>
@@ -200,14 +198,14 @@
                         <button
                             class="theme-toggle-btn"
                             id="dark-theme-btn"
-                            onclick="switchTheme('dark')">
+                            data-theme="dark">
                             <i class="bi bi-moon-stars"></i>
                             <!-- Иконка луны -->
                         </button>
                         <button
                             class="theme-toggle-btn"
                             id="light-theme-btn"
-                            onclick="switchTheme('light')">
+                            data-theme="light">
                             <i class="bi bi-brightness-high"></i>
                             <!-- Иконка солнца -->
                         </button>
@@ -230,7 +228,8 @@
 
         <script src="/js/jquery-3.7.1.min.js"></script>
         <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="/js/jquery-3.7.1.min.js"></script>
-        <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="/js/theme_set.js"></script>
+        <script src="/js/theme_load.js"></script>
     </body>
 </html>

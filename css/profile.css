@@ -1,7 +1,7 @@
 /* profile.css */
 
 /* Style for the avatar */
-.avatar {
+.profile-avatar {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -10,7 +10,7 @@
     /* Avatar border */
 }
 
-.avatar img {
+.profile-avatar img {
     width: 100%;
     height: 100%;
     object-fit: cover;
