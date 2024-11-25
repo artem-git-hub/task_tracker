@@ -30,12 +30,12 @@ body {
 
 .btn-add-sm {
     font-size: 2rem;
-    color: rgb(90, 90, 90);
+    color: inherit;
 }
 
 .btn-add-big {
     font-size: 5rem;
-    color: rgb(90, 90, 90);
+    color: inherit;
 }
 
 .form-check-input:focus {
@@ -173,4 +173,12 @@ body::-webkit-scrollbar-track {
 
 .footer-link:hover {
     text-decoration: underline;
+}
+
+.modal .btn-link {
+    color: inherit;
+}
+
+footer a {
+    color: inherit;
 }
