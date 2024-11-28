@@ -2,10 +2,14 @@ html,
 body {
     min-height: 100vh;
     font-size: 18px;
-    hyphens: auto;
 
     display: flex;
     flex-direction: column;
+}
+
+.card {
+    box-shadow: 5px 4px 3px rgba(0, 0, 0, 0.1);
+    hyphens: auto;
 }
 
 .mini-avatar {
