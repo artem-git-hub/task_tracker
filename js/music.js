@@ -1,6 +1,12 @@
 $(function () {
     $('#loadPlaylist').on('click', function () {
         let link = $('#playlistLink').val().trim();
+
+        if (link.length == 0) {
+            link =
+                'https://music.yandex.ru/users/sv1tlana.prudnikova/playlists/1009';
+        }
+
         let regex =
             /^(?:(?:https?:\/\/)?music\.yandex\.ru\/users\/([^\/]+)\/playlists\/(\d+))$/;
 
