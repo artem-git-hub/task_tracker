@@ -103,19 +103,3 @@
     margin: -0.9rem auto 1rem 27px;
     font-weight: 400;
 }
-
-@font-face {
-    font-family: 'SC Portugal';
-    src: url('fonts/SC Portugal.woff2') format('woff2'),
-        url('fonts/SC Portugal.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('fonts/Montserrat.woff2') format('woff2'),
-        url('fonts/Montserrat.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}

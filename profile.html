@@ -14,7 +14,76 @@
     </head>
 
     <body>
-        <!-- Profile Container (HTML code remains the same) -->
+        <!-- Панель навигации -->
+        <nav class="navbar sticky-top bg-body-tertiary p-1">
+            <div
+                class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
+                <!-- Элементы слева -->
+                <div class="d-flex">
+                    <!-- Логотип -->
+                    <h1 class="my-auto px-2 logo">
+                        <a href="/home.html">MyS</a>
+                    </h1>
+                </div>
+
+                <!-- Элементы справа -->
+                <div class="d-flex">
+                    <!-- Кнопка главного меню -->
+                    <button
+                        class="btn border h-100"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#mainMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <!-- Главное меню -->
+                <div
+                    class="offcanvas offcanvas-end bg-body-tertiary navbar-nav"
+                    tabindex="-1"
+                    id="mainMenu">
+                    <div class="offcanvas-header px-5">
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body text-center py-1">
+                        <ul class="navbar-nav h-100">
+                            <h1 class="mb-3 logo">MyS</h1>
+                            <li class="nav-item">
+                                <a href="/profile.html">
+                                    <div class="menu-avatar my-2 mx-auto">
+                                        <img
+                                            src="/img/avatar.jpeg"
+                                            alt="Аватар пользователя" />
+                                    </div>
+                                    <h5 class="mb-1">Имя пользователя</h5>
+                                    <p class="mb-5">@login</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/home.html">
+                                    <h4 class="mb-4">Проекты</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/settings.html">
+                                    <h4 class="mb-4">Настройки</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item mt-auto">
+                                <a href="/mainpage.html">
+                                    <h4 class="mb-4">Выход</h4>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
         <div
             class="content d-flex flex-column align-items-center justify-content-center vh-100 position-relative">
             <button
@@ -25,7 +94,7 @@
             </button>
 
             <div class="profile-avatar mb-3">
-                <img src="/img/avatar.jpeg" alt="User Avatar" />
+                <img src="/img/avatar.jpeg" alt="Аватар пользователя" />
             </div>
 
             <h2 class="text-center">Имя пользователя</h2>
