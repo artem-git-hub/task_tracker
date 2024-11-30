@@ -85,7 +85,7 @@
 
         <div class="content">
             <!-- Вкладки для переключения -->
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <ul class="nav nav-tabs" id="settingsTabs" role="tablist">
                 <li class="nav-item" role="presentation">
                     <a
                         class="nav-link active"
@@ -93,8 +93,6 @@
                         data-bs-toggle="tab"
                         href="#profile"
                         role="tab"
-                        aria-controls="profile"
-                        aria-selected="true"
                         >Профиль</a
                     >
                 </li>
@@ -105,19 +103,16 @@
                         data-bs-toggle="tab"
                         href="#themes"
                         role="tab"
-                        aria-controls="themes"
-                        aria-selected="false"
                         >Темы</a
                     >
                 </li>
             </ul>
             <!-- Контент вкладок -->
-            <div class="tab-content" id="myTabContent">
+            <div class="tab-content" id="settingsTabContent">
                 <div
                     class="tab-pane fade show active"
                     id="profile"
-                    role="tabpanel"
-                    aria-labelledby="profile-tab">
+                    role="tabpanel">
                     <!-- Контент профиля -->
                     <div class="my-4">
                         <h6>Изменить почту</h6>
@@ -152,11 +147,7 @@
                             placeholder="Новый пароль..." />
                     </div>
                 </div>
-                <div
-                    class="tab-pane fade"
-                    id="themes"
-                    role="tabpanel"
-                    aria-labelledby="themes-tab">
+                <div class="tab-pane fade" id="themes" role="tabpanel">
                     <!-- Переключатели тем -->
                     <div class="d-flex justify-content-center my-4">
                         <button

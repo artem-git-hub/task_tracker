@@ -17,91 +17,112 @@
         style="background: url('/img/img2.jpeg') no-repeat center center/cover">
         <div class="card text-center p-4" style="width: 400px">
             <div class="card-body">
-                <!-- Переключение между формами Входа и Регистрации -->
-                <div class="d-flex justify-content-center mb-4">
-                    <a
-                        href="#"
-                        id="loginLink"
-                        class="text-decoration-none mx-2 active-link"
-                        onclick="toggleForm('login'); return false;"
-                        >Вход</a
-                    >
-                    <a
-                        href="#"
-                        id="registerLink"
-                        class="text-decoration-none mx-2"
-                        onclick="toggleForm('register'); return false;"
-                        >Регистрация</a
-                    >
-                </div>
-
-                <!-- Форма Логина -->
-                <form id="loginForm">
-                    <div class="mb-3">
-                        <input
-                            type="text"
-                            class="form-control bg-light border-0 rounded-pill"
-                            placeholder="Логин"
-                            required />
-                    </div>
-                    <div class="mb-3">
-                        <input
-                            type="password"
-                            class="form-control bg-light border-0 rounded-pill"
-                            placeholder="Пароль"
-                            required />
-                    </div>
-                    <div
-                        class="form-check d-flex align-items-center justify-content-start mb-3">
-                        <input
-                            type="checkbox"
-                            class="form-check-input"
-                            id="rememberMe" />
-                        <label class="form-check-label ms-2" for="rememberMe"
-                            >запомнить меня</label
+                <!-- Вкладки для переключения -->
+                <ul
+                    class="nav justify-content-center nav-underline mb-4"
+                    id="loginTabs"
+                    role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a
+                            class="nav-link active"
+                            id="profile-tab"
+                            data-bs-toggle="tab"
+                            href="#loginForm"
+                            role="tab"
+                            >Вход</a
                         >
-                    </div>
-                    <a href="home.html" class="btn btn-light w-100 rounded-pill"
-                        >Login</a
-                    >
-                </form>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a
+                            class="nav-link"
+                            id="themes-tab"
+                            data-bs-toggle="tab"
+                            href="#registerForm"
+                            role="tab"
+                            >Регистрация</a
+                        >
+                    </li>
+                </ul>
 
-                <!-- Форма Регистрации -->
-                <form id="registerForm" style="display: none">
-                    <div class="mb-3">
-                        <input
-                            type="text"
-                            class="form-control bg-light border-0 rounded-pill"
-                            placeholder="Имя пользователя"
-                            required />
-                    </div>
-                    <div class="mb-3">
-                        <input
-                            type="text"
-                            class="form-control bg-light border-0 rounded-pill"
-                            placeholder="Логин"
-                            required />
-                    </div>
-                    <div class="mb-3">
-                        <input
-                            type="password"
-                            class="form-control bg-light border-0 rounded-pill"
-                            placeholder="Пароль"
-                            required />
-                    </div>
-                    <div class="mb-3">
-                        <input
-                            type="password"
-                            class="form-control bg-light border-0 rounded-pill"
-                            placeholder="Повторите пароль"
-                            required />
-                    </div>
-                    <button
-                        type="submit"
-                        class="btn btn-primary w-100 rounded-pill">
-                        Зарегистрироваться
-                    </button>
-                </form>
+                <div class="tab-content" id="loginTabContent">
+                    <!-- Форма Логина -->
+                    <form
+                        id="loginForm"
+                        class="tab-pane fade show active"
+                        role="tabpanel">
+                        <div class="mb-3">
+                            <input
+                                type="text"
+                                class="form-control bg-light border-0 rounded-pill"
+                                placeholder="Логин"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <input
+                                type="password"
+                                class="form-control bg-light border-0 rounded-pill"
+                                placeholder="Пароль"
+                                required />
+                        </div>
+                        <div
+                            class="form-check d-flex align-items-center justify-content-start mb-3">
+                            <input
+                                type="checkbox"
+                                class="form-check-input"
+                                id="rememberMe" />
+                            <label
+                                class="form-check-label ms-2"
+                                for="rememberMe"
+                                >запомнить меня</label
+                            >
+                        </div>
+                        <a
+                            href="home.html"
+                            class="btn btn-light w-100 rounded-pill"
+                            >Login</a
+                        >
+                    </form>
+
+                    <!-- Форма Регистрации -->
+                    <form
+                        id="registerForm"
+                        class="tab-pane fade"
+                        role="tabpanel">
+                        <div class="mb-3">
+                            <input
+                                type="text"
+                                class="form-control bg-light border-0 rounded-pill"
+                                placeholder="Имя пользователя"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <input
+                                type="text"
+                                class="form-control bg-light border-0 rounded-pill"
+                                placeholder="Логин"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <input
+                                type="password"
+                                class="form-control bg-light border-0 rounded-pill"
+                                placeholder="Пароль"
+                                required />
+                        </div>
+                        <div class="mb-3">
+                            <input
+                                type="password"
+                                class="form-control bg-light border-0 rounded-pill"
+                                placeholder="Повторите пароль"
+                                required />
+                        </div>
+                        <button
+                            type="submit"
+                            class="btn btn-primary w-100 rounded-pill">
+                            Зарегистрироваться
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
 
