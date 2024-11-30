@@ -233,3 +233,11 @@ footer a {
     font-weight: 400;
     font-style: normal;
 }
+
+.text-inherit {
+    color: inherit;
+}
+
+.h1-2 {
+    font-size: calc(1.35rem + 1.2vw);
+}
