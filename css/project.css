@@ -72,34 +72,3 @@
     box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.6);
     /* Тень вокруг кнопки */
 }
-
-/* Подсветка для ссылок в модальных окнах */
-.modal .btn-link:hover {
-    color: #d9534f;
-    /* Бледно-красный цвет текста при наведении */
-}
-
-/* Размытие и стили для модального окна */
-.modal-backdrop {
-    backdrop-filter: blur(5px);
-    /* Добавляет размытие фона */
-    background-color: rgba(0, 0, 0, 0.3);
-    /* Полупрозрачный затемненный фон */
-}
-
-.modal {
-    backdrop-filter: blur(2px);
-    /* Легкое размытие внутри модального окна */
-}
-
-.modal-content {
-    border-radius: 8px;
-    /* Закругленные края */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    /* Тень для глубины */
-}
-
-.error-checkbox {
-    margin: -0.9rem auto 1rem 27px;
-    font-weight: 400;
-}
