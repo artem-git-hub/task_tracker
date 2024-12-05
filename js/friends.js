@@ -8,7 +8,7 @@ $(function () {
         const friendElement = $(this).closest('.friend-item');
         const userName = friendElement.find('.friend-name').text();
         $('#modalDeleteFriend .question').text(
-            `Вы уверены, что хотите удалить ${userName} из друзей проекта?`
+            `Вы уверены, что хотите удалить "${userName}" из друзей проекта?`
         );
     });
 });
