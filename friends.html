@@ -10,6 +10,7 @@
             href="/bootstrap/icons/bootstrap-icons.min.css"
             rel="stylesheet" />
         <link href="/css/global.css" rel="stylesheet" />
+        <link href="/css/friends.css" rel="stylesheet" />
     </head>
 
     <body>
@@ -84,86 +85,93 @@
         </nav>
 
         <div class="content">
-            <div class="d-flex gx-5 gy-4">
-                <h1 class="h1-2">
-                    Друзья проекта
-                    <a
-                        class="btn-link text-inherit text-decoration-none"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modalAddFriends">
-                        <i class="bi bi-plus-circle"></i>
-                    </a>
-                </h1>
-            </div>
+            <div
+                class="col-xl-6 offset-xl-3 col-md-8 offset-md-2 border rounded p-sm-5 p-2">
+                <div class="d-flex gx-5 gy-4">
+                    <h1 class="h1-2">
+                        Друзья проекта
+                        <a
+                            class="btn-link text-inherit text-decoration-none"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalAddFriends">
+                            <i class="bi bi-plus-circle"></i>
+                        </a>
+                    </h1>
+                </div>
 
-            <div class="my-auto">
-                <ul class="list-unstyled">
-                    <li class="my-4 friend-item">
-                        <div class="d-flex">
-                            <div class="dropdown my-auto">
-                                <button
-                                    class="btn btn-block-menu py-0 my-auto"
-                                    type="button"
-                                    data-bs-toggle="dropdown">
-                                    <i class="bi bi-three-dots"></i>
-                                </button>
-                                <ul class="dropdown-menu">
+                <div class="my-auto">
+                    <ul class="list-unstyled">
+                        <li class="my-4 friend-item">
+                            <div class="d-flex">
+                                <div class="dropdown my-auto">
                                     <button
-                                        class="dropdown-item btn btn-link btn-deleteFriend"
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#modalDeleteFriend">
-                                        Удалить друга
+                                        class="btn btn-block-menu py-0 my-auto"
+                                        type="button"
+                                        data-bs-toggle="dropdown">
+                                        <i class="bi bi-three-dots"></i>
                                     </button>
-                                </ul>
-                            </div>
-                            <img
-                                src="/img/avatar.jpeg"
-                                class="my-auto mx-3 rounded avatar" />
-                            <div>
-                                <h5 class="py-0 my-auto friend-name">
-                                    Имя пользователя
-                                </h5>
-                                <h6 class="py-0 my-auto muted friend-login">
-                                    @vasiliy
-                                </h6>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="my-4 friend-item">
-                        <div class="d-flex">
-                            <div class="dropdown my-auto">
-                                <button
-                                    class="btn btn-block-menu py-0 my-auto"
-                                    type="button"
-                                    data-bs-toggle="dropdown">
-                                    <i class="bi bi-three-dots"></i>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li>
+                                    <ul class="dropdown-menu">
                                         <button
-                                            class="dropdown-item btn btn-link btn-deleteFriend"
+                                            class="dropdown-item btn btn-link btn-deleteFriend text-danger"
                                             data-bs-toggle="modal"
                                             data-bs-target="#modalDeleteFriend">
                                             Удалить друга
                                         </button>
-                                    </li>
-                                </ul>
+                                    </ul>
+                                </div>
+                                <img
+                                    src="/img/avatar.jpeg"
+                                    class="my-auto mx-sm-3 mx-1 rounded avatar" />
+                                <div>
+                                    <h6
+                                        class="py-0 my-auto friend-name hyphens text-break">
+                                        Имя пользователя
+                                    </h6>
+                                    <p
+                                        class="py-0 my-auto muted friend-login hyphens text-break">
+                                        @vasiliy
+                                    </p>
+                                </div>
                             </div>
-                            <img
-                                src="/img/avatar.jpeg"
-                                class="my-auto mx-3 rounded avatar" />
-                            <div>
-                                <h5 class="py-0 my-auto friend-name">
-                                    Имя потолкользователя
-                                </h5>
-                                <h6 class="py-0 my-auto muted friend-login">
-                                    @vasiliy2
-                                </h6>
+                        </li>
+
+                        <li class="my-4 friend-item">
+                            <div class="d-flex">
+                                <div class="dropdown my-auto">
+                                    <button
+                                        class="btn btn-block-menu py-0 my-auto"
+                                        type="button"
+                                        data-bs-toggle="dropdown">
+                                        <i class="bi bi-three-dots"></i>
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <button
+                                                class="dropdown-item btn btn-link btn-deleteFriend text-danger"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#modalDeleteFriend">
+                                                Удалить друга
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <img
+                                    src="/img/avatar.jpeg"
+                                    class="my-auto mx-sm-3 mx-1 rounded avatar" />
+                                <div>
+                                    <h6
+                                        class="py-0 my-auto friend-name hyphens text-break">
+                                        Другое имя пользователя
+                                    </h6>
+                                    <p
+                                        class="py-0 my-auto muted friend-login hyphens text-break">
+                                        @vasiliy2
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                    </li>
-                </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <!--Модальное окно для добавления друга-->
@@ -200,10 +208,10 @@
                                         </button>
                                         <img
                                             src="/img/avatar.jpeg"
-                                            class="my-auto mx-3 rounded avatar" />
+                                            class="my-auto mx-sm-3 mx-1 rounded avatar" />
                                         <div>
                                             <h6 class="py-0 my-auto">
-                                                Имя пользователя
+                                                Имя 3 пользователя
                                             </h6>
                                             <p class="py-0 my-auto muted">
                                                 @vasiliy3
@@ -220,10 +228,10 @@
                                         </button>
                                         <img
                                             src="/img/avatar.jpeg"
-                                            class="my-auto mx-3 rounded avatar" />
+                                            class="my-auto mx-sm-3 mx-1 rounded avatar" />
                                         <div>
                                             <h6 class="py-0 my-auto">
-                                                Имя потолкользователя
+                                                Имя 4 пользователя
                                             </h6>
                                             <p class="py-0 my-auto muted">
                                                 @vasiliy4

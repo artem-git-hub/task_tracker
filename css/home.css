@@ -13,3 +13,7 @@
     flex-grow: 1;
     text-align: center;
 }
+
+.status-circle{
+    margin-bottom: 5px;
+}

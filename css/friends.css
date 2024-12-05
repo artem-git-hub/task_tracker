@@ -1,0 +1,4 @@
+.friend-name, .friend-login {
+    word-wrap: break-word;
+    hyphens: auto;
+}
