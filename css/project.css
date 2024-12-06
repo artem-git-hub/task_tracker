@@ -72,3 +72,7 @@
     box-shadow: 0 0 0 3px rgba(217, 83, 79, 0.6);
     /* Тень вокруг кнопки */
 }
+
+#imagePreview {
+    max-width: 75%;
+}
