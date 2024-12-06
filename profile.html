@@ -97,17 +97,16 @@
                 <img src="/img/avatar.jpeg" alt="Аватар пользователя" />
             </div>
 
-            <h2 class="text-center">Имя пользователя</h2>
-            <p class="text-muted">@login</p>
+            <h2 id="name" class="text-center">Имя пользователя</h2>
+            <p id="login" class="text-muted">@login</p>
             <div class="about-section text-center bg-body-tertiary">
-                <p class="mb-0">
-                    О себе: Здесь можно написать краткую информацию о
-                    пользователе.
+                <p id="about" class="mb-0">
+                    Здесь можно написать краткую информацию о пользователе.
                 </p>
             </div>
         </div>
 
-        <!-- Edit Modal -->
+        <!-- Модальное окно редактирования профиля -->
         <div
             class="modal fade"
             id="editModal"
@@ -129,7 +128,7 @@
                     <div class="modal-body">
                         <form>
                             <div class="mb-3">
-                                <label for="userName" class="form-label"
+                                <label for="userName" class="form-label h6"
                                     >Имя пользователя</label
                                 >
                                 <input
@@ -139,7 +138,7 @@
                                     value="Имя пользователя" />
                             </div>
                             <div class="mb-3">
-                                <label for="userLogin" class="form-label"
+                                <label for="userLogin" class="form-label h6"
                                     >Логин</label
                                 >
                                 <input
@@ -149,14 +148,25 @@
                                     value="@login" />
                             </div>
                             <div class="mb-3">
-                                <label for="aboutText" class="form-label"
+                                <h6>Аватар</h6>
+                                <div class="profile-avatar mx-auto mb-3">
+                                    <img id="imagePreview" src="" />
+                                </div>
+                                <input
+                                    type="file"
+                                    class="form-control mb-3"
+                                    accept="image/*"
+                                    onchange="previewImage(event)" />
+                            </div>
+                            <div class="mb-3">
+                                <label for="aboutText" class="form-label h6"
                                     >О себе</label
                                 >
                                 <textarea
                                     class="form-control"
                                     id="aboutText"
                                     rows="3">
-                                Здесь можно написать краткую информацию о пользователе.
+Здесь можно написать краткую информацию о пользователе.
                                 </textarea>
                             </div>
                             <button type="button" class="btn btn-primary">
