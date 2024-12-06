@@ -129,6 +129,7 @@ function clearModalData(modalElement) {
             break;
         case 'modalImage':
             modalElement.find('img').attr('src', '');
+            modalElement.find('input[type="file"]').val(null);
             break;
         case 'modalText':
             modalElement.find('textarea').val('');
@@ -209,6 +210,8 @@ function loadModalDataImage(modalElement, blockElement) {
     let modalImage = modalElement.find('img');
 
     modalImage.attr('src', blockImageData);
+
+    modalElement.find('input[type="file"]').val(null);
 }
 
 // Загрузка данных в модальное окно из блока текста
@@ -317,7 +320,7 @@ function submitModal(type) {
             });
             break;
         case 'Image':
-            // Логика сбора данных для изображения
+            data.image = modalElement.find('input[type="file"]')[0].files[0];
             break;
         case 'Text':
             data.text = modalElement.find('textarea').val();
@@ -541,3 +544,20 @@ $(document).on('change', 'input[type="checkbox"]', function () {
         },
     });
 });
+
+function previewImage(event) {
+    const file = event.target.files[0];
+
+    if (file && file.type.match('image.*')) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imagePreview').attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(file);
+    } else {
+        alert('Пожалуйста, выберите изображение.');
+        $(event.target).val(null);
+    }
+}
