@@ -327,21 +327,17 @@ function submitModal(type) {
             break;
     }
 
-    // Отправка данных на сервер с помощью AJAX
     $.ajax({
-        url: '/', // URL обработчика на сервере
+        url: '/',
         type: 'POST',
         data: JSON.stringify(data),
         contentType: 'application/json',
         success: function (response) {
-            // Обработка успешного ответа от сервера
             console.log('Данные успешно отправлены на сервер:', response);
 
-            // Обновление блока на странице (с сервера)
             // ...
         },
         error: function (error) {
-            // Обработка ошибки отправки данных
             console.error('Ошибка отправки данных:', error);
         },
     });
@@ -359,21 +355,17 @@ function deleteBlock() {
         blockId: modalElement.data('blockId'),
     };
 
-    // Отправка данных на сервер с помощью AJAX
     $.ajax({
-        url: '/block/delete', // URL обработчика на сервере
+        url: '/block/delete',
         type: 'POST',
         data: JSON.stringify(data),
         contentType: 'application/json',
         success: function (response) {
-            // Обработка успешного ответа от сервера
             console.log('Данные успешно отправлены на сервер:', response);
 
-            // Удаление блока на странице (с сервера)
             // ...
         },
         error: function (error) {
-            // Обработка ошибки отправки данных
             console.error('Ошибка отправки данных:', error);
         },
     });
@@ -390,20 +382,16 @@ function deleteProject() {
 
     console.log('projectId:', projectId);
 
-    // Отправляем запрос на сервер
     $.ajax({
-        url: '/project/delete', // Замените на ваш URL
+        url: '/project/delete',
         type: 'POST',
         data: { projectId: projectId },
         success: function (response) {
-            // Обработка ответа от сервера (если необходимо)
-            console.log('Project deleted successfully:', response);
-            // Переадресация на новую страницу
+            console.log('Проект успешно удален:', response);
             window.location.href = '/home';
         },
         error: function (error) {
-            // Обработка ошибки (если необходимо)
-            console.error('Error deleting project:', error);
+            console.error('Ошибка удаления проекта:', error);
         },
     });
 }
@@ -535,11 +523,9 @@ $(document).on('change', 'input[type="checkbox"]', function () {
             isChecked: isChecked,
         },
         success: function (response) {
-            // Обработка ответа от сервера (если необходимо)
             console.log(response);
         },
         error: function (error) {
-            // Обработка ошибки (если необходимо)
             console.error(error);
         },
     });
