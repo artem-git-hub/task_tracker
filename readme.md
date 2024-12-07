@@ -89,5 +89,5 @@
 ### **4. Технологический стек:**  
 
 ---
-Frontend: html+css+js, jQuery 3.7.1, Bootstrap 5, html тег iframe
-Backend: yii 2, php 8.1, MySQL, 8.0, Apache
+**Frontend**: html+css+js, jQuery 3.7.1, Bootstrap 5, html тег iframe  
+**Backend**: yii 2, php 8.1, MySQL, 8.0, Apache
