@@ -11,7 +11,7 @@
             rel="stylesheet" />
         <link href="/css/global.css" rel="stylesheet" />
         <link href="/css/profile.css" rel="stylesheet" />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     </head>
 
     <body>
@@ -86,30 +86,29 @@
         </nav>
 
         <div class="content d-flex align-items-center justify-content-center">
-            
-            <div class="card text-center p-4 col-xxl-4 col-xl-5 col-lg-6 col-md-7 col-sm-9 col-12">
+            <div
+                class="card text-center p-4 col-xxl-4 col-xl-5 col-lg-6 col-md-7 col-sm-9 col-12">
                 <button
-                class="btn edit-button bg-body-tertiary"
-                data-bs-toggle="modal"
-                data-bs-target="#editModal">
-                <i class="bi bi-pencil-square"></i>
-            </button>
+                    class="btn edit-button bg-body-tertiary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#editModal">
+                    <i class="bi bi-pencil-square"></i>
+                </button>
 
-            <div class="d-flex justify-content-center w-100">
-                <div class="profile-avatar mb-3">
-                    <img src="/img/avatar.jpeg" alt="Аватар пользователя" />
+                <div class="d-flex justify-content-center w-100">
+                    <div class="profile-avatar mb-3">
+                        <img src="/img/avatar.jpeg" alt="Аватар пользователя" />
+                    </div>
+                </div>
+
+                <h2 id="name" class="text-center">Имя пользователя</h2>
+                <p id="login" class="text-muted">@login</p>
+                <div class="about-section text-center bg-body-tertiary">
+                    <p id="about" class="mb-0">
+Здесь можно написать краткую информацию о пользователе.
+                    </p>
                 </div>
             </div>
-
-            <h2 id="name" class="text-center">Имя пользователя</h2>
-            <p id="login" class="text-muted">@login</p>
-            <div class="about-section text-center bg-body-tertiary">
-                <p id="about" class="mb-0">
-                    Здесь можно написать краткую информацию о пользователе.
-                </p>
-            </div>
-            </div>
-            
         </div>
 
         <!-- Модальное окно редактирования профиля -->
@@ -175,9 +174,13 @@
 Здесь можно написать краткую информацию о пользователе.
                                 </textarea>
                             </div>
-                            <button type="button" class="btn btn-submit-modal">
-                                Сохранить
-                            </button>
+                            <div class="modal-footer">
+                                <button
+                                    type="button"
+                                    class="btn btn-submit-modal">
+                                    Сохранить
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
