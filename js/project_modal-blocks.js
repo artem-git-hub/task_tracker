@@ -410,7 +410,7 @@ $('.modal-block').on('show.bs.modal', function (event) {
     let blockId = modalElement.data('blockId');
 
     let titleElement = modalElement.find('.modal-title');
-    let primaryButton = modalElement.find('.btn-primary');
+    let primaryButton = modalElement.find('.btn-submit-modal');
 
     // Определяем исходный заголовок в зависимости от типа
     let initialTitle;

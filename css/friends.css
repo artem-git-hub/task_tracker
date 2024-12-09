@@ -1,4 +1,9 @@
-.friend-name, .friend-login {
+.friend-name,
+.friend-login {
     word-wrap: break-word;
     hyphens: auto;
+}
+
+.btn-block-menu {
+    background-color: rgba(0, 0, 0, 0);
 }

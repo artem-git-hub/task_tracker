@@ -17,3 +17,7 @@
 .status-circle{
     margin-bottom: 5px;
 }
+
+ .btn-expand {
+    background-color: rgba(0, 0, 0, 0);
+ }

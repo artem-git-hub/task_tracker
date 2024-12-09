@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Проект №1</title>
+        <title>Проект MyS | MyS</title>
 
         <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <link
@@ -11,6 +11,7 @@
             rel="stylesheet" />
         <link href="/css/global.css" rel="stylesheet" />
         <link href="/css/project.css" rel="stylesheet" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
     </head>
 
     <body>
@@ -170,7 +171,7 @@
                         data-project-id="1">
                         <!-- Содержимое блока -->
                         <div class="card-body">
-                            <h4 class="block-title">Заголовок проекта</h4>
+                            <h4 class="block-title">MyS</h4>
                             <h6 class="mb-1 me-2">Статус проекта:</h6>
                             <div class="d-flex align-items-center mb-3">
                                 <span
@@ -178,14 +179,9 @@
                                 <span name="projectStatus">Активен</span>
                             </div>
                             <h6 class="mb-0">Краткое описание:</h6>
-                            <p class="mb-3" name="shortDescription">
-                                Краткое описание проекта.
-                            </p>
+                            <p class="mb-3" name="shortDescription">Веб-приложение для ведения проектов.</p>
                             <h6 class="mb-0">Полное описание:</h6>
-                            <p class="pre-text" name="description">
-                                Описание проекта. Описание проекта. Описание
-                                проекта. Описание проекта. Описание проекта.
-                            </p>
+                            <p class="pre-text" name="description">Создание уникального приложения таск-трекера для ведения собственных и групповых проектов. Обеспечение удобного процесса планирования благодаря системе блоков с индивидуальным функционалом.</p>
                         </div>
                     </div>
                 </div>
@@ -208,7 +204,7 @@
                                             class="form-check-input"
                                             name="option1"
                                             checked />
-                                        Элемент 1
+                                        Формирование концепции
                                     </label>
                                 </li>
                                 <li class="form-check mb-3" data-item-id="2">
@@ -218,7 +214,7 @@
                                             class="form-check-input"
                                             name="option2"
                                             checked />
-                                        Элемент 2
+                                        Написание ТЗ
                                     </label>
                                 </li>
                                 <li class="form-check mb-3" data-item-id="3">
@@ -227,7 +223,7 @@
                                             type="checkbox"
                                             class="form-check-input"
                                             name="option3" />
-                                        Элемент 3 тыры пыры подлиннее что-то
+                                        Разработка оригинального дизайна
                                     </label>
                                 </li>
                                 <li class="form-check mb-3" data-item-id="4">
@@ -236,7 +232,7 @@
                                             type="checkbox"
                                             class="form-check-input"
                                             name="option4" />
-                                        Элемент 4
+                                        Работа с фронтендом
                                     </label>
                                 </li>
                             </ul>
@@ -332,15 +328,7 @@
                         <div class="card-body">
                             <h5 class="block-title">Блок с заголовком</h5>
 
-                            <p class="pre-text">
-                                Текст блока. Текст блока. Текст блока. Текст
-                                блока. Текст блока. Текст блока. Текст блока.
-                                Текст блока. Текст блока. Текст блока. Текст
-                                блока. Текст блока. Текст блока. Текст блока.
-                                Текст блока. Текст блока. Текст блока. Текст
-                                блока. Текст блока. Текст блока. Текст блока.
-                                Текст блока.
-                            </p>
+                            <p class="pre-text">MyS - Manifest Your Success. Это манифест твоего успеха. Интегрируя MyS в свой проект, вы можете быть уверены в том, что не упустите ни одной детали. Планировать процесс выполнения, менять и дополнять его, используя разновидности трекинга - это то, что поможет сделать путь к цели максимально прозрачным.</p>
                         </div>
                     </div>
                 </div>
@@ -471,13 +459,13 @@
                     <div class="modal-footer">
                         <button
                             type="button"
-                            class="btn btn-secondary"
+                            class="btn"
                             data-bs-dismiss="modal">
                             Отмена
                         </button>
                         <button
                             type="button"
-                            class="btn btn-primary"
+                            class="btn btn-submit-modal"
                             onclick="submitModal('Project')">
                             Добавить блок
                         </button>
@@ -522,13 +510,13 @@
                     <div class="modal-footer">
                         <button
                             type="button"
-                            class="btn btn-secondary"
+                            class="btn"
                             data-bs-dismiss="modal">
                             Отмена
                         </button>
                         <button
                             type="button"
-                            class="btn btn-primary"
+                            class="btn btn-submit-modal"
                             onclick="submitModal('Checklist')">
                             Добавить блок
                         </button>
@@ -568,13 +556,13 @@
                     <div class="modal-footer">
                         <button
                             type="button"
-                            class="btn btn-secondary"
+                            class="btn"
                             data-bs-dismiss="modal">
                             Отмена
                         </button>
                         <button
                             type="button"
-                            class="btn btn-primary"
+                            class="btn btn-submit-modal"
                             onclick="submitModal('Text')">
                             Добавить блок
                         </button>
@@ -619,13 +607,13 @@
                     <div class="modal-footer">
                         <button
                             type="button"
-                            class="btn btn-secondary"
+                            class="btn"
                             data-bs-dismiss="modal">
                             Отмена
                         </button>
                         <button
                             type="button"
-                            class="btn btn-primary"
+                            class="btn btn-submit-modal"
                             onclick="submitModal('Image')">
                             Добавить блок
                         </button>
@@ -670,13 +658,13 @@
                     <div class="modal-footer">
                         <button
                             type="button"
-                            class="btn btn-secondary"
+                            class="btn"
                             data-bs-dismiss="modal">
                             Отмена
                         </button>
                         <button
                             type="button"
-                            class="btn btn-primary"
+                            class="btn btn-submit-modal"
                             onclick="submitModal('Links')">
                             Добавить блок
                         </button>
@@ -703,7 +691,7 @@
                     <div class="modal-footer">
                         <button
                             type="button"
-                            class="btn btn-secondary"
+                            class="btn"
                             data-bs-dismiss="modal">
                             Отмена
                         </button>
@@ -749,7 +737,7 @@
                     <div class="modal-footer">
                         <button
                             type="button"
-                            class="btn btn-secondary"
+                            class="btn"
                             data-bs-dismiss="modal">
                             Отмена
                         </button>
@@ -767,11 +755,11 @@
         <footer class="footer bg-body-tertiary">
             <div
                 class="container d-flex justify-content-between align-items-center">
-                <h1 class="footer-logo">MyS</h1>
-                <div class="footer-links">
-                    <a href="/about.html" class="footer-link">About Us</a>
-                    <a href="/faq.html" class="footer-link">FAQ</a>
-                </div>
+                <h1 class="footer-logo me-3">MyS</h1>
+                <p class="footer-copyright">
+                    © Ларин А.Р., Гуляева А.П., Прудникова С.С., Арехов А.А.,
+                    2024
+                </p>
             </div>
         </footer>
 

@@ -1,5 +1,5 @@
 $(function () {
-    $('#editModal .btn-primary').on('click', () => {
+    $('#editModal .btn-submit-modal').on('click', () => {
         let userName = $('#userName').val();
         let userLogin = $('#userLogin').val();
         let aboutText = $('#aboutText').val();
