@@ -106,7 +106,6 @@ h6,
 
 .card {
     box-shadow: 5px 4px 3px rgba(var(--base-rgb), 0.09);
-    hyphens: auto;
 }
 
 .mini-avatar {

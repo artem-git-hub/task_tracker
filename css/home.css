@@ -1,5 +1,6 @@
 .card {
     height: 250px;
+    hyphens: auto;
 }
 
 .card-body {
@@ -14,10 +15,10 @@
     text-align: center;
 }
 
-.status-circle{
+.status-circle {
     margin-bottom: 5px;
 }
 
- .btn-expand {
+.btn-expand {
     background-color: rgba(0, 0, 0, 0);
- }
+}
