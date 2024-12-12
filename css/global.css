@@ -35,6 +35,7 @@ body {
     --btn-bg: #fff6ec;
     --btn-modal-bg: #fcf9e8;
     --btn-danger-bg: #dc3545;
+    --btn-secondary-bg: #fcf9e8;
 }
 
 /* Темная тема */
@@ -51,6 +52,7 @@ body[data-bs-theme='dark'] {
     --btn-bg: #343a40;
     --btn-modal-bg: #343a40;
     --btn-danger-bg: #dc3545;
+    --btn-secondary-bg: #343a40;
 }
 
 html,
@@ -102,6 +104,11 @@ h6,
 
 .btn-danger {
     background-color: var(--btn-danger-bg) !important;
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary-bg) !important;
+    color: var(--btn-text-color) !important;
 }
 
 .card {
