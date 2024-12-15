@@ -14,3 +14,10 @@
     border-color: #aaa;
     box-shadow: 0px 0px 12px #d36d24;
 }
+
+.carousel-item * {
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

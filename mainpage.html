@@ -11,7 +11,7 @@
             rel="stylesheet" />
         <link href="/css/global.css" rel="stylesheet" />
         <link href="/css/mainpage.css" rel="stylesheet" />
-        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     </head>
 
     <body>
@@ -30,18 +30,14 @@
                     <!-- Кнопка "Login" с переходом на страницу входа -->
                     <a
                         href="login.html"
-                        class="btn border h-100 me-3 custom-btn"
-                        >
+                        class="btn border h-100 me-3 custom-btn">
                         Вход
-                        </a
-                    >
+                    </a>
                     <a
                         href="login.html"
-                        class="btn border h-100 me-3 custom-btn"
-                        >
+                        class="btn border h-100 me-3 custom-btn">
                         Регистрация
-                        </a
-                    >
+                    </a>
                 </div>
             </div>
         </nav>
@@ -52,13 +48,13 @@
                 class="row my-3 align-items-center justify-content-between gx-5">
                 <!-- Левый блок с описанием -->
                 <div class="col-md-6 align-items-center">
-                    <p>
+                    <p class="fs-5">
                         MyS (Manifest your Success) — это удобный планировщик
                         задач, который помогает вам организовать дела, управлять
                         приоритетами и достигать целей. Используйте наш
                         инструмент, чтобы стать продуктивнее каждый день!
                     </p>
-                    <p>
+                    <p class="fs-5">
                         Интегрируя MyS в свой проект, вы можете быть уверены в
                         том, что не упустите ни одной детали. Планировать
                         процесс выполнения, менять и дополнять его, используя
@@ -67,12 +63,55 @@
                     </p>
                 </div>
 
-                <!-- Правый блок с изображением -->
+                <!-- Карусель с изображениями -->
                 <div class="col-md-6 align-items-center">
-                    <img
-                        src="/img/img3.png"
-                        class="card img-fluid"
-                        alt="Изображение на главной" />
+                    <div
+                        id="carouselMain"
+                        class="carousel carousel-dark slide w-100 border rounded py-4"
+                        data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h4>Блок проекта</h4>
+                                <img src="/img/main1.png" alt="Блок проекта" />
+                            </div>
+                            <div class="carousel-item">
+                                <h4>Блок чек-листа</h4>
+                                <img
+                                    src="/img/main2.png"
+                                    alt="Блок чек-листа" />
+                            </div>
+                            <div class="carousel-item">
+                                <h4>Блок изображения</h4>
+                                <img
+                                    src="/img/main3.png"
+                                    alt="Блок изображения" />
+                            </div>
+                            <div class="carousel-item">
+                                <h4>Блок ссылок</h4>
+                                <img src="/img/main4.png" alt="Блок ссылок" />
+                            </div>
+                            <div class="carousel-item">
+                                <h4>Блок текста</h4>
+                                <img src="/img/main5.png" alt="Блок текста" />
+                            </div>
+                        </div>
+                        <button
+                            class="carousel-control-prev"
+                            type="button"
+                            data-bs-target="#carouselMain"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Предыдущий</span>
+                        </button>
+                        <button
+                            class="carousel-control-next"
+                            type="button"
+                            data-bs-target="#carouselMain"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Следующий</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
