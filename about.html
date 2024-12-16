@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>О нас | MyS</title>
+
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link
+            href="/bootstrap/icons/bootstrap-icons.min.css"
+            rel="stylesheet" />
+        <link href="/css/global.css" rel="stylesheet" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    </head>
+
+    <body>
+        <!--Панель навигации сверху, закрепленная-->
+        <nav class="navbar sticky-top bg-body-tertiary p-1">
+            <div
+                class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
+                <!-- Элементы слева -->
+                <div class="d-flex">
+                    <!-- Логотип -->
+                    <h1 class="my-auto px-2 logo h1-2">
+                        <a href="/home.html">MyS</a>
+                    </h1>
+                </div>
+
+                <!--Элементы справа-->
+                <div class="d-flex">
+                    <!--Кнопка разворачивания главного меню-->
+                    <button
+                        class="btn border h-100"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#mainMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <!-- Главное меню -->
+                <div
+                    class="offcanvas offcanvas-end bg-body-tertiary navbar-nav"
+                    tabindex="-1"
+                    id="mainMenu">
+                    <div class="offcanvas-header px-5">
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body text-center py-1">
+                        <ul class="navbar-nav h-100">
+                            <h1 class="mb-3 logo">MyS</h1>
+                            <li class="nav-item">
+                                <a href="/profile.html">
+                                    <div class="menu-avatar my-2 mx-auto">
+                                        <img
+                                            src="/img/avatar.jpeg"
+                                            alt="Аватар пользователя" />
+                                    </div>
+                                    <h5 class="mb-1">Имя пользователя</h5>
+                                    <p class="mb-5">@login</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/home.html">
+                                    <h4 class="mb-4">Проекты</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/settings.html">
+                                    <h4 class="mb-4">Настройки</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item mt-auto">
+                                <a href="/mainpage.html">
+                                    <h4 class="mb-4">Выход</h4>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Основной контент -->
+        <main class="content">
+            <div
+                class="card card p-4 col-xxl-5 col-xl-6 col-lg-8 col-md-9 col-11 mx-auto p-5">
+                <h2 class="mb-3">Наша команда:</h2>
+                <dl class="row fs-5 mx-1">
+                    <dt class="col-1">&#129417;</dt>
+                    <dd class="col-11">Ларин Александр (Фронтенд)</dd>
+
+                    <dt class="col-1">&#129418;</dt>
+                    <dd class="col-11">Гуляева Анастасия (Фронтенд, Дизайн)</dd>
+
+                    <dt class="col-1">&#129428;</dt>
+                    <dd class="col-11">Прудникова Светлана (Дизайн)</dd>
+
+                    <dt class="col-1">&#128054;</dt>
+                    <dd class="col-11">Арехов Артём (Проект-менеджер)</dd>
+                </dl>
+
+                <h3 class="mb-3">Контакты:</h3>
+                <ul class="list-unstyled fs-5 mb-0">
+                    <li>
+                        E-mail:
+                        <a href="mailto:mys_project@mail.ru"
+                            >mys_project@mail.ru</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </main>
+
+        <footer class="footer bg-body-tertiary">
+            <div
+                class="container d-flex justify-content-between align-items-center">
+                <h1 class="footer-logo me-3">MyS</h1>
+                <div class="footer-content">
+                    <a class="me-2" href="/about.html">О нас</a>
+                    <a href="/help.html">Помощь и обратная связь</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-3.7.1.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="/js/theme_load.js"></script>
+    </body>
+</html>

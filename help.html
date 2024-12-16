@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Помощь и обратная связь | MyS</title>
+
+        <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link
+            href="/bootstrap/icons/bootstrap-icons.min.css"
+            rel="stylesheet" />
+        <link href="/css/global.css" rel="stylesheet" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    </head>
+
+    <body>
+        <!--Панель навигации сверху, закрепленная-->
+        <nav class="navbar sticky-top bg-body-tertiary p-1">
+            <div
+                class="container-fluid px-4 d-flex justify-content-between flex-nowrap">
+                <!-- Элементы слева -->
+                <div class="d-flex">
+                    <!-- Логотип -->
+                    <h1 class="my-auto px-2 logo h1-2">
+                        <a href="/home.html">MyS</a>
+                    </h1>
+                </div>
+
+                <!--Элементы справа-->
+                <div class="d-flex">
+                    <!--Кнопка разворачивания главного меню-->
+                    <button
+                        class="btn border h-100"
+                        type="button"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#mainMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+
+                <!-- Главное меню -->
+                <div
+                    class="offcanvas offcanvas-end bg-body-tertiary navbar-nav"
+                    tabindex="-1"
+                    id="mainMenu">
+                    <div class="offcanvas-header px-5">
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body text-center py-1">
+                        <ul class="navbar-nav h-100">
+                            <h1 class="mb-3 logo">MyS</h1>
+                            <li class="nav-item">
+                                <a href="/profile.html">
+                                    <div class="menu-avatar my-2 mx-auto">
+                                        <img
+                                            src="/img/avatar.jpeg"
+                                            alt="Аватар пользователя" />
+                                    </div>
+                                    <h5 class="mb-1">Имя пользователя</h5>
+                                    <p class="mb-5">@login</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/home.html">
+                                    <h4 class="mb-4">Проекты</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/settings.html">
+                                    <h4 class="mb-4">Настройки</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item mt-auto">
+                                <a href="/mainpage.html">
+                                    <h4 class="mb-4">Выход</h4>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Основной контент -->
+        <main class="content">
+            <div class="card col-xxl-6 col-lg-8 col-sm-10 col-11 mx-auto p-5">
+                <h2 class="mb-3">Помощь и обратная связь</h2>
+                <p class="fs-5 mb-1">Если вы:</p>
+                <ul class="fs-5">
+                    <li class="mb-1">Столкнулись с проблемой</li>
+                    <li class="mb-1">
+                        Не можете разобраться в каком-то вопросе
+                    </li>
+                    <li class="mb-1">
+                        Хотите предложить свою идею для улучшения проекта
+                    </li>
+                </ul>
+                <p class="fs-5">
+                    Воспользуйтесь формой связи ниже или напишите на нашу
+                    электронную почту:
+                    <a href="mailto:mys_project@mail.ru">mys_project@mail.ru</a>
+                </p>
+                <form class="col-lg-9 col-11 mx-auto">
+                    <h3 class="my-4">Форма обратной связи</h3>
+                    <div class="mb-3">
+                        <input
+                            type="text"
+                            class="form-control rounded-pill"
+                            placeholder="Тема"
+                            required />
+                    </div>
+                    <div class="mb-3">
+                        <input
+                            type="email"
+                            class="form-control rounded-pill"
+                            placeholder="Почта для связи с Вами"
+                            required />
+                    </div>
+                    <div class="mb-3">
+                        <textarea
+                            class="form-control rounded"
+                            rows="4"
+                            placeholder="Текст сообщения"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn border w-100 rounded-pill">
+                        Отправить
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <footer class="footer bg-body-tertiary">
+            <div
+                class="container d-flex justify-content-between align-items-center">
+                <h1 class="footer-logo me-3">MyS</h1>
+                <div class="footer-content">
+                    <a class="me-2" href="/about.html">О нас</a>
+                    <a href="/help.html">Помощь и обратная связь</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="/js/jquery-3.7.1.min.js"></script>
+        <script src="/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+        <script src="/js/theme_load.js"></script>
+    </body>
+</html>
